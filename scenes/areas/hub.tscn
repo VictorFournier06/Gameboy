@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://sc4be44blh86"]
+
+[node name="Hub" type="Control"]
+layout_mode = 3
+anchors_preset = 0

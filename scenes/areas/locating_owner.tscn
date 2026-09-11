@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://b3b0lcc3bcabw"]
+
+[node name="LocatingOwner" type="Node2D"]

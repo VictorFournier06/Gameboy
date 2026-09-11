@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://dvm0xecpugvrv"]
+
+[node name="Shop" type="Control"]
+layout_mode = 3
+anchors_preset = 0
