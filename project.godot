@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="Gameboy"
-run/main_scene="uid://cu231e4cdfn1q"
+run/main_scene="uid://sc4be44blh86"
 config/features=PackedStringArray("4.5", "Forward Plus")
-config/icon="res://icon.svg"
 
 [autoload]
 
-Game="*res://scenes/game.tscn"
+Inventory="*res://scenes/game/inventory.tscn"
+MusicPlayer="*res://scenes/game/music_player.tscn"
+AreaManager="*res://scenes/game/area_manager.tscn"
 
 [display]
 

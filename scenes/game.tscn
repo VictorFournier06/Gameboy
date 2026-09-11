@@ -1,9 +1,0 @@
-[gd_scene format=3 uid="uid://dytj6es52c348"]
-
-[node name="Game" type="Node"]
-
-[node name="MusicPlayer" type="AudioStreamPlayer2D" parent="."]
-
-[node name="SceneManager" type="Node" parent="."]
-
-[node name="Inventory" type="Node" parent="."]
