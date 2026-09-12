@@ -1,5 +1,11 @@
-[gd_scene format=3 uid="uid://sc4be44blh86"]
+[gd_scene load_steps=2 format=3 uid="uid://sc4be44blh86"]
+
+[ext_resource type="Texture2D" uid="uid://bm3obslvvbwxa" path="res://assets/areas/hub.jpg" id="1_qj3x0"]
 
 [node name="Hub" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_qj3x0")
+centered = false

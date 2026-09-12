@@ -1,3 +1,9 @@
-[gd_scene format=3 uid="uid://n0d2bfx60yol"]
+[gd_scene load_steps=2 format=3 uid="uid://n0d2bfx60yol"]
+
+[ext_resource type="Texture2D" uid="uid://66vjo1pnve07" path="res://assets/areas/fishing.jpg" id="1_wbpxe"]
 
 [node name="Fishing" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_wbpxe")
+centered = false

@@ -1,3 +1,9 @@
-[gd_scene format=3 uid="uid://b3b0lcc3bcabw"]
+[gd_scene load_steps=2 format=3 uid="uid://b3b0lcc3bcabw"]
+
+[ext_resource type="Texture2D" uid="uid://cd3lmptaclumx" path="res://assets/areas/locating_owners.jpg" id="1_iuiyi"]
 
 [node name="LocatingOwners" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_iuiyi")
+centered = false
