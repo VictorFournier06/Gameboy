@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c30q1oak6vbwg"
-path="res://.godot/imported/HubDoor.png-483f15f2b236487d474549af2934ab48.ctex"
+uid="uid://ce56362xgbqwo"
+path="res://.godot/imported/HubWorkshop.png-af5e4a5596f3ee54a186c7adeff6ae1a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/areas/Hub_area/HubDoor.png"
-dest_files=["res://.godot/imported/HubDoor.png-483f15f2b236487d474549af2934ab48.ctex"]
+source_file="res://assets/areas/Hub_area_orange_palet/HubWorkshop.png"
+dest_files=["res://.godot/imported/HubWorkshop.png-af5e4a5596f3ee54a186c7adeff6ae1a.ctex"]
 
 [params]
 

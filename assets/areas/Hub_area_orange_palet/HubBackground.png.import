@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvffnfcb2e7yp"
-path="res://.godot/imported/Fish Pole Selected.png-ddccc843b97e9b74e080a3a10589640c.ctex"
+uid="uid://cfuh8frsuvajm"
+path="res://.godot/imported/HubBackground.png-1b29f27d6ffc6bd94ded499020317996.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/areas/Hub_area/Fish Pole Selected.png"
-dest_files=["res://.godot/imported/Fish Pole Selected.png-ddccc843b97e9b74e080a3a10589640c.ctex"]
+source_file="res://assets/areas/Hub_area_orange_palet/HubBackground.png"
+dest_files=["res://.godot/imported/HubBackground.png-1b29f27d6ffc6bd94ded499020317996.ctex"]
 
 [params]
 

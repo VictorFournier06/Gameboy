@@ -1,13 +1,13 @@
 [gd_scene load_steps=9 format=3 uid="uid://sc4be44blh86"]
 
 [ext_resource type="Script" uid="uid://crxv1w2v7b1c3" path="res://scenes/areas/hub.gd" id="1_3jkhj"]
-[ext_resource type="Texture2D" uid="uid://cfuh8frsuvajm" path="res://assets/areas/Hub_area/HubBackground.png" id="2_3jkhj"]
-[ext_resource type="Texture2D" uid="uid://cq44jbcv2d6p6" path="res://assets/areas/Hub_area/Fish Pole.png" id="2_spdrs"]
-[ext_resource type="Texture2D" uid="uid://bvffnfcb2e7yp" path="res://assets/areas/Hub_area/Fish Pole Selected.png" id="3_3jkhj"]
-[ext_resource type="Texture2D" uid="uid://c30q1oak6vbwg" path="res://assets/areas/Hub_area/HubDoor.png" id="5_3jkhj"]
-[ext_resource type="Texture2D" uid="uid://dach6q0fqp5fc" path="res://assets/areas/Hub_area/HubDoorHighlight.png" id="6_qlspo"]
-[ext_resource type="Texture2D" uid="uid://5sf8t6e1qf3p" path="res://assets/areas/Hub_area/Workshop.png" id="6_wh0xw"]
-[ext_resource type="Texture2D" uid="uid://bp2mxyjs1wje8" path="res://assets/areas/Hub_area/Workshop Selected.png" id="7_euau0"]
+[ext_resource type="Texture2D" uid="uid://cfuh8frsuvajm" path="res://assets/areas/Hub_area_orange_palet/HubBackground.png" id="2_3jkhj"]
+[ext_resource type="Texture2D" uid="uid://dfkce2380yyd0" path="res://assets/areas/Hub_area_orange_palet/FishPole.png" id="2_spdrs"]
+[ext_resource type="Texture2D" uid="uid://be7656m4kcnj" path="res://assets/areas/Hub_area_orange_palet/FishPoleHighlight.png" id="4_3jkhj"]
+[ext_resource type="Texture2D" uid="uid://c30q1oak6vbwg" path="res://assets/areas/Hub_area_orange_palet/HubDoor.png" id="5_3jkhj"]
+[ext_resource type="Texture2D" uid="uid://dach6q0fqp5fc" path="res://assets/areas/Hub_area_orange_palet/HubDoorHighlight.png" id="6_qlspo"]
+[ext_resource type="Texture2D" uid="uid://ce56362xgbqwo" path="res://assets/areas/Hub_area_orange_palet/HubWorkshop.png" id="7_3jkhj"]
+[ext_resource type="Texture2D" uid="uid://bacf2vphv4thm" path="res://assets/areas/Hub_area_orange_palet/HubWorkshopHighlight.png" id="8_qlspo"]
 
 [node name="Hub" type="Control"]
 layout_mode = 3
@@ -20,12 +20,12 @@ centered = false
 
 [node name="FishPole" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 11.0
-offset_top = 66.0
-offset_right = 27.0
-offset_bottom = 82.0
+offset_left = 2.0
+offset_top = 62.0
+offset_right = 34.0
+offset_bottom = 94.0
 texture_normal = ExtResource("2_spdrs")
-texture_focused = ExtResource("3_3jkhj")
+texture_focused = ExtResource("4_3jkhj")
 
 [node name="Door" type="TextureButton" parent="."]
 layout_mode = 0
@@ -38,9 +38,9 @@ texture_focused = ExtResource("6_qlspo")
 
 [node name="Workshop" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 111.0
-offset_top = 117.0
-offset_right = 127.0
-offset_bottom = 134.0
-texture_normal = ExtResource("6_wh0xw")
-texture_focused = ExtResource("7_euau0")
+offset_left = 48.0
+offset_top = 72.0
+offset_right = 112.0
+offset_bottom = 136.0
+texture_normal = ExtResource("7_3jkhj")
+texture_focused = ExtResource("8_qlspo")

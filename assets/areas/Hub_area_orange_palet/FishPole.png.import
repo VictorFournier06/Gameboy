@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dach6q0fqp5fc"
-path="res://.godot/imported/HubDoorHighlight.png-8a05893a063461c2d36d357707dc3255.ctex"
+uid="uid://dfkce2380yyd0"
+path="res://.godot/imported/FishPole.png-61d0274c0ed5fd280066f2931617b232.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/areas/Hub_area/HubDoorHighlight.png"
-dest_files=["res://.godot/imported/HubDoorHighlight.png-8a05893a063461c2d36d357707dc3255.ctex"]
+source_file="res://assets/areas/Hub_area_orange_palet/FishPole.png"
+dest_files=["res://.godot/imported/FishPole.png-61d0274c0ed5fd280066f2931617b232.ctex"]
 
 [params]
 
