@@ -1,9 +1,43 @@
-[gd_scene load_steps=2 format=3 uid="uid://d3dr0gh263yak"]
+[gd_scene load_steps=11 format=3 uid="uid://d3dr0gh263yak"]
 
 [ext_resource type="Texture2D" uid="uid://cs5slpvnwkkma" path="res://assets/areas/restoring.jpg" id="1_sd5fg"]
+[ext_resource type="Script" uid="uid://cr122fu60irp" path="res://scenes/areas/player.gd" id="2_iysp6"]
+[ext_resource type="Shader" uid="uid://wuwbah74w55m" path="res://scenes/areas/restoring.gdshader" id="2_ov8pg"]
+[ext_resource type="Script" uid="uid://cxg40dy05iqj7" path="res://scenes/areas/restorable_object.gd" id="3_ov8pg"]
+[ext_resource type="Texture2D" uid="uid://dxrb5vnf8fkl6" path="res://assets/areas/Hub_area_orange_palet/square.png" id="4_2pk82"]
+
+[sub_resource type="Gradient" id="Gradient_ov8pg"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+metadata/_snap_enabled = true
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_2pk82"]
+gradient = SubResource("Gradient_ov8pg")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gerlc"]
+shader = ExtResource("2_ov8pg")
+shader_parameter/clean_texture = SubResource("GradientTexture2D_2pk82")
+shader_parameter/cutoff = 0.5
+
+[sub_resource type="Gradient" id="Gradient_gerlc"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ov8pg"]
+gradient = SubResource("Gradient_gerlc")
 
 [node name="Restoring" type="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("1_sd5fg")
 centered = false
+
+[node name="RestorableObject" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_gerlc")
+position = Vector2(48, 61)
+texture = SubResource("GradientTexture2D_ov8pg")
+centered = false
+script = ExtResource("3_ov8pg")
+
+[node name="Player" type="Sprite2D" parent="."]
+position = Vector2(40, 124)
+texture = ExtResource("4_2pk82")
+script = ExtResource("2_iysp6")
