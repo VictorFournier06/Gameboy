@@ -24,6 +24,7 @@ AreaManager="*res://scenes/game/area_manager.tscn"
 
 window/size/viewport_width=160
 window/size/viewport_height=144
+window/size/mode=2
 window/size/window_width_override=640
 window/size/window_height_override=576
 window/stretch/mode="viewport"
