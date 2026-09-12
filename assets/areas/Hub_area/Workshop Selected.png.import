@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5sf8t6e1qf3p"
-path="res://.godot/imported/Workshop.png-afc62f1a4057d1a3a68a3375cb5b97bb.ctex"
+uid="uid://bp2mxyjs1wje8"
+path="res://.godot/imported/Workshop Selected.png-a8afd9ecf544faafce04354d532e2397.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/areas/Hub_areas/Workshop.png"
-dest_files=["res://.godot/imported/Workshop.png-afc62f1a4057d1a3a68a3375cb5b97bb.ctex"]
+source_file="res://assets/areas/Hub_area/Workshop Selected.png"
+dest_files=["res://.godot/imported/Workshop Selected.png-a8afd9ecf544faafce04354d532e2397.ctex"]
 
 [params]
 

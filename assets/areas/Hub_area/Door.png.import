@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvffnfcb2e7yp"
-path="res://.godot/imported/Fish Pole Selected.png-c9d383a1d9dc3e84a59619f6035f0b4c.ctex"
+uid="uid://c3kpaq5x3340o"
+path="res://.godot/imported/Door.png-5d1fec7bfbd5d5e8a2bf26d58ec88141.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/areas/Hub_areas/Fish Pole Selected.png"
-dest_files=["res://.godot/imported/Fish Pole Selected.png-c9d383a1d9dc3e84a59619f6035f0b4c.ctex"]
+source_file="res://assets/areas/Hub_area/Door.png"
+dest_files=["res://.godot/imported/Door.png-5d1fec7bfbd5d5e8a2bf26d58ec88141.ctex"]
 
 [params]
 
