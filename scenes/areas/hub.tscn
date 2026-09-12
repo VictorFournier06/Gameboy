@@ -1,11 +1,46 @@
-[gd_scene load_steps=2 format=3 uid="uid://sc4be44blh86"]
+[gd_scene load_steps=9 format=3 uid="uid://sc4be44blh86"]
 
+[ext_resource type="Script" uid="uid://crxv1w2v7b1c3" path="res://scenes/areas/hub.gd" id="1_3jkhj"]
 [ext_resource type="Texture2D" uid="uid://bm3obslvvbwxa" path="res://assets/areas/hub.jpg" id="1_qj3x0"]
+[ext_resource type="Texture2D" uid="uid://cq44jbcv2d6p6" path="res://assets/areas/Hub_areas/Fish Pole.png" id="2_spdrs"]
+[ext_resource type="Texture2D" uid="uid://bvffnfcb2e7yp" path="res://assets/areas/Hub_areas/Fish Pole Selected.png" id="3_3jkhj"]
+[ext_resource type="Texture2D" uid="uid://c3kpaq5x3340o" path="res://assets/areas/Hub_areas/Door.png" id="4_qlspo"]
+[ext_resource type="Texture2D" uid="uid://b3vlv1mw4ixbm" path="res://assets/areas/Hub_areas/Door Selected.png" id="5_sunr8"]
+[ext_resource type="Texture2D" uid="uid://5sf8t6e1qf3p" path="res://assets/areas/Hub_areas/Workshop.png" id="6_wh0xw"]
+[ext_resource type="Texture2D" uid="uid://bp2mxyjs1wje8" path="res://assets/areas/Hub_areas/Workshop Selected.png" id="7_euau0"]
 
 [node name="Hub" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_3jkhj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_qj3x0")
 centered = false
+
+[node name="FishPole" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 66.0
+offset_right = 27.0
+offset_bottom = 82.0
+texture_normal = ExtResource("2_spdrs")
+texture_focused = ExtResource("3_3jkhj")
+
+[node name="Door" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 132.0
+offset_top = 64.0
+offset_right = 148.0
+offset_bottom = 80.0
+texture_normal = ExtResource("4_qlspo")
+texture_focused = ExtResource("5_sunr8")
+
+[node name="Workshop" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 111.0
+offset_top = 117.0
+offset_right = 127.0
+offset_bottom = 134.0
+texture_normal = ExtResource("6_wh0xw")
+texture_focused = ExtResource("7_euau0")
