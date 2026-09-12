@@ -3,8 +3,6 @@ extends Node
 signal money_changed(new_value: int)
 signal items_changed(new_items: Array[Item])
 
-enum Item { OLD_GOLD }
-
 var money: int:
 	get:
 		return _money
