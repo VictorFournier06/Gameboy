@@ -21,5 +21,6 @@ func _physics_process(_delta: float) -> void:
 
 	position.x = clamp(position.x, player_size.x / 2, viewport_size.x - player_size.x / 2)
 	position.y = clamp(position.y, player_size.y / 2, viewport_size.y - player_size.y / 2)
-
-	restorable_object.scrub_at(position, scrub_effect)
+	
+	if dir != Vector2.ZERO:
+		restorable_object.scrub_at(global_position, scrub_effect)
