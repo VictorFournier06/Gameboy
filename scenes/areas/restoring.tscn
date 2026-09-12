@@ -37,7 +37,8 @@ texture = SubResource("GradientTexture2D_ov8pg")
 centered = false
 script = ExtResource("3_ov8pg")
 
-[node name="Player" type="Sprite2D" parent="."]
+[node name="Player" type="Sprite2D" parent="." node_paths=PackedStringArray("restorable_object")]
 position = Vector2(40, 124)
 texture = ExtResource("4_2pk82")
 script = ExtResource("2_iysp6")
+restorable_object = NodePath("../RestorableObject")

@@ -1,8 +1,8 @@
 extends Sprite2D
 
 @export var speed: int = 2
-@export var scrub_size: int = 1
-@export var scrub_strength: int = 1
+@export var scrub_effect: Array = [[0.1]]
+@export var restorable_object: RestorableObject
 
 @onready var viewport_size: Vector2 = get_viewport_rect().size
 @onready var player_size: Vector2 = texture.get_size()
@@ -21,3 +21,5 @@ func _physics_process(_delta: float) -> void:
 
 	position.x = clamp(position.x, player_size.x / 2, viewport_size.x - player_size.x / 2)
 	position.y = clamp(position.y, player_size.y / 2, viewport_size.y - player_size.y / 2)
+
+	restorable_object.scrub_at(position, scrub_effect)
