@@ -1,8 +1,8 @@
 class_name RestorableObject
 extends Sprite2D
 
-var grid_size = 16
-var image: Image = Image.create_empty(grid_size, grid_size, false, Image.FORMAT_RGBA8)
+const GRID_SIZE = 16
+var image: Image = Image.create_empty(GRID_SIZE, GRID_SIZE, false, Image.FORMAT_RGBA8)
 var cleaning_grid: ImageTexture = ImageTexture.create_from_image(image)
 
 func _ready() -> void:
@@ -11,13 +11,13 @@ func _ready() -> void:
 func scrub_at(world_position: Vector2, scrub_kernel: Array) -> void:
 	var local_position: Vector2 = to_local(world_position)
 	var uv_position: Vector2 = local_position / texture.get_size()
-	var cell_postion = Vector2i(uv_position * grid_size)
+	var cell_postion = Vector2i(uv_position * GRID_SIZE)
 
 	var scrub_size: Vector2i = Vector2i(scrub_kernel[0].size(), scrub_kernel.size())
 	var scrub_top_left: Vector2i = cell_postion - scrub_size / 2
 
 	var scrub_rect: Rect2i = Rect2i(scrub_top_left, scrub_size)
-	var grid_rect: Rect2i = Rect2i(0, 0, grid_size, grid_size)
+	var grid_rect: Rect2i = Rect2i(0, 0, GRID_SIZE, GRID_SIZE)
 	var overlap: Rect2i = grid_rect.intersection(scrub_rect)
 
 	for x in range(overlap.position.x, overlap.end.x):
