@@ -2,11 +2,17 @@ class_name Item
 extends Resource
 
 enum Deterioration { NONE, DIRTY, BROKEN }
-enum Artefact { OLD_GOLD, AMPHORA, MUSIC_BOX, LOST_KEY, MOSSY_CASKET }
 
-@export var artefact: Artefact = Artefact.OLD_GOLD
+@export var type: ItemType = preload("res://resources/items/old_gold.tres")
 
 @export var deterioration: Deterioration:
 	set(value):
 		deterioration = value
 		emit_changed()
+
+func _init(
+	item_type: ItemType = ItemCatalog.OLD_GOLD,
+	item_deterioration: Deterioration = Deterioration.DIRTY
+	) -> void:
+	type = item_type
+	deterioration = item_deterioration
