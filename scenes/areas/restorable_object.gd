@@ -46,6 +46,7 @@ func to_cell_position(local_position: Vector2) -> Vector2i:
 	var cell_position = Vector2i(uv_position * GRID_SIZE)
 	return cell_position
 
+## returns true if there is an object being scrubbe
 func scrub_at(world_position: Vector2, scrub_kernel: Array) -> bool:
 	var has_something_been_scrubbed: bool = false
 
