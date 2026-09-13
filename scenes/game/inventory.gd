@@ -14,7 +14,7 @@ var items: Array[Item]:
 		return read_only_items
 
 var _money: int = 0
-var _items: Array[Item] = []
+var _items: Array[Item] = [Item.new(ItemCatalog.RUSTY_KEY, Item.Deterioration.DIRTY)] #WIP
 
 func spend_money(cost: int) -> bool:
 	assert(cost >= 0)
