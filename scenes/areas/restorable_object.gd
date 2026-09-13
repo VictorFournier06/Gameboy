@@ -19,6 +19,8 @@ func _reset() -> void:
 	cleaning_grid.update(grid_image)
 
 	current_item = Inventory.get_first_restorable_item(Item.Deterioration.DIRTY)
+	if current_item == null:
+		return
 	texture = current_item.type.dirty_texture
 	material.set_shader_parameter("clean_texture", current_item.type.clean_texture)
 
