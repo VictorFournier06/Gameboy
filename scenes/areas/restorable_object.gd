@@ -12,14 +12,15 @@ func _ready() -> void:
 	grid_image = Image.create_empty(GRID_SIZE, GRID_SIZE, false, Image.FORMAT_RGBA8)
 	cleaning_grid = ImageTexture.create_from_image(grid_image)
 	material.set_shader_parameter("grid_texture", cleaning_grid)
-
-	current_item = Inventory.get_first_restorable_item(Item.Deterioration.DIRTY)
+	_reset()
 
 func _reset() -> void:
 	grid_image.fill(Color(0, 0, 0, 1))
 	cleaning_grid.update(grid_image)
 
 	current_item = Inventory.get_first_restorable_item(Item.Deterioration.DIRTY)
+	texture = current_item.type.dirty_texture
+	material.set_shader_parameter("clean_texture", current_item.type.clean_texture)
 
 func scrub_at(world_position: Vector2, scrub_kernel: Array) -> void:
 	if current_item == null:
