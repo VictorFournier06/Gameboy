@@ -1,11 +1,20 @@
-extends Sprite2D
+extends AnimatedSprite2D
 
 @export var speed: int = 2
 @export var scrub_effect: Array = [[0.1]]
 @export var restorable_object: RestorableObject
 
+var scrubbing: bool = false
+
 @onready var viewport_size: Vector2 = get_viewport_rect().size
-@onready var player_size: Vector2 = texture.get_size()
+@onready var player_size: Vector2i = Vector2i(16, 16)
+
+func _ready():
+	animation_looped.connect(_stop_scrub_animation_if_necessary)
+
+func _stop_scrub_animation_if_necessary():
+	if not scrubbing and animation == "scrubbing":
+		play("idle")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta: float) -> void:
@@ -19,8 +28,12 @@ func _physics_process(_delta: float) -> void:
 
 	position += dir * speed
 
-	position.x = clamp(position.x, player_size.x / 2, viewport_size.x - player_size.x / 2)
-	position.y = clamp(position.y, player_size.y / 2, viewport_size.y - player_size.y / 2)
+	position.x = clamp(position.x, player_size.x / 2.0, viewport_size.x - player_size.x / 2.0)
+	position.y = clamp(position.y, player_size.y / 2.0, viewport_size.y - player_size.y / 2.0)
 
-	if dir != Vector2.ZERO:
-		restorable_object.scrub_at(global_position, scrub_effect)
+	scrubbing = false
+	if dir != Vector2.ZERO and restorable_object.scrub_at(global_position, scrub_effect):
+			scrubbing = true
+
+	if scrubbing and animation != "scrubbing":
+		play("scrubbing")
