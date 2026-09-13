@@ -2,7 +2,7 @@ class_name RestorableObject
 extends Sprite2D
 
 const GRID_SIZE: int = 16
-const CLEAN_THRESHOLD: float = 0.75
+const CLEAN_THRESHOLD: float = 0.9
 
 var grid_image: Image #just there to update the ImageTexture
 var cleaning_grid: ImageTexture #the square mask of 0->1s that gets cleaned
@@ -18,27 +18,29 @@ func _ready() -> void:
 	_reset()
 
 func _reset() -> void:
-	grid_image.fill(Color(0, 0, 0, 1))
-	cleaning_grid.update(grid_image)
-
 	current_item = Inventory.get_first_restorable_item(Item.Deterioration.DIRTY)
 	if current_item == null:
+		texture = null
 		return
 	texture = current_item.type.dirty_texture
 	material.set_shader_parameter("clean_texture", current_item.type.clean_texture)
 	_set_current_item_shape()
+	
+	grid_image.fill(Color(0, 0, 0, 1))
+	cleaning_grid.update(grid_image)
 
 func _set_current_item_shape():
 	current_item_shape_mask = Image.create_empty(GRID_SIZE, GRID_SIZE, false, Image.FORMAT_RGBA8)
 	var current_item_image = texture.get_image()
-	var surface_sum: int = 0 #counts the number of pixels of the mask
+	var surface_sum: int = 0 #counts the number of cells of the mask
 
 	for x in range(current_item_image.get_width()):
 		for y in range(current_item_image.get_height()):
 			var cell_position = to_cell_position(Vector2(x, y))
 			if current_item_image.get_pixel(x, y).a > 0:
-				current_item_shape_mask.set_pixel(cell_position.x, cell_position.y, Color.WHITE)
-				surface_sum += 1
+				if current_item_shape_mask.get_pixel(cell_position.x, cell_position.y) != Color.WHITE: #needed to increment surface only once per cell
+					surface_sum += 1
+					current_item_shape_mask.set_pixel(cell_position.x, cell_position.y, Color.WHITE)
 	current_item_surface = surface_sum
 
 func to_cell_position(local_position: Vector2) -> Vector2i:
