@@ -43,5 +43,5 @@ func _physics_process(_delta: float) -> void:
 	particles.global_position = global_position
 	particles.emitting = scrubbing
 
-	scratch_sound.scratch_intensity = dir.length() #L2 norm
+	scratch_sound.scratch_intensity = dir.length() / sqrt(2) #L2 norm
 	scratch_sound.scrubbing = scrubbing
