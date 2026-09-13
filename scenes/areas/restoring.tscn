@@ -1,10 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://d3dr0gh263yak"]
+[gd_scene load_steps=15 format=3 uid="uid://d3dr0gh263yak"]
 
 [ext_resource type="Texture2D" uid="uid://bk13jo1hr7xjy" path="res://assets/visual/areas/Worshop_area_orange_palet/Workshop_Background.png" id="1_2pk82"]
 [ext_resource type="Script" uid="uid://cr122fu60irp" path="res://scenes/areas/player.gd" id="2_iysp6"]
 [ext_resource type="Shader" uid="uid://wuwbah74w55m" path="res://scenes/areas/restoring.gdshader" id="2_ov8pg"]
 [ext_resource type="Script" uid="uid://cxg40dy05iqj7" path="res://scenes/areas/restorable_object.gd" id="3_ov8pg"]
 [ext_resource type="SpriteFrames" uid="uid://ctjfdeq8a5qc2" path="res://resources/scrubbing_tools/rag.tres" id="4_2pk82"]
+[ext_resource type="Script" uid="uid://217ekmdqdj3j" path="res://scenes/areas/scratch_sound.gd" id="6_4jl2u"]
+[ext_resource type="AudioStream" uid="uid://b6ovmg0b0k6xl" path="res://assets/audio/sfx/scratch1.wav" id="7_0331c"]
+[ext_resource type="AudioStream" uid="uid://dxl3uv8js3hp5" path="res://assets/audio/sfx/scratch2.wav" id="8_llqx5"]
+[ext_resource type="AudioStream" uid="uid://mgfy1opatm4g" path="res://assets/audio/sfx/scratch3.wav" id="9_jpvhe"]
 
 [sub_resource type="Gradient" id="Gradient_ov8pg"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
@@ -60,3 +64,7 @@ centered = false
 offset = Vector2(-27, -9)
 script = ExtResource("2_iysp6")
 restorable_object = NodePath("../RestorableObject")
+
+[node name="ScratchSound" type="Node" parent="."]
+script = ExtResource("6_4jl2u")
+scratch_sounds = Array[AudioStream]([ExtResource("7_0331c"), ExtResource("8_llqx5"), ExtResource("9_jpvhe")])
