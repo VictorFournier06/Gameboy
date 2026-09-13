@@ -25,7 +25,6 @@ func _reset() -> void:
 	texture = current_item.type.dirty_texture
 	material.set_shader_parameter("clean_texture", current_item.type.clean_texture)
 	_set_current_item_shape()
-	
 	grid_image.fill(Color(0, 0, 0, 1))
 	cleaning_grid.update(grid_image)
 
@@ -38,7 +37,8 @@ func _set_current_item_shape():
 		for y in range(current_item_image.get_height()):
 			var cell_position = to_cell_position(Vector2(x, y))
 			if current_item_image.get_pixel(x, y).a > 0:
-				if current_item_shape_mask.get_pixel(cell_position.x, cell_position.y) != Color.WHITE: #needed to increment surface only once per cell
+				#needed to increment surface only once per cell:
+				if current_item_shape_mask.get_pixel(cell_position.x, cell_position.y) != Color.WHITE:
 					surface_sum += 1
 					current_item_shape_mask.set_pixel(cell_position.x, cell_position.y, Color.WHITE)
 	current_item_surface = surface_sum
