@@ -25,7 +25,7 @@ func _process(delta: float) -> void:
 		#new random cooldown based on scratch_intensity
 		var min_cooldown: float = lerp(0.10, 0.02, scratch_intensity)
 		var max_cooldown: float = lerp(0.16, 0.05, scratch_intensity)
-		cooldown = randf_range(min_cooldown, max_cooldown) 
+		cooldown = randf_range(min_cooldown, max_cooldown)
 
 		var player: AudioStreamPlayer = audio_players[audio_player_index]
 		audio_player_index = (audio_player_index + 1) % track_nb
