@@ -3,7 +3,7 @@ extends Resource
 
 enum Deterioration { NONE, DIRTY, BROKEN }
 
-@export var type: ItemType = preload("res://resources/items/old_gold.tres")
+@export var type: ItemType
 
 @export var deterioration: Deterioration:
 	set(value):
