@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cht430hyjs03e"
-path="res://.godot/imported/boot.png-d744070b45eb10b36494bcf0e470fcf8.ctex"
+uid="uid://cfuh8frsuvajm"
+path="res://.godot/imported/HubBackground.png-c6e9c6904d49f4c43810329792bf9b7e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/areas/Fishing_area_blue_palet/boot.png"
-dest_files=["res://.godot/imported/boot.png-d744070b45eb10b36494bcf0e470fcf8.ctex"]
+source_file="res://assets/visual/areas/Hub_area_orange_palet/HubBackground.png"
+dest_files=["res://.godot/imported/HubBackground.png-c6e9c6904d49f4c43810329792bf9b7e.ctex"]
 
 [params]
 

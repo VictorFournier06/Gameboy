@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="ItemType" load_steps=4 format=3 uid="uid://b48u6pbduhl7y"]
 
 [ext_resource type="Script" uid="uid://bfkgwhugqn2wy" path="res://resources/item_type.gd" id="1_acr8r"]
-[ext_resource type="Texture2D" uid="uid://jptulsbr7k4r" path="res://assets/areas/Worshop_area_orange_palet/Key_Clean.png" id="1_cl5gm"]
-[ext_resource type="Texture2D" uid="uid://dyelp6ysat6bd" path="res://assets/areas/Worshop_area_orange_palet/Key_Dirty.png" id="2_7074m"]
+[ext_resource type="Texture2D" uid="uid://jptulsbr7k4r" path="res://assets/visual/areas/Worshop_area_orange_palet/Key_Clean.png" id="1_cl5gm"]
+[ext_resource type="Texture2D" uid="uid://dyelp6ysat6bd" path="res://assets/visual/areas/Worshop_area_orange_palet/Key_Dirty.png" id="2_7074m"]
 
 [resource]
 script = ExtResource("1_acr8r")

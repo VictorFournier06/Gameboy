@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ct4e7i2q7gg6w"
-path="res://.godot/imported/TissueSpriteSheet.png-cc9eb8cc161c14efcdaa904eef953e94.ctex"
+uid="uid://bacf2vphv4thm"
+path="res://.godot/imported/HubWorkshopHighlight.png-a748ae00e2db66a4b9ebd99c67dba47e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/areas/Worshop_area_orange_palet/TissueSpriteSheet.png"
-dest_files=["res://.godot/imported/TissueSpriteSheet.png-cc9eb8cc161c14efcdaa904eef953e94.ctex"]
+source_file="res://assets/visual/areas/Hub_area_orange_palet/HubWorkshopHighlight.png"
+dest_files=["res://.godot/imported/HubWorkshopHighlight.png-a748ae00e2db66a4b9ebd99c67dba47e.ctex"]
 
 [params]
 

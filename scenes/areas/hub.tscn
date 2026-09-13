@@ -1,13 +1,13 @@
 [gd_scene load_steps=9 format=3 uid="uid://sc4be44blh86"]
 
 [ext_resource type="Script" uid="uid://crxv1w2v7b1c3" path="res://scenes/areas/hub.gd" id="1_3jkhj"]
-[ext_resource type="Texture2D" uid="uid://cfuh8frsuvajm" path="res://assets/areas/Hub_area_orange_palet/HubBackground.png" id="2_3jkhj"]
-[ext_resource type="Texture2D" uid="uid://dfkce2380yyd0" path="res://assets/areas/Hub_area_orange_palet/FishPole.png" id="2_spdrs"]
-[ext_resource type="Texture2D" uid="uid://be7656m4kcnj" path="res://assets/areas/Hub_area_orange_palet/FishPoleHighlight.png" id="4_3jkhj"]
-[ext_resource type="Texture2D" uid="uid://c30q1oak6vbwg" path="res://assets/areas/Hub_area_orange_palet/HubDoor.png" id="5_3jkhj"]
-[ext_resource type="Texture2D" uid="uid://dach6q0fqp5fc" path="res://assets/areas/Hub_area_orange_palet/HubDoorHighlight.png" id="6_qlspo"]
-[ext_resource type="Texture2D" uid="uid://ce56362xgbqwo" path="res://assets/areas/Hub_area_orange_palet/HubWorkshop.png" id="7_3jkhj"]
-[ext_resource type="Texture2D" uid="uid://bacf2vphv4thm" path="res://assets/areas/Hub_area_orange_palet/HubWorkshopHighlight.png" id="8_qlspo"]
+[ext_resource type="Texture2D" uid="uid://cfuh8frsuvajm" path="res://assets/visual/areas/Hub_area_orange_palet/HubBackground.png" id="2_3jkhj"]
+[ext_resource type="Texture2D" uid="uid://dfkce2380yyd0" path="res://assets/visual/areas/Hub_area_orange_palet/FishPole.png" id="2_spdrs"]
+[ext_resource type="Texture2D" uid="uid://be7656m4kcnj" path="res://assets/visual/areas/Hub_area_orange_palet/FishPoleHighlight.png" id="4_3jkhj"]
+[ext_resource type="Texture2D" uid="uid://c30q1oak6vbwg" path="res://assets/visual/areas/Hub_area_orange_palet/HubDoor.png" id="5_3jkhj"]
+[ext_resource type="Texture2D" uid="uid://dach6q0fqp5fc" path="res://assets/visual/areas/Hub_area_orange_palet/HubDoorHighlight.png" id="6_qlspo"]
+[ext_resource type="Texture2D" uid="uid://ce56362xgbqwo" path="res://assets/visual/areas/Hub_area_orange_palet/HubWorkshop.png" id="7_3jkhj"]
+[ext_resource type="Texture2D" uid="uid://bacf2vphv4thm" path="res://assets/visual/areas/Hub_area_orange_palet/HubWorkshopHighlight.png" id="8_qlspo"]
 
 [node name="Hub" type="Control"]
 layout_mode = 3

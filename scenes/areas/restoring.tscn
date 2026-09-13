@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://d3dr0gh263yak"]
 
-[ext_resource type="Texture2D" uid="uid://bk13jo1hr7xjy" path="res://assets/areas/Worshop_area_orange_palet/Workshop_Background.png" id="1_2pk82"]
+[ext_resource type="Texture2D" uid="uid://bk13jo1hr7xjy" path="res://assets/visual/areas/Worshop_area_orange_palet/Workshop_Background.png" id="1_2pk82"]
 [ext_resource type="Script" uid="uid://cr122fu60irp" path="res://scenes/areas/player.gd" id="2_iysp6"]
 [ext_resource type="Shader" uid="uid://wuwbah74w55m" path="res://scenes/areas/restoring.gdshader" id="2_ov8pg"]
 [ext_resource type="Script" uid="uid://cxg40dy05iqj7" path="res://scenes/areas/restorable_object.gd" id="3_ov8pg"]

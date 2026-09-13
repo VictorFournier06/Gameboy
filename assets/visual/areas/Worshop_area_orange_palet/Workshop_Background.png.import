@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://be7656m4kcnj"
-path="res://.godot/imported/FishPoleHighlight.png-c4a21a46f8e8e5a3a564b3ed089b2a03.ctex"
+uid="uid://bk13jo1hr7xjy"
+path="res://.godot/imported/Workshop_Background.png-b9e6235c94a5bfc42d30559c618063ea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/areas/Hub_area_orange_palet/FishPoleHighlight.png"
-dest_files=["res://.godot/imported/FishPoleHighlight.png-c4a21a46f8e8e5a3a564b3ed089b2a03.ctex"]
+source_file="res://assets/visual/areas/Worshop_area_orange_palet/Workshop_Background.png"
+dest_files=["res://.godot/imported/Workshop_Background.png-b9e6235c94a5bfc42d30559c618063ea.ctex"]
 
 [params]
 

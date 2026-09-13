@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsewxyog667ye"
-path="res://.godot/imported/Doggo.png-36004f02b2c451196b70935c90bb1d20.ctex"
+uid="uid://dyelp6ysat6bd"
+path="res://.godot/imported/Key_Dirty.png-025781d61a55bef168259d300ea1dd13.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/areas/Hub_area_orange_palet/Doggo.png"
-dest_files=["res://.godot/imported/Doggo.png-36004f02b2c451196b70935c90bb1d20.ctex"]
+source_file="res://assets/visual/areas/Worshop_area_orange_palet/Key_Dirty.png"
+dest_files=["res://.godot/imported/Key_Dirty.png-025781d61a55bef168259d300ea1dd13.ctex"]
 
 [params]
 

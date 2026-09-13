@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cd3lmptaclumx"
-path="res://.godot/imported/locating_owners.jpg-d0a23fe6e65f10b354c0e7391f3cf1e9.ctex"
+uid="uid://bsewxyog667ye"
+path="res://.godot/imported/Doggo.png-964ed706a70308603febbae602d3936f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/areas/locating_owners.jpg"
-dest_files=["res://.godot/imported/locating_owners.jpg-d0a23fe6e65f10b354c0e7391f3cf1e9.ctex"]
+source_file="res://assets/visual/areas/Hub_area_orange_palet/Doggo.png"
+dest_files=["res://.godot/imported/Doggo.png-964ed706a70308603febbae602d3936f.ctex"]
 
 [params]
 

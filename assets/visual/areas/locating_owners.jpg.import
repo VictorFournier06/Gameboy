@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ce56362xgbqwo"
-path="res://.godot/imported/HubWorkshop.png-af5e4a5596f3ee54a186c7adeff6ae1a.ctex"
+uid="uid://cd3lmptaclumx"
+path="res://.godot/imported/locating_owners.jpg-5eaef499290437656e04fc7188296332.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/areas/Hub_area_orange_palet/HubWorkshop.png"
-dest_files=["res://.godot/imported/HubWorkshop.png-af5e4a5596f3ee54a186c7adeff6ae1a.ctex"]
+source_file="res://assets/visual/areas/locating_owners.jpg"
+dest_files=["res://.godot/imported/locating_owners.jpg-5eaef499290437656e04fc7188296332.ctex"]
 
 [params]
 

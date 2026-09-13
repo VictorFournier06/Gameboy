@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://66vjo1pnve07"
-path="res://.godot/imported/fishing.jpg-9d9f48eb4414c1d1bca99eaa86068b1d.ctex"
+path="res://.godot/imported/fishing.jpg-9a6e47bf2e139aa8eea4df6ed5d29ce6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/areas/fishing.jpg"
-dest_files=["res://.godot/imported/fishing.jpg-9d9f48eb4414c1d1bca99eaa86068b1d.ctex"]
+source_file="res://assets/visual/areas/fishing.jpg"
+dest_files=["res://.godot/imported/fishing.jpg-9a6e47bf2e139aa8eea4df6ed5d29ce6.ctex"]
 
 [params]
 
