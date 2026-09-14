@@ -20,6 +20,9 @@ gradient = SubResource("Gradient_ov8pg")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gerlc"]
 shader = ExtResource("2_ov8pg")
 shader_parameter/clean_texture = SubResource("GradientTexture2D_2pk82")
+shader_parameter/shine_animation_progress = 0.0
+shader_parameter/shine_color = Color(0, 0, 0, 1)
+shader_parameter/shine_width = 0.0
 
 [sub_resource type="Gradient" id="Gradient_gerlc"]
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)

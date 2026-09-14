@@ -3,6 +3,13 @@ extends Sprite2D
 
 const CLEAN_THRESHOLD: float = 0.95
 
+@export var shine_animation_duration = 2.0
+@export var shine_color = Color("#f3edd1") #white from palette
+@export var shine_width = 0.1
+@export var cleaned_pause = 1.0
+
+var can_scrub: bool
+
 var grid_size: Vector2i
 var grid_image: Image #just there to update the ImageTexture
 #r channel: the square cleanness of 0->1s that gets cleaned
@@ -16,6 +23,8 @@ var current_item: Item
 var current_item_surface: int
 
 func _ready() -> void:
+	material.set_shader_parameter("shine_color", shine_color)
+	material.set_shader_parameter("shine_width", shine_width)
 	_reset()
 
 func _reset() -> void:
@@ -23,6 +32,7 @@ func _reset() -> void:
 	if current_item == null:
 		return
 	_build_grid()
+	can_scrub = true
 
 func _build_grid() -> void:
 	grid_size = texture.get_size()
@@ -58,7 +68,7 @@ func _switch_item() -> void:
 func scrub_at(world_position: Vector2, scrub_kernel: Array) -> bool:
 	var has_something_been_scrubbed: bool = false
 
-	if current_item == null:
+	if not can_scrub:
 		return has_something_been_scrubbed
 
 	var local_position: Vector2i = Vector2i(to_local(world_position))
@@ -94,5 +104,31 @@ func _check_cleanness() -> void:
 		return
 	var average_cleanness = cleanness_sum / current_item_surface
 	if average_cleanness > CLEAN_THRESHOLD:
-		current_item.deterioration = Item.Deterioration.NONE
-		_reset()
+		_finished_restoring()
+
+func _finished_restoring() -> void:
+	can_scrub = false
+	current_item.deterioration = Item.Deterioration.NONE
+	_fully_clean()
+	await _shine_animation()
+	#$PocketItem.play() TODO
+	#await $PocketItem.finished TODO
+	_reset()
+
+func _fully_clean() -> void:
+	grid_image.fill(Color(1.0, 0.0, 0.0))
+	cleaning_grid.update(grid_image)
+
+func _shine_animation():
+	await get_tree().create_timer(cleaned_pause).timeout
+	var tween = create_tween()
+	tween.tween_property(
+		material,
+		"shader_parameter/shine_animation_progress",
+		1.0,
+		shine_animation_duration
+	)
+	#$ShiningItem.play() TODO
+	await tween.finished
+
+	material.set_shader_parameter("shine_animation_progress", 0.0) #reset
