@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ct4e7i2q7gg6w"
-path="res://.godot/imported/TissueSpriteSheet.png-993102f151657d073d1602a29949474f.ctex"
+uid="uid://cvf0ar1ng23se"
+path="res://.godot/imported/owl.png-bfe53aea095256fee9e50ae2b72e300f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/visual/areas/Worshop_area_orange_palet/TissueSpriteSheet.png"
-dest_files=["res://.godot/imported/TissueSpriteSheet.png-993102f151657d073d1602a29949474f.ctex"]
+source_file="res://assets/visual/areas/locating_owners_green_orange_palet/owl.png"
+dest_files=["res://.godot/imported/owl.png-bfe53aea095256fee9e50ae2b72e300f.ctex"]
 
 [params]
 

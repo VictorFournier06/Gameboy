@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ce56362xgbqwo"
-path="res://.godot/imported/HubWorkshop.png-fd2f4ee3782f5f8b4dd4534a79d77dde.ctex"
+uid="uid://0ehliaylkkh0"
+path="res://.godot/imported/back_owl.png-edcd9f16f01b3ff21fa1758b2162ff91.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/visual/areas/Hub_area_orange_palet/HubWorkshop.png"
-dest_files=["res://.godot/imported/HubWorkshop.png-fd2f4ee3782f5f8b4dd4534a79d77dde.ctex"]
+source_file="res://assets/visual/areas/locating_owners_green_orange_palet/back_owl.png"
+dest_files=["res://.godot/imported/back_owl.png-edcd9f16f01b3ff21fa1758b2162ff91.ctex"]
 
 [params]
 

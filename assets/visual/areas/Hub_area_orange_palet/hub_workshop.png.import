@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfuh8frsuvajm"
-path="res://.godot/imported/HubBackground.png-c6e9c6904d49f4c43810329792bf9b7e.ctex"
+uid="uid://ce56362xgbqwo"
+path="res://.godot/imported/hub_workshop.png-aa5a96b0f87abf4d76d61d19f44332e6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/visual/areas/Hub_area_orange_palet/HubBackground.png"
-dest_files=["res://.godot/imported/HubBackground.png-c6e9c6904d49f4c43810329792bf9b7e.ctex"]
+source_file="res://assets/visual/areas/hub_area_orange_palet/hub_workshop.png"
+dest_files=["res://.godot/imported/hub_workshop.png-aa5a96b0f87abf4d76d61d19f44332e6.ctex"]
 
 [params]
 

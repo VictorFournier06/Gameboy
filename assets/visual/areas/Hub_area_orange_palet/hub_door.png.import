@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0ehliaylkkh0"
-path="res://.godot/imported/BackOwl.png-50a475509efda9a0cbbb72a9f0166667.ctex"
+uid="uid://c30q1oak6vbwg"
+path="res://.godot/imported/hub_door.png-1861bc47744697dccaec5813e177b8a4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/visual/areas/Locating_owner_green_orange_palet/BackOwl.png"
-dest_files=["res://.godot/imported/BackOwl.png-50a475509efda9a0cbbb72a9f0166667.ctex"]
+source_file="res://assets/visual/areas/hub_area_orange_palet/hub_door.png"
+dest_files=["res://.godot/imported/hub_door.png-1861bc47744697dccaec5813e177b8a4.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxdlenqo0nyv1"
-path="res://.godot/imported/DialogBox.png-acbe54edae313a55a21fd7b2598dea54.ctex"
+uid="uid://cfuh8frsuvajm"
+path="res://.godot/imported/hub_background.png-35adb394fd49133243197d79be5b0501.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/visual/areas/Locating_owner_green_orange_palet/DialogBox.png"
-dest_files=["res://.godot/imported/DialogBox.png-acbe54edae313a55a21fd7b2598dea54.ctex"]
+source_file="res://assets/visual/areas/hub_area_orange_palet/hub_background.png"
+dest_files=["res://.godot/imported/hub_background.png-35adb394fd49133243197d79be5b0501.ctex"]
 
 [params]
 
