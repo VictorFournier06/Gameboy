@@ -21,8 +21,7 @@ func switch_area(new_area: Area) -> void:
 	origin_area = current_area
 	current_area = new_area
 	if new_area in MUSIC_MAPPING: #TODO: remove once all areas have a music
-		MusicPlayer.stream = MUSIC_MAPPING[new_area]
-		MusicPlayer.play()
+		MusicPlayer.music_transition(MUSIC_MAPPING[new_area])
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("start") and current_area != Area.HUB:
