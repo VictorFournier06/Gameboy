@@ -10,7 +10,8 @@ const AREA_MAPPING: Dictionary = {
 	Area.SHOP: "res://scenes/areas/shop.tscn",
 }
 const MUSIC_MAPPING: Dictionary = {
-	Area.LOCATING_OWNERS: preload("res://assets/audio/music/Nostalgia_Box.wav")
+	Area.LOCATING_OWNERS: preload("res://assets/audio/music/nostalgia_box.wav"),
+	Area.FISHING: preload("res://assets/audio/music/retrieving_memories.wav")
 }
 
 var origin_area: Area = Area.FISHING
