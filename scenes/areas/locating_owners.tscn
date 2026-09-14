@@ -1,9 +1,35 @@
-[gd_scene load_steps=2 format=3 uid="uid://b3b0lcc3bcabw"]
+[gd_scene load_steps=7 format=3 uid="uid://b3b0lcc3bcabw"]
 
-[ext_resource type="Texture2D" uid="uid://cd3lmptaclumx" path="res://assets/visual/areas/locating_owners.jpg" id="1_iuiyi"]
+[ext_resource type="Texture2D" uid="uid://0ehliaylkkh0" path="res://assets/visual/areas/Locating_owner_green_orange_palet/BackOwl.png" id="1_4wons"]
+[ext_resource type="Script" uid="uid://cdwoo23s30qp3" path="res://scenes/areas/locating_owners.gd" id="1_fo5li"]
+[ext_resource type="Resource" uid="uid://lnetsbbr24qa" path="res://assets/dialogue/TestDialogue.tres" id="2_0xjlx"]
+[ext_resource type="Texture2D" uid="uid://cvf0ar1ng23se" path="res://assets/visual/areas/Locating_owner_green_orange_palet/Owl.png" id="2_gff3b"]
+[ext_resource type="Texture2D" uid="uid://bxdlenqo0nyv1" path="res://assets/visual/areas/Locating_owner_green_orange_palet/DialogBox.png" id="3_fo5li"]
+[ext_resource type="FontFile" uid="uid://bjkhi8or8orcm" path="res://assets/font/m5x7.ttf" id="4_gff3b"]
 
 [node name="LocatingOwners" type="Node2D"]
+script = ExtResource("1_fo5li")
+dialogue = ExtResource("2_0xjlx")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_iuiyi")
-centered = false
+[node name="BackOwl" type="Sprite2D" parent="."]
+position = Vector2(80, 72)
+texture = ExtResource("1_4wons")
+
+[node name="Owl" type="Sprite2D" parent="."]
+position = Vector2(80, 72)
+texture = ExtResource("2_gff3b")
+
+[node name="DialogBox" type="Sprite2D" parent="."]
+position = Vector2(80, 72)
+texture = ExtResource("3_fo5li")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 12.0
+offset_top = 115.0
+offset_right = 84.0
+offset_bottom = 138.0
+theme_override_colors/font_color = Color(0.1254902, 0.15686275, 0.23921569, 1)
+theme_override_constants/line_spacing = -5
+theme_override_fonts/font = ExtResource("4_gff3b")
+text = "aaaaaaaaaaaa"
+metadata/_edit_use_anchors_ = true

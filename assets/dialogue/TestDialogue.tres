@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3 uid="uid://lnetsbbr24qa"]
+
+[ext_resource type="Script" uid="uid://b7lxtrcfc1iu5" path="res://scripts/DialogueData.gd" id="1_lqouv"]
+
+[resource]
+script = ExtResource("1_lqouv")
+lines = Array[String](["Hello, Doggy!", "What's up?", "Joyful as usual!", "Did you see the palm tree
+I planted yesterday?", "It is awesome isn't it?"])
+metadata/_custom_type_script = "uid://b7lxtrcfc1iu5"
