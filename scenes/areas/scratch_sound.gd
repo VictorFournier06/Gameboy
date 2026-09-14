@@ -14,6 +14,7 @@ func _ready() -> void:
 	for i in range(track_nb):
 		var player: AudioStreamPlayer = AudioStreamPlayer.new()
 		add_child(player)
+		player.bus = "SFX"
 		audio_players.append(player)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

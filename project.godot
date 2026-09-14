@@ -14,6 +14,10 @@ config/name="Gameboy"
 run/main_scene="uid://sc4be44blh86"
 config/features=PackedStringArray("4.5", "Forward Plus")
 
+[audio]
+
+buses/default_bus_layout="res://scenes/game/bus_layout.tres"
+
 [autoload]
 
 Inventory="*res://scenes/game/inventory.tscn"
