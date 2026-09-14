@@ -2,15 +2,14 @@ extends Node2D
 
 @export var dialogue: DialogueData
 @export var text_speed := 0.04
-@onready var label: Label = $Label
 
 var current_line := 0
 var typing := false
 
+@onready var label: Label = $Label
 
 func _ready():
 	show_line()
-
 
 func show_line():
 	if current_line >= dialogue.lines.size():
