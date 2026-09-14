@@ -79,17 +79,17 @@ func scrub_at(world_position: Vector2, scrub_kernel: Array) -> bool:
 			var new_color: Color = Color(new_cleanness, randf(), pixel.b)
 			grid_image.set_pixel(x, y, new_color)
 
-			var color_value_increase = new_cleanness - old_cleanness
-			if pixel.b > 0.0 and color_value_increase > 0.0:
+			var cleanness_increase: float = new_cleanness - old_cleanness
+			if pixel.b > 0.0 and cleanness_increase > 0.0:
 				has_something_been_scrubbed = true
-				cleanness_sum += color_value_increase
+				cleanness_sum += cleanness_increase
 
 	cleaning_grid.update(grid_image)
 	_check_cleanness()
 
 	return has_something_been_scrubbed
 
-func _check_cleanness():
+func _check_cleanness() -> void:
 	if current_item_surface == 0:
 		return
 	var average_cleanness = cleanness_sum / current_item_surface
