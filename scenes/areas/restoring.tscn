@@ -20,7 +20,6 @@ gradient = SubResource("Gradient_ov8pg")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gerlc"]
 shader = ExtResource("2_ov8pg")
 shader_parameter/clean_texture = SubResource("GradientTexture2D_2pk82")
-shader_parameter/cutoff = 0.5
 
 [sub_resource type="Gradient" id="Gradient_gerlc"]
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)

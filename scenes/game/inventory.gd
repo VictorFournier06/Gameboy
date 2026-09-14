@@ -5,7 +5,7 @@ signal items_changed(new_items: Array[Item])
 
 var money: int:
 	get:
-		return _money
+		return _nostalgia_coupons
 
 var items: Array[Item]:
 	get:
@@ -13,21 +13,21 @@ var items: Array[Item]:
 		read_only_items.make_read_only()
 		return read_only_items
 
-var _money: int = 0
+var _nostalgia_coupons: int = 0
 #TODO: remove once fishing adds item
 var _items: Array[Item] = [Item.new(ItemCatalog.RUSTY_KEY, Item.Deterioration.DIRTY)]
 
 func spend_money(cost: int) -> bool:
 	assert(cost >= 0)
 	if money >= cost:
-		_money -= cost
+		_nostalgia_coupons -= cost
 		money_changed.emit(money)
 		return true
 	return false
 
 func earn_money(amount: int) -> void:
 	assert(amount >= 0)
-	_money += amount
+	_nostalgia_coupons += amount
 	money_changed.emit(money)
 
 func use_item(item: Item) -> bool:

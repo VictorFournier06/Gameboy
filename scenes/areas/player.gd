@@ -1,7 +1,11 @@
 extends AnimatedSprite2D
 
 @export var speed: float = 1.5
-@export var scrub_effect: Array = [[0.1]]
+@export var scrub_effect: Array = [
+	[0.1, 0.1, 0.1],
+	[0.1, 0.3, 0.1],
+	[0.1, 0.1, 0.1]
+	]
 @export var restorable_object: RestorableObject
 
 var scrubbing: bool = false
