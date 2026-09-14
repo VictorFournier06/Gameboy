@@ -27,6 +27,8 @@ func _ready() -> void:
 	material.set_shader_parameter("shine_width", shine_width)
 	_reset()
 
+	Debug.skip_minigame.connect(_skip_cleaning)
+
 func _reset() -> void:
 	_switch_item()
 	if current_item == null:
@@ -119,7 +121,7 @@ func _fully_clean() -> void:
 	grid_image.fill(Color(1.0, 0.0, 0.0))
 	cleaning_grid.update(grid_image)
 
-func _shine_animation():
+func _shine_animation() -> void:
 	await get_tree().create_timer(cleaned_pause).timeout
 	var tween = create_tween()
 	tween.tween_property(
@@ -132,3 +134,9 @@ func _shine_animation():
 	await tween.finished
 
 	material.set_shader_parameter("shine_animation_progress", 0.0) #reset
+
+func _skip_cleaning() -> void:
+	if not can_scrub:
+		return
+	cleanness_sum = current_item_surface
+	_check_cleanness()
