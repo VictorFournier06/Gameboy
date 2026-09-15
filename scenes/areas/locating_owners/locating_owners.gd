@@ -4,14 +4,15 @@ extends Node2D
 @export var text_speed: float = 0.04
 @export var dialog_sfx: AudioStream
 @export var char_per_sfx: int = 3
-@onready var background: Sprite2D = $Background
-@onready var character: Sprite2D = $Character
+@export var enter_sfx: AudioStream
 
 var current_line_nb: int = 0
 var reveal_tween: Tween
 
 var char_nb_before_last_sfx: int = 0
 
+@onready var background: Sprite2D = $Background
+@onready var character: Sprite2D = $Character
 @onready var label: RichTextLabel = $RichTextLabel
 @onready var sfx_player: SFXPlayer = $SFXPlayer
 
@@ -53,4 +54,4 @@ func _process(_delta: float) -> void:
 		var char_nb: int = label.visible_characters
 		if char_nb - char_nb_before_last_sfx >= char_per_sfx:
 			char_nb_before_last_sfx = char_nb
-			sfx_player.play_sfx(dialog_sfx, -4.0)
+			sfx_player.play_sfx(dialog_sfx, -8.0)
