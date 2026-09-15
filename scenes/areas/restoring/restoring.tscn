@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://bk13jo1hr7xjy" path="res://assets/visual/areas/worshop_area_orange_palet/workshop_background.png" id="1_2pk82"]
 [ext_resource type="Script" uid="uid://cr122fu60irp" path="res://scenes/areas/restoring/player.gd" id="2_iysp6"]
-[ext_resource type="Shader" uid="uid://wuwbah74w55m" path="res://scenes/areas/restoring/restoring.gdshader" id="2_ov8pg"]
-[ext_resource type="Script" uid="uid://cxg40dy05iqj7" path="res://scenes/areas/restoring/restoring.gd" id="3_ov8pg"]
+[ext_resource type="Shader" uid="uid://wuwbah74w55m" path="res://scenes/areas/restoring/restorable_object.gdshader" id="2_ov8pg"]
+[ext_resource type="Script" uid="uid://cxg40dy05iqj7" path="res://scenes/areas/restoring/restorable_object.gd" id="3_ov8pg"]
 [ext_resource type="SpriteFrames" uid="uid://ctjfdeq8a5qc2" path="res://resources/scrubbing_tools/rag.tres" id="4_2pk82"]
 [ext_resource type="Script" uid="uid://217ekmdqdj3j" path="res://scenes/areas/restoring/scratch_sound.gd" id="6_4jl2u"]
 [ext_resource type="AudioStream" uid="uid://b6ovmg0b0k6xl" path="res://assets/audio/sfx/scratch1.wav" id="7_0331c"]
@@ -43,18 +43,7 @@ texture = SubResource("GradientTexture2D_ov8pg")
 centered = false
 script = ExtResource("3_ov8pg")
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
-amount = 12
-lifetime = 0.39
-explosiveness = 0.15
-randomness = 0.2
-spread = 180.0
-gravity = Vector2(0, 0)
-initial_velocity_min = 14.29
-initial_velocity_max = 28.57
-damping_min = 4.286
-damping_max = 8.571
-color = Color(0.22352941, 0.14509805, 0.13725491, 1)
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="RestorableObject"]
 
 [node name="Player" type="AnimatedSprite2D" parent="." node_paths=PackedStringArray("restorable_object")]
 position = Vector2(38, 123)
@@ -67,6 +56,21 @@ offset = Vector2(-27, -9)
 script = ExtResource("2_iysp6")
 restorable_object = NodePath("../RestorableObject")
 
-[node name="ScratchSound" type="Node" parent="."]
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Player"]
+position = Vector2(-76, -246)
+scale = Vector2(2, 2)
+amount = 12
+lifetime = 0.39
+explosiveness = 0.15
+randomness = 0.2
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 14.29
+initial_velocity_max = 28.57
+damping_min = 4.286
+damping_max = 8.571
+color = Color(0.22352941, 0.14509805, 0.13725491, 1)
+
+[node name="ScratchSound" type="Node" parent="Player"]
 script = ExtResource("6_4jl2u")
 scratch_sounds = Array[AudioStream]([ExtResource("7_0331c"), ExtResource("8_llqx5"), ExtResource("9_jpvhe")])

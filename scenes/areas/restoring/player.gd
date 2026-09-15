@@ -12,8 +12,8 @@ var scrubbing: bool = false
 
 @onready var viewport_size: Vector2 = get_viewport_rect().size
 @onready var player_size: Vector2i = Vector2i(16, 16)
-@onready var particles: CPUParticles2D = $"../CPUParticles2D"
-@onready var scratch_sound: Node = $"../ScratchSound"
+@onready var particles: CPUParticles2D = $"CPUParticles2D"
+@onready var scratch_sound: Node = $"ScratchSound"
 
 func _ready():
 	animation_looped.connect(_stop_scrub_animation_if_necessary)

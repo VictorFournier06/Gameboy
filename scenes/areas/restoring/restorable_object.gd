@@ -113,8 +113,8 @@ func _finished_restoring() -> void:
 	current_item.deterioration = Item.Deterioration.NONE
 	_fully_clean()
 	await _shine_animation()
-	#$PocketItem.play() TODO
-	#await $PocketItem.finished TODO
+	#$SFXPlayer.play() TODO
+	#await $SFXPlayer.finished TODO
 	_reset()
 
 func _fully_clean() -> void:
@@ -130,7 +130,7 @@ func _shine_animation() -> void:
 		1.0,
 		shine_animation_duration
 	)
-	#$ShiningItem.play() TODO
+	#$SFXPlayer.play() TODO
 	await tween.finished
 
 	material.set_shader_parameter("shine_animation_progress", 0.0) #reset
