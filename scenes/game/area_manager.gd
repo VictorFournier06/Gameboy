@@ -3,11 +3,11 @@ extends Node
 enum Area { FISHING, HUB, LOCATING_OWNERS, RESTORING, SHOP }
 
 const AREA_MAPPING: Dictionary = {
-	Area.FISHING: "res://scenes/areas/fishing.tscn",
-	Area.HUB: "res://scenes/areas/hub.tscn",
-	Area.LOCATING_OWNERS: "res://scenes/areas/locating_owners.tscn",
-	Area.RESTORING: "res://scenes/areas/restoring.tscn",
-	Area.SHOP: "res://scenes/areas/shop.tscn",
+	Area.FISHING: "res://scenes/areas/fishing/fishing.tscn",
+	Area.HUB: "res://scenes/areas/hub/hub.tscn",
+	Area.LOCATING_OWNERS: "res://scenes/areas/locating_owners/locating_owners.tscn",
+	Area.RESTORING: "res://scenes/areas/restoring/restoring.tscn",
+	Area.SHOP: "res://scenes/areas/shop/shop.tscn",
 }
 const MUSIC_MAPPING: Dictionary = {
 	Area.LOCATING_OWNERS: preload("res://assets/audio/music/nostalgia_box.wav"),
