@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://d3dr0gh263yak"]
+[gd_scene load_steps=17 format=3 uid="uid://d3dr0gh263yak"]
 
 [ext_resource type="Texture2D" uid="uid://bk13jo1hr7xjy" path="res://assets/visual/areas/worshop_area_orange_palet/workshop_background.png" id="1_2pk82"]
 [ext_resource type="Script" uid="uid://cr122fu60irp" path="res://scenes/areas/restoring/player.gd" id="2_iysp6"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://217ekmdqdj3j" path="res://scenes/areas/restoring/scratch_sound.gd" id="6_4jl2u"]
 [ext_resource type="AudioStream" uid="uid://edwk5flnwq2j" path="res://assets/audio/sfx/pocketing.wav" id="6_awq15"]
 [ext_resource type="AudioStream" uid="uid://b6ovmg0b0k6xl" path="res://assets/audio/sfx/scratch1.wav" id="7_0331c"]
+[ext_resource type="Script" uid="uid://cbg2drqlxjv78" path="res://scenes/game/sfx_player.gd" id="7_wqt7y"]
 [ext_resource type="AudioStream" uid="uid://dxl3uv8js3hp5" path="res://assets/audio/sfx/scratch2.wav" id="8_llqx5"]
 [ext_resource type="AudioStream" uid="uid://mgfy1opatm4g" path="res://assets/audio/sfx/scratch3.wav" id="9_jpvhe"]
 
@@ -43,6 +44,8 @@ pocketing_sfx = ExtResource("6_awq15")
 
 [node name="SFXPlayer" type="AudioStreamPlayer" parent="RestorableObject"]
 bus = &"SFX"
+script = ExtResource("7_wqt7y")
+metadata/_custom_type_script = "uid://cbg2drqlxjv78"
 
 [node name="Player" type="AnimatedSprite2D" parent="." node_paths=PackedStringArray("restorable_object")]
 position = Vector2(38, 123)

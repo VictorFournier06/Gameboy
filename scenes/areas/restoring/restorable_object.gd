@@ -118,9 +118,9 @@ func _finished_restoring() -> void:
 	can_scrub = false
 	current_item.deterioration = Item.Deterioration.NONE
 	_fully_clean()
-	_play_sfx(finished_cleaning_sfx)
+	sfx_player.play_sfx(finished_cleaning_sfx)
 	await _shine_animation()
-	_play_sfx(pocketing_sfx)
+	sfx_player.play_sfx(pocketing_sfx)
 	await sfx_player.finished
 	_reset()
 
@@ -137,7 +137,7 @@ func _shine_animation() -> void:
 		1.0,
 		shine_animation_duration
 	)
-	_play_sfx(shiney_sfx)
+	sfx_player.play_sfx(shiney_sfx)
 	await tween.finished
 
 	material.set_shader_parameter("shine_animation_progress", 0.0) #reset
@@ -147,7 +147,3 @@ func _skip_cleaning() -> void:
 		return
 	cleanness_sum = current_item_surface
 	_check_cleanness()
-
-func _play_sfx(stream: AudioStream) -> void:
-	sfx_player.stream = stream
-	sfx_player.play()
