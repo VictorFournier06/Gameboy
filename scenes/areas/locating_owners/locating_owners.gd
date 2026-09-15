@@ -1,41 +1,35 @@
 extends Node2D
 
-@export var dialogue: DialogueData
+@export var dialog: DialogData
 @export var text_speed := 0.04
 
-var current_line := 0
-var typing := false
+var current_line_nb := 0
+var reveal_tween: Tween
 
-@onready var label: Label = $Label
+@onready var label: RichTextLabel = $RichTextLabel
 
-func _ready():
+func _ready() -> void:
 	show_line()
 
-func show_line():
-	if current_line >= dialogue.lines.size():
-		label.text = ""
+func show_line() -> void:
+	if current_line_nb >= dialog.lines.size():
 		return
 
-	label.text = ""
-	typing = true
+	label.text = dialog.lines[current_line_nb]
+	label.visible_ratio = 0.0
 
-	var line = dialogue.lines[current_line]
+	var count: int = label.get_total_character_count()
 
-	for character in line:
-		if not typing:
-			break
+	reveal_tween = create_tween()
+	reveal_tween.tween_property(label, "visible_ratio", 1.0, count * text_speed)
 
-		label.text += character
-		await get_tree().create_timer(text_speed).timeout
+func _input(event: InputEvent) -> void:
+	if not event.is_action_pressed("ui_accept"):
+		return
 
-	typing = false
-
-
-func _input(event):
-	if event.is_action_pressed("ui_accept"):
-		if typing:
-			typing = false
-			label.text = dialogue.lines[current_line]
-		else:
-			current_line += 1
-			show_line()
+	if reveal_tween and reveal_tween.is_running(): #reveal instant
+		reveal_tween.kill()
+		label.visible_ratio = 1.0
+	else:
+		current_line_nb += 1
+		show_line()
