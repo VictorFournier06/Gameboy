@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://66vjo1pnve07"
-path="res://.godot/imported/fishing.jpg-9a6e47bf2e139aa8eea4df6ed5d29ce6.ctex"
+uid="uid://dmo0boqdfv325"
+path="res://.godot/imported/dialog_arrow.png-db081c723918ee2cea5d05162618979b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/visual/areas/fishing.jpg"
-dest_files=["res://.godot/imported/fishing.jpg-9a6e47bf2e139aa8eea4df6ed5d29ce6.ctex"]
+source_file="res://assets/visual/components/dialog_arrow.png"
+dest_files=["res://.godot/imported/dialog_arrow.png-db081c723918ee2cea5d05162618979b.ctex"]
 
 [params]
 
