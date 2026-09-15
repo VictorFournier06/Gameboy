@@ -1,25 +1,20 @@
-[gd_scene load_steps=15 format=3 uid="uid://d3dr0gh263yak"]
+[gd_scene load_steps=16 format=3 uid="uid://d3dr0gh263yak"]
 
 [ext_resource type="Texture2D" uid="uid://bk13jo1hr7xjy" path="res://assets/visual/areas/worshop_area_orange_palet/workshop_background.png" id="1_2pk82"]
 [ext_resource type="Script" uid="uid://cr122fu60irp" path="res://scenes/areas/restoring/player.gd" id="2_iysp6"]
 [ext_resource type="Shader" uid="uid://wuwbah74w55m" path="res://scenes/areas/restoring/restorable_object.gdshader" id="2_ov8pg"]
 [ext_resource type="Script" uid="uid://cxg40dy05iqj7" path="res://scenes/areas/restoring/restorable_object.gd" id="3_ov8pg"]
 [ext_resource type="SpriteFrames" uid="uid://ctjfdeq8a5qc2" path="res://resources/scrubbing_tools/rag.tres" id="4_2pk82"]
+[ext_resource type="AudioStream" uid="uid://caoe21prgyul3" path="res://assets/audio/sfx/finished_cleaning.wav" id="4_qak5x"]
+[ext_resource type="AudioStream" uid="uid://cq67e0fivaji7" path="res://assets/audio/sfx/shiney.wav" id="5_wqt7y"]
 [ext_resource type="Script" uid="uid://217ekmdqdj3j" path="res://scenes/areas/restoring/scratch_sound.gd" id="6_4jl2u"]
+[ext_resource type="AudioStream" uid="uid://edwk5flnwq2j" path="res://assets/audio/sfx/pocketing.wav" id="6_awq15"]
 [ext_resource type="AudioStream" uid="uid://b6ovmg0b0k6xl" path="res://assets/audio/sfx/scratch1.wav" id="7_0331c"]
 [ext_resource type="AudioStream" uid="uid://dxl3uv8js3hp5" path="res://assets/audio/sfx/scratch2.wav" id="8_llqx5"]
 [ext_resource type="AudioStream" uid="uid://mgfy1opatm4g" path="res://assets/audio/sfx/scratch3.wav" id="9_jpvhe"]
 
-[sub_resource type="Gradient" id="Gradient_ov8pg"]
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
-metadata/_snap_enabled = true
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_2pk82"]
-gradient = SubResource("Gradient_ov8pg")
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gerlc"]
 shader = ExtResource("2_ov8pg")
-shader_parameter/clean_texture = SubResource("GradientTexture2D_2pk82")
 shader_parameter/shine_animation_progress = 0.0
 shader_parameter/shine_color = Color(0, 0, 0, 1)
 shader_parameter/shine_width = 0.0
@@ -42,8 +37,12 @@ position = Vector2(48, 61)
 texture = SubResource("GradientTexture2D_ov8pg")
 centered = false
 script = ExtResource("3_ov8pg")
+finished_cleaning_sfx = ExtResource("4_qak5x")
+shiney_sfx = ExtResource("5_wqt7y")
+pocketing_sfx = ExtResource("6_awq15")
 
 [node name="SFXPlayer" type="AudioStreamPlayer" parent="RestorableObject"]
+bus = &"SFX"
 
 [node name="Player" type="AnimatedSprite2D" parent="." node_paths=PackedStringArray("restorable_object")]
 position = Vector2(38, 123)

@@ -8,6 +8,10 @@ const CLEAN_THRESHOLD: float = 0.9
 @export var shine_width = 0.1
 @export var cleaned_pause = 1.0
 
+@export var finished_cleaning_sfx: AudioStream
+@export var shiney_sfx: AudioStream
+@export var pocketing_sfx: AudioStream
+
 var can_scrub: bool
 
 var grid_size: Vector2i
@@ -21,6 +25,8 @@ var cleanness_sum: float
 
 var current_item: Item
 var current_item_surface: int
+
+@onready var sfx_player: AudioStreamPlayer = $SFXPlayer
 
 func _ready() -> void:
 	material.set_shader_parameter("shine_color", shine_color)
@@ -41,7 +47,7 @@ func _build_grid() -> void:
 	#recreate a new one each reset in case the item has a different size
 	grid_image = Image.create_empty(grid_size.x, grid_size.y, false, Image.FORMAT_RGBA8)
 
-	var current_item_image = texture.get_image()
+	var current_item_image: Image = texture.get_image()
 	var surface_sum: int = 0 #counts the number of pixels of the mask
 
 	for x in range(grid_size.x):
@@ -104,7 +110,7 @@ func scrub_at(world_position: Vector2, scrub_kernel: Array) -> bool:
 func _check_cleanness() -> void:
 	if current_item_surface == 0:
 		return
-	var average_cleanness = cleanness_sum / current_item_surface
+	var average_cleanness: float = cleanness_sum / current_item_surface
 	if average_cleanness > CLEAN_THRESHOLD:
 		_finished_restoring()
 
@@ -112,9 +118,10 @@ func _finished_restoring() -> void:
 	can_scrub = false
 	current_item.deterioration = Item.Deterioration.NONE
 	_fully_clean()
+	_play_sfx(finished_cleaning_sfx)
 	await _shine_animation()
-	#$SFXPlayer.play() TODO
-	#await $SFXPlayer.finished TODO
+	_play_sfx(pocketing_sfx)
+	await sfx_player.finished
 	_reset()
 
 func _fully_clean() -> void:
@@ -123,14 +130,14 @@ func _fully_clean() -> void:
 
 func _shine_animation() -> void:
 	await get_tree().create_timer(cleaned_pause).timeout
-	var tween = create_tween()
+	var tween: Tween = create_tween()
 	tween.tween_property(
 		material,
 		"shader_parameter/shine_animation_progress",
 		1.0,
 		shine_animation_duration
 	)
-	#$SFXPlayer.play() TODO
+	_play_sfx(shiney_sfx)
 	await tween.finished
 
 	material.set_shader_parameter("shine_animation_progress", 0.0) #reset
@@ -140,3 +147,7 @@ func _skip_cleaning() -> void:
 		return
 	cleanness_sum = current_item_surface
 	_check_cleanness()
+
+func _play_sfx(stream: AudioStream) -> void:
+	sfx_player.stream = stream
+	sfx_player.play()

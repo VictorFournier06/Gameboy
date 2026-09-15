@@ -23,7 +23,7 @@ buses/default_bus_layout="res://scenes/game/bus_layout.tres"
 Inventory="*res://scenes/game/inventory.tscn"
 MusicPlayer="*res://scenes/game/music_player.tscn"
 AreaManager="*res://scenes/game/area_manager.tscn"
-Debug="*res://scenes/game/Debug.tscn"
+Debug="*res://scenes/game/debug.tscn"
 
 [display]
 
