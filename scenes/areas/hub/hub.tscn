@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://sc4be44blh86"]
 
-[ext_resource type="Script" uid="uid://crxv1w2v7b1c3" path="res://scenes/areas/hub.gd" id="1_3jkhj"]
+[ext_resource type="Script" uid="uid://crxv1w2v7b1c3" path="res://scenes/areas/hub/hub.gd" id="1_3jkhj"]
 [ext_resource type="Texture2D" uid="uid://cfuh8frsuvajm" path="res://assets/visual/areas/hub_area_orange_palet/hub_background.png" id="2_3jkhj"]
 [ext_resource type="Texture2D" uid="uid://dfkce2380yyd0" path="res://assets/visual/areas/hub_area_orange_palet/fish_pole.png" id="2_spdrs"]
 [ext_resource type="Texture2D" uid="uid://be7656m4kcnj" path="res://assets/visual/areas/hub_area_orange_palet/fish_pole_highlight.png" id="4_3jkhj"]
