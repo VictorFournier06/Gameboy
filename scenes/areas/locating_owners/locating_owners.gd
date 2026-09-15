@@ -17,8 +17,8 @@ var char_nb_before_last_sfx: int = 0
 @onready var sfx_player: SFXPlayer = $SFXPlayer
 
 func _ready() -> void:
-	background.texture=dialog.background
-	character.texture=dialog.character
+	background.texture = dialog.background
+	character.texture = dialog.character
 	show_line()
 
 func show_line() -> void:
