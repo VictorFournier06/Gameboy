@@ -1,15 +1,16 @@
-[gd_scene load_steps=12 format=3 uid="uid://sc4be44blh86"]
+[gd_scene load_steps=13 format=3 uid="uid://sc4be44blh86"]
 
 [ext_resource type="Script" uid="uid://crxv1w2v7b1c3" path="res://scenes/areas/hub/hub.gd" id="1_3jkhj"]
-[ext_resource type="Texture2D" uid="uid://cfuh8frsuvajm" path="res://assets/visual/areas/hub_area_orange_palet/hub_background.png" id="2_3jkhj"]
-[ext_resource type="Texture2D" uid="uid://dfkce2380yyd0" path="res://assets/visual/areas/hub_area_orange_palet/fish_pole.png" id="2_spdrs"]
+[ext_resource type="Texture2D" uid="uid://cfuh8frsuvajm" path="res://assets/visual/areas/Hub_area_orange_palet/hub_background.png" id="2_3jkhj"]
+[ext_resource type="Texture2D" uid="uid://dfkce2380yyd0" path="res://assets/visual/areas/Hub_area_orange_palet/fish_pole.png" id="2_spdrs"]
 [ext_resource type="AudioStream" uid="uid://c7640uqo803q2" path="res://assets/audio/sfx/menu_move.wav" id="2_xlwne"]
 [ext_resource type="AudioStream" uid="uid://bvlxgbq1rnj4h" path="res://assets/audio/sfx/menu_accept.wav" id="3_psc5a"]
-[ext_resource type="Texture2D" uid="uid://be7656m4kcnj" path="res://assets/visual/areas/hub_area_orange_palet/fish_pole_highlight.png" id="4_3jkhj"]
-[ext_resource type="Texture2D" uid="uid://c30q1oak6vbwg" path="res://assets/visual/areas/hub_area_orange_palet/hub_door.png" id="5_3jkhj"]
-[ext_resource type="Texture2D" uid="uid://dach6q0fqp5fc" path="res://assets/visual/areas/hub_area_orange_palet/hub_door_highlight.png" id="6_qlspo"]
-[ext_resource type="Texture2D" uid="uid://ce56362xgbqwo" path="res://assets/visual/areas/hub_area_orange_palet/hub_workshop.png" id="7_3jkhj"]
-[ext_resource type="Texture2D" uid="uid://bacf2vphv4thm" path="res://assets/visual/areas/hub_area_orange_palet/hub_workshop_highlight.png" id="8_qlspo"]
+[ext_resource type="Texture2D" uid="uid://be7656m4kcnj" path="res://assets/visual/areas/Hub_area_orange_palet/fish_pole_highlight.png" id="4_3jkhj"]
+[ext_resource type="Texture2D" uid="uid://c30q1oak6vbwg" path="res://assets/visual/areas/Hub_area_orange_palet/hub_door.png" id="5_3jkhj"]
+[ext_resource type="Texture2D" uid="uid://bsewxyog667ye" path="res://assets/visual/areas/Hub_area_orange_palet/Doggo.png" id="5_psc5a"]
+[ext_resource type="Texture2D" uid="uid://dach6q0fqp5fc" path="res://assets/visual/areas/Hub_area_orange_palet/hub_door_highlight.png" id="6_qlspo"]
+[ext_resource type="Texture2D" uid="uid://ce56362xgbqwo" path="res://assets/visual/areas/Hub_area_orange_palet/hub_workshop.png" id="7_3jkhj"]
+[ext_resource type="Texture2D" uid="uid://bacf2vphv4thm" path="res://assets/visual/areas/Hub_area_orange_palet/hub_workshop_highlight.png" id="8_qlspo"]
 [ext_resource type="Script" uid="uid://cbg2drqlxjv78" path="res://scenes/game/sfx_player.gd" id="9_s8lqa"]
 
 [node name="Hub" type="Control"]
@@ -22,6 +23,10 @@ enter_sfx = ExtResource("3_psc5a")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_3jkhj")
 centered = false
+
+[node name="Doggo" type="Sprite2D" parent="."]
+position = Vector2(81, 79)
+texture = ExtResource("5_psc5a")
 
 [node name="FishPole" type="TextureButton" parent="."]
 layout_mode = 0
