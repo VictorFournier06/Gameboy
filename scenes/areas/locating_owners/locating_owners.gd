@@ -2,6 +2,8 @@ extends Node2D
 
 @export var dialog: DialogData
 @export var text_speed := 0.04
+@onready var background: Sprite2D = $Background
+@onready var character: Sprite2D = $Character
 
 var current_line_nb := 0
 var reveal_tween: Tween
@@ -9,6 +11,8 @@ var reveal_tween: Tween
 @onready var label: RichTextLabel = $RichTextLabel
 
 func _ready() -> void:
+	background.texture=dialog.background
+	character.texture=dialog.character
 	show_line()
 
 func show_line() -> void:
