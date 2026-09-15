@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dv5jnvne0scof"
-path="res://.godot/imported/nostalgia_box.wav-03cd40c96cc949d5482bd8fbbee390c3.sample"
+path="res://.godot/imported/Nostalgia_Box.wav-9e99733bc265555e48d8efe96e2c7e45.sample"
 
 [deps]
 
-source_file="res://assets/audio/music/nostalgia_box.wav"
-dest_files=["res://.godot/imported/nostalgia_box.wav-03cd40c96cc949d5482bd8fbbee390c3.sample"]
+source_file="res://assets/audio/music/Nostalgia_Box.wav"
+dest_files=["res://.godot/imported/Nostalgia_Box.wav-9e99733bc265555e48d8efe96e2c7e45.sample"]
 
 [params]
 
