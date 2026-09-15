@@ -19,7 +19,7 @@ func _ready() -> void:
 
 	for button in [fish_pole, door, workshop]:
 		button.focus_entered.connect(sfx_player.play_sfx.bind(navigate_sfx))
-		button.pressed.connect(sfx_player.play_sfx.bind(enter_sfx))
+		button.pressed.connect(sfx_player.play_sfx.bind(enter_sfx, -8.0))
 		button.pressed.connect(_on_area_selected.bind(button_area_binding[button]))
 
 func _on_area_selected(area: AreaManager.Area) -> void:
