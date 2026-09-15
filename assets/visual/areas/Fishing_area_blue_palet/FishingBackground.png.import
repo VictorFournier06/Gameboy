@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cruseh3oic61j"
-path="res://.godot/imported/FishingBackground.png-94d2bcf7daabaabe6b39bea0f95d4d1e.ctex"
+path="res://.godot/imported/FishingBackground.png-5721c9ac455766d097f109bce08695ce.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/visual/areas/Fishing_area_blue_palet/FishingBackground.png"
-dest_files=["res://.godot/imported/FishingBackground.png-94d2bcf7daabaabe6b39bea0f95d4d1e.ctex"]
+source_file="res://assets/visual/areas/fishing_area_blue_palet/FishingBackground.png"
+dest_files=["res://.godot/imported/FishingBackground.png-5721c9ac455766d097f109bce08695ce.ctex"]
 
 [params]
 
