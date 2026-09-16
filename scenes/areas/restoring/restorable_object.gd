@@ -3,7 +3,7 @@ extends Sprite2D
 
 signal no_item
 
-const CLEAN_THRESHOLD: float = 0.9
+const CLEAN_THRESHOLD: float = 0.95
 
 @export var shine_animation_duration = 2.0
 @export var shine_color = Color("#f3edd1") #white from palette
