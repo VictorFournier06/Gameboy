@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="OwnerData" load_steps=6 format=3 uid="uid://e4ig7bsuynym"]
+
+[ext_resource type="Texture2D" uid="uid://be7gjwiuim1o2" path="res://assets/visual/areas/locating_owners_green_orange_palet/back_frog.png" id="1_m5m0e"]
+[ext_resource type="Texture2D" uid="uid://b47q7ypkthvy7" path="res://assets/visual/areas/locating_owners_green_orange_palet/frog.png" id="2_hjuyb"]
+[ext_resource type="Script" uid="uid://b7lxtrcfc1iu5" path="res://resources/classes/dialog_data.gd" id="3_tbd8x"]
+[ext_resource type="Resource" uid="uid://dnwavrqm2p7tt" path="res://resources/dialog/froggo_base_dialog.tres" id="4_o5606"]
+[ext_resource type="Script" uid="uid://dxnh3kgqd0k5h" path="res://resources/classes/owner_data.gd" id="5_3bwjv"]
+
+[resource]
+script = ExtResource("5_3bwjv")
+character = ExtResource("2_hjuyb")
+background = ExtResource("1_m5m0e")
+dialogs = Array[ExtResource("3_tbd8x")]([ExtResource("4_o5606")])
+metadata/_custom_type_script = "uid://dxnh3kgqd0k5h"

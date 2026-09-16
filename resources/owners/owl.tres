@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="OwnerData" load_steps=5 format=3 uid="uid://d0li2bsukia63"]
+
+[ext_resource type="Script" uid="uid://b7lxtrcfc1iu5" path="res://resources/classes/dialog_data.gd" id="1_mk1dd"]
+[ext_resource type="Texture2D" uid="uid://rolaluhp5j4y" path="res://assets/visual/areas/locating_owners_green_orange_palet/back_goose.png" id="1_urbso"]
+[ext_resource type="Script" uid="uid://dxnh3kgqd0k5h" path="res://resources/classes/owner_data.gd" id="2_jcv5g"]
+[ext_resource type="Texture2D" uid="uid://cvf0ar1ng23se" path="res://assets/visual/areas/locating_owners_green_orange_palet/owl.png" id="2_rc1p3"]
+
+[resource]
+script = ExtResource("2_jcv5g")
+character = ExtResource("2_rc1p3")
+background = ExtResource("1_urbso")
+metadata/_custom_type_script = "uid://dxnh3kgqd0k5h"

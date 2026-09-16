@@ -1,16 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://b3b0lcc3bcabw"]
+[gd_scene load_steps=10 format=3 uid="uid://b3b0lcc3bcabw"]
 
 [ext_resource type="Script" uid="uid://diha7jpnbh076" path="res://scenes/areas/locating_owners/locating_owners.gd" id="1_fo5li"]
-[ext_resource type="Resource" uid="uid://dnwavrqm2p7tt" path="res://resources/dialog/froggo_base_dialog.tres" id="2_jj7qe"]
+[ext_resource type="Script" uid="uid://dxnh3kgqd0k5h" path="res://resources/classes/owner_data.gd" id="2_3lkyt"]
+[ext_resource type="Resource" uid="uid://os0i3h1xxsog" path="res://resources/owners/cat.tres" id="3_jj7qe"]
 [ext_resource type="Texture2D" uid="uid://be7gjwiuim1o2" path="res://assets/visual/areas/locating_owners_green_orange_palet/back_frog.png" id="3_slc62"]
 [ext_resource type="Texture2D" uid="uid://b47q7ypkthvy7" path="res://assets/visual/areas/locating_owners_green_orange_palet/frog.png" id="4_3lkyt"]
+[ext_resource type="Resource" uid="uid://d0li2bsukia63" path="res://resources/owners/owl.tres" id="4_6udhy"]
+[ext_resource type="Resource" uid="uid://e4ig7bsuynym" path="res://resources/owners/frog.tres" id="5_cm22u"]
 [ext_resource type="PackedScene" uid="uid://bel5jjp1bj06v" path="res://scenes/components/dialog_component.tscn" id="5_slc62"]
+[ext_resource type="Resource" uid="uid://7a3ysg5545xq" path="res://resources/owners/goose.tres" id="6_jexa5"]
 
-[node name="LocatingOwners" type="Node2D" node_paths=PackedStringArray("background", "character")]
+[node name="LocatingOwners" type="Node2D"]
 script = ExtResource("1_fo5li")
-dialog = ExtResource("2_jj7qe")
-background = NodePath("Background")
-character = NodePath("Character")
+owners = Array[ExtResource("2_3lkyt")]([ExtResource("3_jj7qe"), ExtResource("4_6udhy"), ExtResource("5_cm22u"), ExtResource("6_jexa5")])
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(80, 72)
