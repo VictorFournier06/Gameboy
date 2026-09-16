@@ -1,9 +1,9 @@
 extends Node
 
-signal money_changed(new_value: int)
+signal coupons_changed(new_value: int)
 signal items_changed(new_items: Array[Item])
 
-var money: int:
+var nostalgia_coupons: int:
 	get:
 		return _nostalgia_coupons
 
@@ -17,18 +17,18 @@ var _nostalgia_coupons: int = 0
 #TODO: remove once fishing adds item
 var _items: Array[Item] = [Item.new(ItemCatalog.RUSTY_KEY, Item.Deterioration.DIRTY)]
 
-func spend_money(cost: int) -> bool:
+func spend_coupons(cost: int) -> bool:
 	assert(cost >= 0)
-	if money >= cost:
+	if nostalgia_coupons >= cost:
 		_nostalgia_coupons -= cost
-		money_changed.emit(money)
+		coupons_changed.emit(nostalgia_coupons)
 		return true
 	return false
 
 func earn_money(amount: int) -> void:
 	assert(amount >= 0)
 	_nostalgia_coupons += amount
-	money_changed.emit(money)
+	coupons_changed.emit(nostalgia_coupons)
 
 func use_item(item: Item) -> bool:
 	if item in _items:
