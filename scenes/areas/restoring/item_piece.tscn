@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bgo4aqvimdy2q"]
+
+[node name="ItemPiece" type="Node2D"]
+
+[node name="Fill" type="Node2D" parent="."]
+
+[node name="Outline" type="Node2D" parent="."]
+z_index = -1
