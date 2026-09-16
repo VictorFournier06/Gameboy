@@ -64,6 +64,8 @@ func show_line() -> void:
 	char_nb_before_last_sfx = 0
 
 func _input(event: InputEvent) -> void:
+	if not visible:
+		return
 	if not event.is_action_pressed("ui_accept"):
 		return
 
