@@ -1,12 +1,8 @@
-[gd_resource type="Resource" script_class="DialogData" load_steps=4 format=3 uid="uid://dnwavrqm2p7tt"]
+[gd_resource type="Resource" script_class="DialogData" load_steps=2 format=3 uid="uid://dnwavrqm2p7tt"]
 
 [ext_resource type="Script" uid="uid://b7lxtrcfc1iu5" path="res://resources/dialog_data.gd" id="1_2x8m6"]
-[ext_resource type="Texture2D" uid="uid://be7gjwiuim1o2" path="res://assets/visual/areas/locating_owners_green_orange_palet/back_frog.png" id="1_5o3tl"]
-[ext_resource type="Texture2D" uid="uid://b47q7ypkthvy7" path="res://assets/visual/areas/locating_owners_green_orange_palet/frog.png" id="2_b5yt7"]
 
 [resource]
 script = ExtResource("1_2x8m6")
-lines = Array[String](["Good Day Doggy!", "How are you since", "our last sailing trip?", "What a storm we got!", "I'm glad everyone's fine!"])
-character = ExtResource("2_b5yt7")
-background = ExtResource("1_5o3tl")
+lines = Array[String](["Good Day Doggy !", "How are you since our last sailing trip ?", "What a storm we got !", "I'm glad everyone's fine !"])
 metadata/_custom_type_script = "uid://b7lxtrcfc1iu5"

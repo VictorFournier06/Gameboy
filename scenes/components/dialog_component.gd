@@ -26,6 +26,7 @@ func _ready() -> void:
 	label.add_theme_color_override("default_color", black_color)
 	dialog_box.material.set_shader_parameter("black_color", black_color)
 	dialog_box.material.set_shader_parameter("white_color", white_color)
+	dialog_finished.connect(hide)
 	arrow_bobbing()
 
 func arrow_bobbing() -> void:
@@ -36,6 +37,7 @@ func arrow_bobbing() -> void:
 	bobbing_tween.tween_interval(1.0)
 
 func play_dialog(input_dialog: DialogData) -> void:
+	show()
 	dialog = input_dialog
 	current_line_nb = 0
 	show_line()
