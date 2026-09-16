@@ -81,20 +81,25 @@ script = ExtResource("7_wqt7y")
 metadata/_custom_type_script = "uid://cbg2drqlxjv78"
 
 [node name="Repairing" type="Node2D" parent="."]
-visible = false
 script = ExtResource("17_sd7ac")
 
 [node name="BrokenItem" type="Node2D" parent="Repairing"]
 position = Vector2(76, 85)
 
 [node name="ItemPiece1" parent="Repairing/BrokenItem" instance=ExtResource("18_fdw42")]
+position = Vector2(-42, -27)
 
 [node name="ItemPiece2" parent="Repairing/BrokenItem" instance=ExtResource("18_fdw42")]
+position = Vector2(-43, -3)
 
 [node name="ItemPiece3" parent="Repairing/BrokenItem" instance=ExtResource("18_fdw42")]
+position = Vector2(-38, 18)
 
 [node name="ItemPiece4" parent="Repairing/BrokenItem" instance=ExtResource("18_fdw42")]
+position = Vector2(45, -26)
 
 [node name="ItemPiece5" parent="Repairing/BrokenItem" instance=ExtResource("18_fdw42")]
+position = Vector2(48, -3)
 
 [node name="ItemPiece6" parent="Repairing/BrokenItem" instance=ExtResource("18_fdw42")]
+position = Vector2(46, 19)
