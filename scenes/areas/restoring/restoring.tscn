@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://d3dr0gh263yak"]
+[gd_scene load_steps=18 format=3 uid="uid://d3dr0gh263yak"]
 
 [ext_resource type="Texture2D" uid="uid://bk13jo1hr7xjy" path="res://assets/visual/areas/worshop_area_orange_palet/workshop_background.png" id="1_2pk82"]
 [ext_resource type="Script" uid="uid://bcpdkyw3i8j8b" path="res://scenes/areas/restoring/restoring.gd" id="1_yhtj7"]
@@ -14,23 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://bel5jjp1bj06v" path="res://scenes/components/dialog_component.tscn" id="15_no1w5"]
 [ext_resource type="Script" uid="uid://csmhuk0dbpcgs" path="res://scenes/areas/restoring/repairing/repairing.gd" id="17_sd7ac"]
 [ext_resource type="PackedScene" uid="uid://jix4vnbamqhu" path="res://scenes/areas/restoring/repairing/item_piece.tscn" id="18_fdw42"]
-[ext_resource type="Texture2D" uid="uid://dh3jnw5lwyyuk" path="res://assets/visual/areas/worshop_area_orange_palet/amphora_pieces/p1_fill.png" id="19_q2xng"]
-[ext_resource type="Texture2D" uid="uid://dp6ludqqv1ila" path="res://assets/visual/areas/worshop_area_orange_palet/amphora_pieces/p1_outline.png" id="20_48np6"]
-[ext_resource type="Texture2D" uid="uid://b58mc2jajvtbt" path="res://assets/visual/areas/worshop_area_orange_palet/amphora_pieces/p1_fill_highlighted .png" id="21_xhng0"]
-[ext_resource type="Texture2D" uid="uid://bsk14nxlmfcsk" path="res://assets/visual/areas/worshop_area_orange_palet/amphora_pieces/p2_fill.png" id="22_x014u"]
-[ext_resource type="Texture2D" uid="uid://ddagl3q3ttf58" path="res://assets/visual/areas/worshop_area_orange_palet/amphora_pieces/p2_fill_highlighted.png" id="24_70dlm"]
-[ext_resource type="Texture2D" uid="uid://cqfnhim2v0dtt" path="res://assets/visual/areas/worshop_area_orange_palet/amphora_pieces/p3_fill.png" id="24_gj2tm"]
-[ext_resource type="Texture2D" uid="uid://nlhk585s416n" path="res://assets/visual/areas/worshop_area_orange_palet/amphora_pieces/p3_outline.png" id="25_gqbfy"]
-[ext_resource type="Texture2D" uid="uid://7jrql8ttayh0" path="res://assets/visual/areas/worshop_area_orange_palet/amphora_pieces/p3_fill_highlighted.png" id="26_t22ms"]
-[ext_resource type="Texture2D" uid="uid://cvsp7sr00fkg8" path="res://assets/visual/areas/worshop_area_orange_palet/amphora_pieces/p4_fill.png" id="27_joowf"]
-[ext_resource type="Texture2D" uid="uid://f2nelxnc5nic" path="res://assets/visual/areas/worshop_area_orange_palet/amphora_pieces/p4_outline.png" id="28_rb0ys"]
-[ext_resource type="Texture2D" uid="uid://3h2rbm13ntbw" path="res://assets/visual/areas/worshop_area_orange_palet/amphora_pieces/p4_fill_highlighted.png" id="29_khod8"]
-[ext_resource type="Texture2D" uid="uid://sfvs5cxtih3y" path="res://assets/visual/areas/worshop_area_orange_palet/amphora_pieces/p5_fill.png" id="30_lipsv"]
-[ext_resource type="Texture2D" uid="uid://5wdeurxm56n4" path="res://assets/visual/areas/worshop_area_orange_palet/amphora_pieces/p5_outline.png" id="31_vyjn4"]
-[ext_resource type="Texture2D" uid="uid://nvlbb0xqbmr5" path="res://assets/visual/areas/worshop_area_orange_palet/amphora_pieces/p5_fill_highlighted.png" id="32_05h8h"]
-[ext_resource type="Texture2D" uid="uid://ckwk27215jpcu" path="res://assets/visual/areas/worshop_area_orange_palet/amphora_pieces/p6_fill.png" id="33_cjisc"]
-[ext_resource type="Texture2D" uid="uid://bg1arctdoh5um" path="res://assets/visual/areas/worshop_area_orange_palet/amphora_pieces/p6_outline.png" id="34_nxawq"]
-[ext_resource type="Texture2D" uid="uid://cfk477odol3x6" path="res://assets/visual/areas/worshop_area_orange_palet/amphora_pieces/p6_fill_highlighted.png" id="35_ftm4u"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gerlc"]
 shader = ExtResource("2_ov8pg")
@@ -102,51 +85,16 @@ visible = false
 script = ExtResource("17_sd7ac")
 
 [node name="BrokenItem" type="Node2D" parent="Repairing"]
+position = Vector2(76, 85)
 
 [node name="ItemPiece1" parent="Repairing/BrokenItem" instance=ExtResource("18_fdw42")]
-fill = ExtResource("19_q2xng")
-outline = ExtResource("20_48np6")
-highlighted_fill = ExtResource("21_xhng0")
 
 [node name="ItemPiece2" parent="Repairing/BrokenItem" instance=ExtResource("18_fdw42")]
-fill = ExtResource("22_x014u")
-outline = ExtResource("20_48np6")
-highlighted_fill = ExtResource("24_70dlm")
 
 [node name="ItemPiece3" parent="Repairing/BrokenItem" instance=ExtResource("18_fdw42")]
-fill = ExtResource("24_gj2tm")
-outline = ExtResource("25_gqbfy")
-highlighted_fill = ExtResource("26_t22ms")
 
 [node name="ItemPiece4" parent="Repairing/BrokenItem" instance=ExtResource("18_fdw42")]
-fill = ExtResource("27_joowf")
-outline = ExtResource("28_rb0ys")
-highlighted_fill = ExtResource("29_khod8")
 
 [node name="ItemPiece5" parent="Repairing/BrokenItem" instance=ExtResource("18_fdw42")]
-fill = ExtResource("30_lipsv")
-outline = ExtResource("31_vyjn4")
-highlighted_fill = ExtResource("32_05h8h")
 
 [node name="ItemPiece6" parent="Repairing/BrokenItem" instance=ExtResource("18_fdw42")]
-fill = ExtResource("33_cjisc")
-outline = ExtResource("34_nxawq")
-highlighted_fill = ExtResource("35_ftm4u")
-
-[node name="Repairing" type="Node2D" parent="Repairing"]
-visible = false
-script = ExtResource("17_sd7ac")
-
-[node name="BrokenItem" type="Node2D" parent="Repairing/Repairing"]
-
-[node name="ItemPiece1" parent="Repairing/Repairing/BrokenItem" instance=ExtResource("18_fdw42")]
-
-[node name="ItemPiece2" parent="Repairing/Repairing/BrokenItem" instance=ExtResource("18_fdw42")]
-
-[node name="ItemPiece3" parent="Repairing/Repairing/BrokenItem" instance=ExtResource("18_fdw42")]
-
-[node name="ItemPiece4" parent="Repairing/Repairing/BrokenItem" instance=ExtResource("18_fdw42")]
-
-[node name="ItemPiece5" parent="Repairing/Repairing/BrokenItem" instance=ExtResource("18_fdw42")]
-
-[node name="ItemPiece6" parent="Repairing/Repairing/BrokenItem" instance=ExtResource("18_fdw42")]
