@@ -87,19 +87,19 @@ script = ExtResource("17_sd7ac")
 position = Vector2(76, 85)
 
 [node name="ItemPiece1" parent="Repairing/BrokenItem" instance=ExtResource("18_fdw42")]
-position = Vector2(-42, -27)
+position = Vector2(-31, -34)
 
 [node name="ItemPiece2" parent="Repairing/BrokenItem" instance=ExtResource("18_fdw42")]
-position = Vector2(-43, -3)
+position = Vector2(-43, -5)
 
 [node name="ItemPiece3" parent="Repairing/BrokenItem" instance=ExtResource("18_fdw42")]
-position = Vector2(-38, 18)
+position = Vector2(-26, 27)
 
 [node name="ItemPiece4" parent="Repairing/BrokenItem" instance=ExtResource("18_fdw42")]
-position = Vector2(45, -26)
+position = Vector2(27, -35)
 
 [node name="ItemPiece5" parent="Repairing/BrokenItem" instance=ExtResource("18_fdw42")]
-position = Vector2(48, -3)
+position = Vector2(39, -5)
 
 [node name="ItemPiece6" parent="Repairing/BrokenItem" instance=ExtResource("18_fdw42")]
-position = Vector2(46, 19)
+position = Vector2(27, 28)

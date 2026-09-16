@@ -28,3 +28,7 @@ func _compute_centroid(texture: Texture2D) -> Vector2:
 				sum += Vector2(x, y)
 				pixel_nb += 1
 	return sum / pixel_nb
+
+func highlight(value: bool) -> void:
+	highlighted_fill_node.visible = value
+	fill_node.visible = not value
