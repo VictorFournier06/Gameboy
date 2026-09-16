@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ItemType" load_steps=10 format=3 uid="uid://dtv33g2418u7p"]
+
+[ext_resource type="Script" uid="uid://bufyg5eq08p5" path="res://resources/classes/piece_data.gd" id="1_7tet1"]
+[ext_resource type="Resource" uid="uid://diyi3ar8x5hf3" path="res://resources/items/amphora/piece1.tres" id="2_315lt"]
+[ext_resource type="Resource" uid="uid://crifafyty0aa3" path="res://resources/items/amphora/piece2.tres" id="3_55ss7"]
+[ext_resource type="Resource" uid="uid://brvkvr7egb6dt" path="res://resources/items/amphora/piece3.tres" id="4_ukwwb"]
+[ext_resource type="Resource" uid="uid://bstvl6mfhs7tr" path="res://resources/items/amphora/piece4.tres" id="5_e2qhq"]
+[ext_resource type="Resource" uid="uid://bn7dka82fqb4i" path="res://resources/items/amphora/piece5.tres" id="6_v8ml3"]
+[ext_resource type="Resource" uid="uid://4tostraymmx8" path="res://resources/items/amphora/piece6.tres" id="7_c5cm6"]
+[ext_resource type="Texture2D" uid="uid://eafbuiabxqnd" path="res://assets/visual/areas/worshop_area_orange_palet/amphora_pieces/amphora.png" id="8_urbdo"]
+[ext_resource type="Script" uid="uid://bfkgwhugqn2wy" path="res://resources/classes/item_type.gd" id="9_mjavh"]
+
+[resource]
+script = ExtResource("9_mjavh")
+clean_texture = ExtResource("8_urbdo")
+broken_pieces = Array[ExtResource("1_7tet1")]([ExtResource("2_315lt"), ExtResource("3_55ss7"), ExtResource("4_ukwwb"), ExtResource("5_e2qhq"), ExtResource("6_v8ml3"), ExtResource("7_c5cm6")])
+metadata/_custom_type_script = "uid://bfkgwhugqn2wy"

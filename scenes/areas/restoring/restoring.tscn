@@ -1,16 +1,12 @@
-[gd_scene load_steps=39 format=3 uid="uid://d3dr0gh263yak"]
+[gd_scene load_steps=35 format=3 uid="uid://d3dr0gh263yak"]
 
 [ext_resource type="Texture2D" uid="uid://bk13jo1hr7xjy" path="res://assets/visual/areas/worshop_area_orange_palet/workshop_background.png" id="1_2pk82"]
-[ext_resource type="Script" path="res://scenes/areas/restoring/repairing/restoring.gd" id="1_awq15"]
+[ext_resource type="Script" uid="uid://bcpdkyw3i8j8b" path="res://scenes/areas/restoring/restoring.gd" id="1_yhtj7"]
 [ext_resource type="Script" uid="uid://cr122fu60irp" path="res://scenes/areas/restoring/cleaning/cleaning_player.gd" id="2_iysp6"]
 [ext_resource type="Shader" uid="uid://wuwbah74w55m" path="res://scenes/areas/restoring/cleaning/cleaning.gdshader" id="2_ov8pg"]
-[ext_resource type="Resource" uid="uid://bns7nh1n48wa0" path="res://resources/dialog/no_item.tres" id="2_uc1vo"]
 [ext_resource type="Script" uid="uid://cxg40dy05iqj7" path="res://scenes/areas/restoring/cleaning/cleaning.gd" id="3_ov8pg"]
 [ext_resource type="SpriteFrames" uid="uid://ctjfdeq8a5qc2" path="res://resources/scrubbing_tools/rag.tres" id="4_2pk82"]
-[ext_resource type="AudioStream" uid="uid://caoe21prgyul3" path="res://assets/audio/sfx/finished_cleaning.wav" id="4_qak5x"]
-[ext_resource type="AudioStream" uid="uid://cq67e0fivaji7" path="res://assets/audio/sfx/shiney.wav" id="5_wqt7y"]
 [ext_resource type="Script" uid="uid://217ekmdqdj3j" path="res://scenes/areas/restoring/cleaning/scratch_sound.gd" id="6_4jl2u"]
-[ext_resource type="AudioStream" uid="uid://edwk5flnwq2j" path="res://assets/audio/sfx/pocketing.wav" id="6_awq15"]
 [ext_resource type="AudioStream" uid="uid://b6ovmg0b0k6xl" path="res://assets/audio/sfx/scratch1.wav" id="7_0331c"]
 [ext_resource type="Script" uid="uid://cbg2drqlxjv78" path="res://scenes/game/sfx_player.gd" id="7_wqt7y"]
 [ext_resource type="AudioStream" uid="uid://dxl3uv8js3hp5" path="res://assets/audio/sfx/scratch2.wav" id="8_llqx5"]
@@ -49,11 +45,7 @@ colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
 gradient = SubResource("Gradient_gerlc")
 
 [node name="Restoring" type="Node2D"]
-script = ExtResource("1_awq15")
-no_object_dialog = ExtResource("2_uc1vo")
-finished_restoring_sfx = ExtResource("4_qak5x")
-shiney_sfx = ExtResource("5_wqt7y")
-pocketing_sfx = ExtResource("6_awq15")
+script = ExtResource("1_yhtj7")
 
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("1_2pk82")
@@ -140,3 +132,21 @@ highlighted_fill = ExtResource("32_05h8h")
 fill = ExtResource("33_cjisc")
 outline = ExtResource("34_nxawq")
 highlighted_fill = ExtResource("35_ftm4u")
+
+[node name="Repairing" type="Node2D" parent="Repairing"]
+visible = false
+script = ExtResource("17_sd7ac")
+
+[node name="BrokenItem" type="Node2D" parent="Repairing/Repairing"]
+
+[node name="ItemPiece1" parent="Repairing/Repairing/BrokenItem" instance=ExtResource("18_fdw42")]
+
+[node name="ItemPiece2" parent="Repairing/Repairing/BrokenItem" instance=ExtResource("18_fdw42")]
+
+[node name="ItemPiece3" parent="Repairing/Repairing/BrokenItem" instance=ExtResource("18_fdw42")]
+
+[node name="ItemPiece4" parent="Repairing/Repairing/BrokenItem" instance=ExtResource("18_fdw42")]
+
+[node name="ItemPiece5" parent="Repairing/Repairing/BrokenItem" instance=ExtResource("18_fdw42")]
+
+[node name="ItemPiece6" parent="Repairing/Repairing/BrokenItem" instance=ExtResource("18_fdw42")]

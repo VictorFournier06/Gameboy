@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="PieceData" load_steps=5 format=3 uid="uid://4tostraymmx8"]
+
+[ext_resource type="Script" uid="uid://bufyg5eq08p5" path="res://resources/classes/piece_data.gd" id="1_nc61c"]
+[ext_resource type="Texture2D" uid="uid://ckwk27215jpcu" path="res://assets/visual/areas/worshop_area_orange_palet/amphora_pieces/p6_fill.png" id="1_vl2iq"]
+[ext_resource type="Texture2D" uid="uid://cfk477odol3x6" path="res://assets/visual/areas/worshop_area_orange_palet/amphora_pieces/p6_fill_highlighted.png" id="2_jqlj5"]
+[ext_resource type="Texture2D" uid="uid://bg1arctdoh5um" path="res://assets/visual/areas/worshop_area_orange_palet/amphora_pieces/p6_outline.png" id="3_fbgth"]
+
+[resource]
+script = ExtResource("1_nc61c")
+fill = ExtResource("1_vl2iq")
+outline = ExtResource("3_fbgth")
+highlighted_fill = ExtResource("2_jqlj5")
+metadata/_custom_type_script = "uid://bufyg5eq08p5"
