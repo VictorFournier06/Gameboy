@@ -4,5 +4,5 @@
 
 [resource]
 script = ExtResource("1_mxkga")
-lines = Array[String](["Oh ! I don't have any item to restore.", "I'd better go fishing then"])
+lines = Array[String](["Oh ! I don't have any item to restore.", "I'd better go fishing then !"])
 metadata/_custom_type_script = "uid://b7lxtrcfc1iu5"
