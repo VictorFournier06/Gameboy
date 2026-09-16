@@ -1,6 +1,8 @@
 class_name RestorableObject
 extends Sprite2D
 
+signal no_item
+
 const CLEAN_THRESHOLD: float = 0.9
 
 @export var shine_animation_duration = 2.0
@@ -31,13 +33,14 @@ var current_item_surface: int
 func _ready() -> void:
 	material.set_shader_parameter("shine_color", shine_color)
 	material.set_shader_parameter("shine_width", shine_width)
-	_reset()
+	_reset.call_deferred()
 
 	Debug.skip_minigame.connect(_skip_cleaning)
 
 func _reset() -> void:
 	_switch_item()
 	if current_item == null:
+		no_item.emit()
 		return
 	_build_grid()
 	can_scrub = true
