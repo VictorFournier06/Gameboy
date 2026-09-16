@@ -1,11 +1,11 @@
-[gd_scene load_steps=20 format=3 uid="uid://d3dr0gh263yak"]
+[gd_scene load_steps=21 format=3 uid="uid://d3dr0gh263yak"]
 
 [ext_resource type="Texture2D" uid="uid://bk13jo1hr7xjy" path="res://assets/visual/areas/worshop_area_orange_palet/workshop_background.png" id="1_2pk82"]
 [ext_resource type="Script" uid="uid://bcpdkyw3i8j8b" path="res://scenes/areas/restoring/restoring.gd" id="1_awq15"]
-[ext_resource type="Script" uid="uid://cr122fu60irp" path="res://scenes/areas/restoring/player.gd" id="2_iysp6"]
-[ext_resource type="Shader" uid="uid://wuwbah74w55m" path="res://scenes/areas/restoring/restorable_object.gdshader" id="2_ov8pg"]
+[ext_resource type="Script" uid="uid://cr122fu60irp" path="res://scenes/areas/restoring/cleaning_player.gd" id="2_iysp6"]
+[ext_resource type="Shader" uid="uid://wuwbah74w55m" path="res://scenes/areas/restoring/cleaning.gdshader" id="2_ov8pg"]
 [ext_resource type="Resource" uid="uid://bns7nh1n48wa0" path="res://resources/dialog/no_item.tres" id="2_uc1vo"]
-[ext_resource type="Script" uid="uid://cxg40dy05iqj7" path="res://scenes/areas/restoring/restorable_object.gd" id="3_ov8pg"]
+[ext_resource type="Script" uid="uid://cxg40dy05iqj7" path="res://scenes/areas/restoring/cleaning.gd" id="3_ov8pg"]
 [ext_resource type="SpriteFrames" uid="uid://ctjfdeq8a5qc2" path="res://resources/scrubbing_tools/rag.tres" id="4_2pk82"]
 [ext_resource type="AudioStream" uid="uid://caoe21prgyul3" path="res://assets/audio/sfx/finished_cleaning.wav" id="4_qak5x"]
 [ext_resource type="AudioStream" uid="uid://cq67e0fivaji7" path="res://assets/audio/sfx/shiney.wav" id="5_wqt7y"]
@@ -16,6 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://dxl3uv8js3hp5" path="res://assets/audio/sfx/scratch2.wav" id="8_llqx5"]
 [ext_resource type="AudioStream" uid="uid://mgfy1opatm4g" path="res://assets/audio/sfx/scratch3.wav" id="9_jpvhe"]
 [ext_resource type="PackedScene" uid="uid://bel5jjp1bj06v" path="res://scenes/components/dialog_component.tscn" id="15_no1w5"]
+[ext_resource type="Script" uid="uid://csmhuk0dbpcgs" path="res://scenes/areas/restoring/repairing.gd" id="17_sd7ac"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gerlc"]
 shader = ExtResource("2_ov8pg")
@@ -32,28 +33,23 @@ gradient = SubResource("Gradient_gerlc")
 [node name="Restoring" type="Node2D"]
 script = ExtResource("1_awq15")
 no_object_dialog = ExtResource("2_uc1vo")
+finished_restoring_sfx = ExtResource("4_qak5x")
+shiney_sfx = ExtResource("5_wqt7y")
+pocketing_sfx = ExtResource("6_awq15")
 
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("1_2pk82")
 centered = false
 
-[node name="RestorableObject" type="Sprite2D" parent="."]
+[node name="Cleaning" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_gerlc")
 position = Vector2(48, 61)
 texture = SubResource("GradientTexture2D_ov8pg")
 centered = false
 script = ExtResource("3_ov8pg")
-finished_cleaning_sfx = ExtResource("4_qak5x")
-shiney_sfx = ExtResource("5_wqt7y")
-pocketing_sfx = ExtResource("6_awq15")
 
-[node name="SFXPlayer" type="AudioStreamPlayer" parent="RestorableObject"]
-bus = &"SFX"
-script = ExtResource("7_wqt7y")
-metadata/_custom_type_script = "uid://cbg2drqlxjv78"
-
-[node name="Player" type="AnimatedSprite2D" parent="." node_paths=PackedStringArray("restorable_object")]
-position = Vector2(38, 123)
+[node name="CleaningPlayer" type="AnimatedSprite2D" parent="Cleaning"]
+position = Vector2(-10, 62)
 scale = Vector2(0.5, 0.5)
 sprite_frames = ExtResource("4_2pk82")
 animation = &"idle"
@@ -61,9 +57,8 @@ frame_progress = 1.0
 centered = false
 offset = Vector2(-27, -9)
 script = ExtResource("2_iysp6")
-restorable_object = NodePath("../RestorableObject")
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="Player"]
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Cleaning/CleaningPlayer"]
 position = Vector2(-76, -246)
 scale = Vector2(2, 2)
 amount = 12
@@ -78,10 +73,18 @@ damping_min = 4.286
 damping_max = 8.571
 color = Color(0.22352941, 0.14509805, 0.13725491, 1)
 
-[node name="ScratchSound" type="Node" parent="Player"]
+[node name="ScratchSound" type="Node" parent="Cleaning/CleaningPlayer"]
 script = ExtResource("6_4jl2u")
 scratch_sounds = Array[AudioStream]([ExtResource("7_0331c"), ExtResource("8_llqx5"), ExtResource("9_jpvhe")])
 
 [node name="DialogComponent" parent="." instance=ExtResource("15_no1w5")]
 black_color = Color(0.22352941, 0.14509805, 0.13725491, 1)
 white_color = Color(0.9529412, 0.92941177, 0.81960785, 1)
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"
+script = ExtResource("7_wqt7y")
+metadata/_custom_type_script = "uid://cbg2drqlxjv78"
+
+[node name="Repairing" type="Node2D" parent="."]
+script = ExtResource("17_sd7ac")

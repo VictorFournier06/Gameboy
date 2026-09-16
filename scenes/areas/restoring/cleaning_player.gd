@@ -6,14 +6,14 @@ extends AnimatedSprite2D
 	[0.1, 0.3, 0.1],
 	[0.1, 0.1, 0.1]
 	]
-@export var restorable_object: RestorableObject
 
 var scrubbing: bool = false
 
 @onready var viewport_size: Vector2 = get_viewport_rect().size
 @onready var player_size: Vector2i = Vector2i(16, 16)
-@onready var particles: CPUParticles2D = $"CPUParticles2D"
-@onready var scratch_sound: Node = $"ScratchSound"
+@onready var particles: CPUParticles2D = $CPUParticles2D
+@onready var scratch_sound: Node = $ScratchSound
+@onready var cleaning: Cleaning = get_parent()
 
 func _ready():
 	animation_looped.connect(_stop_scrub_animation_if_necessary)
@@ -38,7 +38,7 @@ func _physics_process(_delta: float) -> void:
 	position.y = clamp(position.y, player_size.y / 2.0, viewport_size.y - player_size.y / 2.0)
 
 	scrubbing = false
-	if dir != Vector2.ZERO and restorable_object.scrub_at(global_position, scrub_effect):
+	if dir != Vector2.ZERO and cleaning.scrub_at(global_position, scrub_effect):
 			scrubbing = true
 
 	if scrubbing and animation != "scrubbing":

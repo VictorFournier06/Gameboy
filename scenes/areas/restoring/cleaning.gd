@@ -1,20 +1,10 @@
-class_name RestorableObject
+class_name Cleaning
 extends Sprite2D
 
-signal no_item
+signal finished_restoring
 
 const CLEAN_THRESHOLD: float = 0.95
-
-@export var shine_animation_duration = 2.0
-@export var shine_color = Color("#f3edd1") #white from palette
-@export var shine_width = 0.1
-@export var cleaned_pause = 1.0
-
-@export var finished_cleaning_sfx: AudioStream
-@export var shiney_sfx: AudioStream
-@export var pocketing_sfx: AudioStream
-
-var can_scrub: bool
+var current_item_surface: int
 
 var grid_size: Vector2i
 var grid_image: Image #just there to update the ImageTexture
@@ -25,25 +15,12 @@ var grid_image: Image #just there to update the ImageTexture
 var cleaning_grid: ImageTexture
 var cleanness_sum: float
 
-var current_item: Item
-var current_item_surface: int
+var user_interactions_allowed: bool
 
-@onready var sfx_player: AudioStreamPlayer = $SFXPlayer
-
-func _ready() -> void:
-	material.set_shader_parameter("shine_color", shine_color)
-	material.set_shader_parameter("shine_width", shine_width)
-	_reset.call_deferred()
-
-	Debug.skip_minigame.connect(_skip_cleaning)
-
-func _reset() -> void:
-	_switch_item()
-	if current_item == null:
-		no_item.emit()
-		return
+func setup(item: Item) -> void:
+	texture = item.type.dirty_texture
+	material.set_shader_parameter("clean_texture", item.type.clean_texture)
 	_build_grid()
-	can_scrub = true
 
 func _build_grid() -> void:
 	grid_size = texture.get_size()
@@ -67,20 +44,12 @@ func _build_grid() -> void:
 
 	current_item_surface = surface_sum
 
-func _switch_item() -> void:
-	current_item = Inventory.get_first_restorable_item(Item.Deterioration.DIRTY)
-	if current_item == null:
-		texture = null
-		return
-	texture = current_item.type.dirty_texture
-	material.set_shader_parameter("clean_texture", current_item.type.clean_texture)
-
 ## returns true if there is an object being scrubbed
 func scrub_at(world_position: Vector2, scrub_kernel: Array) -> bool:
 	var has_something_been_scrubbed: bool = false
 
-	if not can_scrub:
-		return has_something_been_scrubbed
+	if not user_interactions_allowed:
+		return false
 
 	var local_position: Vector2i = Vector2i(to_local(world_position))
 
@@ -115,38 +84,14 @@ func _check_cleanness() -> void:
 		return
 	var average_cleanness: float = cleanness_sum / current_item_surface
 	if average_cleanness > CLEAN_THRESHOLD:
-		_finished_restoring()
+		finished_restoring.emit()
 
-func _finished_restoring() -> void:
-	can_scrub = false
-	current_item.deterioration = Item.Deterioration.NONE
-	_fully_clean()
-	sfx_player.play_sfx(finished_cleaning_sfx)
-	await _shine_animation()
-	sfx_player.play_sfx(pocketing_sfx)
-	await sfx_player.finished
-	_reset()
-
-func _fully_clean() -> void:
+func complete() -> void:
 	grid_image.fill(Color(1.0, 0.0, 0.0))
 	cleaning_grid.update(grid_image)
 
-func _shine_animation() -> void:
-	await get_tree().create_timer(cleaned_pause).timeout
-	var tween: Tween = create_tween()
-	tween.tween_property(
-		material,
-		"shader_parameter/shine_animation_progress",
-		1.0,
-		shine_animation_duration
-	)
-	sfx_player.play_sfx(shiney_sfx)
-	await tween.finished
-
-	material.set_shader_parameter("shine_animation_progress", 0.0) #reset
-
-func _skip_cleaning() -> void:
-	if not can_scrub:
+func skip() -> void:
+	if not user_interactions_allowed:
 		return
 	cleanness_sum = current_item_surface
 	_check_cleanness()

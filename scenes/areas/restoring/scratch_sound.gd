@@ -2,12 +2,12 @@ extends Node
 
 @export var track_nb: int = 6
 @export var scratch_sounds: Array[AudioStream]
-@export var scratch_intensity: float = 0.0
 
 var cooldown: float = -1.0  #start negative to ensure it's set in _process
 var audio_player_index: int = 0
 var audio_players: Array[AudioStreamPlayer] = []
 var scrubbing: bool = false
+var scratch_intensity: float
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
