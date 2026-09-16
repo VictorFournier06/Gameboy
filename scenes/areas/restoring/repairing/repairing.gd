@@ -7,6 +7,10 @@ enum Mode { SELECT, MOVE, ROTATE }
 
 const ROTATION_NB = 24
 
+@export var navigate_sfx: AudioStream
+@export var enter_sfx: AudioStream
+@export var sfx_player: SFXPlayer
+
 var user_interactions_allowed: bool
 var pieces_initial_positions: Array
 
@@ -43,6 +47,15 @@ func _update_selected(index: int):
 func _unhandled_input(event: InputEvent) -> void:
 	if not user_interactions_allowed or mode != Mode.SELECT:
 		return
+	if event.is_action_pressed("ui_accept"):
+		_change_mode()
+		sfx_player.play_sfx(enter_sfx)
+	elif event.is_action_pressed("ui_cancel"):
+		_set_mode(Mode.SELECT)
+	elif mode == Mode.SELECT:
+		_menu_navigate(event)
+
+func _menu_navigate(event: InputEvent) -> void:
 	var direction: Vector2 = Vector2.ZERO
 	if event.is_action_pressed("up"): direction = Vector2.UP
 	elif event.is_action_pressed("down"): direction = Vector2.DOWN
@@ -53,6 +66,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	var closest_piece_index: int = _closest_piece_in_direction(direction)
 	if closest_piece_index != -1:
 		_update_selected(closest_piece_index)
+		sfx_player.play_sfx(navigate_sfx)
 
 func _closest_piece_in_direction(direction: Vector2) -> int:
 	var start: Vector2 = pieces[selected_index].position
@@ -63,3 +77,14 @@ func _closest_piece_in_direction(direction: Vector2) -> int:
 	var min_distance: float = distances.min()
 	var argmin: int = distances.find(min_distance) if min_distance < INF else -1
 	return argmin
+
+func _change_mode() -> void:
+	_set_mode(
+		Mode.MOVE if mode == Mode.SELECT
+		else (Mode.ROTATE if mode == Mode.MOVE
+		else Mode.MOVE)
+	)
+
+func _set_mode(new_mode: Mode) -> void:
+	mode = new_mode
+	_update_selected(selected_index)

@@ -10,7 +10,9 @@ extends AnimatedSprite2D
 var scrubbing: bool = false
 
 @onready var viewport_size: Vector2 = get_viewport_rect().size
-@onready var player_size: Vector2i = Vector2i(16, 16)
+@onready var player_size: Vector2 = Vector2(16.0, 16.0)
+@onready var bounds: Rect2 = Rect2(player_size / 2.0, viewport_size - player_size)
+
 @onready var particles: CPUParticles2D = $CPUParticles2D
 @onready var scratch_sound: Node = $ScratchSound
 @onready var cleaning: Cleaning = get_parent()
@@ -24,21 +26,10 @@ func _stop_scrub_animation_if_necessary():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta: float) -> void:
-	var dir: Vector2 = Vector2.ZERO
-	if Input.is_action_pressed("right"): dir.x += 1
-	if Input.is_action_pressed("left"):  dir.x -= 1
-	if Input.is_action_pressed("down"):  dir.y += 1
-	if Input.is_action_pressed("up"):    dir.y -= 1
-	# note: diagonal movement is sqrt(2) faster
-	# it's a fun tech I want to leave in
-
-	position += dir * speed
-
-	position.x = clamp(position.x, player_size.x / 2.0, viewport_size.x - player_size.x / 2.0)
-	position.y = clamp(position.y, player_size.y / 2.0, viewport_size.y - player_size.y / 2.0)
+	var direction: Vector2 = Player.move(self, speed, bounds)
 
 	scrubbing = false
-	if dir != Vector2.ZERO and cleaning.scrub_at(global_position, scrub_effect):
+	if direction != Vector2.ZERO and cleaning.scrub_at(global_position, scrub_effect):
 			scrubbing = true
 
 	if scrubbing and animation != "scrubbing":
@@ -47,5 +38,5 @@ func _physics_process(_delta: float) -> void:
 	particles.global_position = global_position
 	particles.emitting = scrubbing
 
-	scratch_sound.scratch_intensity = dir.length() / sqrt(2) #L2 norm
+	scratch_sound.scratch_intensity = direction.length() / sqrt(2) #L2 norm
 	scratch_sound.scrubbing = scrubbing

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://d3dr0gh263yak"]
+[gd_scene load_steps=20 format=3 uid="uid://d3dr0gh263yak"]
 
 [ext_resource type="Texture2D" uid="uid://bk13jo1hr7xjy" path="res://assets/visual/areas/worshop_area_orange_palet/workshop_background.png" id="1_2pk82"]
 [ext_resource type="Script" uid="uid://bcpdkyw3i8j8b" path="res://scenes/areas/restoring/restoring.gd" id="1_yhtj7"]
@@ -11,7 +11,9 @@
 [ext_resource type="Script" uid="uid://cbg2drqlxjv78" path="res://scenes/game/sfx_player.gd" id="7_wqt7y"]
 [ext_resource type="AudioStream" uid="uid://dxl3uv8js3hp5" path="res://assets/audio/sfx/scratch2.wav" id="8_llqx5"]
 [ext_resource type="AudioStream" uid="uid://mgfy1opatm4g" path="res://assets/audio/sfx/scratch3.wav" id="9_jpvhe"]
+[ext_resource type="AudioStream" uid="uid://c7640uqo803q2" path="res://assets/audio/sfx/menu_move.wav" id="14_uc1vo"]
 [ext_resource type="PackedScene" uid="uid://bel5jjp1bj06v" path="res://scenes/components/dialog_component.tscn" id="15_no1w5"]
+[ext_resource type="AudioStream" uid="uid://bvlxgbq1rnj4h" path="res://assets/audio/sfx/menu_accept.wav" id="15_sd7ac"]
 [ext_resource type="Script" uid="uid://csmhuk0dbpcgs" path="res://scenes/areas/restoring/repairing/repairing.gd" id="17_sd7ac"]
 [ext_resource type="PackedScene" uid="uid://jix4vnbamqhu" path="res://scenes/areas/restoring/repairing/item_piece.tscn" id="18_fdw42"]
 
@@ -80,8 +82,11 @@ bus = &"SFX"
 script = ExtResource("7_wqt7y")
 metadata/_custom_type_script = "uid://cbg2drqlxjv78"
 
-[node name="Repairing" type="Node2D" parent="."]
+[node name="Repairing" type="Node2D" parent="." node_paths=PackedStringArray("sfx_player")]
 script = ExtResource("17_sd7ac")
+navigate_sfx = ExtResource("14_uc1vo")
+enter_sfx = ExtResource("15_sd7ac")
+sfx_player = NodePath("../SFXPlayer")
 
 [node name="BrokenItem" type="Node2D" parent="Repairing"]
 position = Vector2(76, 85)
