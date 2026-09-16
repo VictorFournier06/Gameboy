@@ -1,23 +1,40 @@
-[gd_scene load_steps=22 format=3 uid="uid://d3dr0gh263yak"]
+[gd_scene load_steps=39 format=3 uid="uid://d3dr0gh263yak"]
 
 [ext_resource type="Texture2D" uid="uid://bk13jo1hr7xjy" path="res://assets/visual/areas/worshop_area_orange_palet/workshop_background.png" id="1_2pk82"]
-[ext_resource type="Script" uid="uid://bcpdkyw3i8j8b" path="res://scenes/areas/restoring/restoring.gd" id="1_awq15"]
-[ext_resource type="Script" uid="uid://cr122fu60irp" path="res://scenes/areas/restoring/cleaning_player.gd" id="2_iysp6"]
-[ext_resource type="Shader" uid="uid://wuwbah74w55m" path="res://scenes/areas/restoring/cleaning.gdshader" id="2_ov8pg"]
+[ext_resource type="Script" path="res://scenes/areas/restoring/repairing/restoring.gd" id="1_awq15"]
+[ext_resource type="Script" uid="uid://cr122fu60irp" path="res://scenes/areas/restoring/cleaning/cleaning_player.gd" id="2_iysp6"]
+[ext_resource type="Shader" uid="uid://wuwbah74w55m" path="res://scenes/areas/restoring/cleaning/cleaning.gdshader" id="2_ov8pg"]
 [ext_resource type="Resource" uid="uid://bns7nh1n48wa0" path="res://resources/dialog/no_item.tres" id="2_uc1vo"]
-[ext_resource type="Script" uid="uid://cxg40dy05iqj7" path="res://scenes/areas/restoring/cleaning.gd" id="3_ov8pg"]
+[ext_resource type="Script" uid="uid://cxg40dy05iqj7" path="res://scenes/areas/restoring/cleaning/cleaning.gd" id="3_ov8pg"]
 [ext_resource type="SpriteFrames" uid="uid://ctjfdeq8a5qc2" path="res://resources/scrubbing_tools/rag.tres" id="4_2pk82"]
 [ext_resource type="AudioStream" uid="uid://caoe21prgyul3" path="res://assets/audio/sfx/finished_cleaning.wav" id="4_qak5x"]
 [ext_resource type="AudioStream" uid="uid://cq67e0fivaji7" path="res://assets/audio/sfx/shiney.wav" id="5_wqt7y"]
-[ext_resource type="Script" uid="uid://217ekmdqdj3j" path="res://scenes/areas/restoring/scratch_sound.gd" id="6_4jl2u"]
+[ext_resource type="Script" uid="uid://217ekmdqdj3j" path="res://scenes/areas/restoring/cleaning/scratch_sound.gd" id="6_4jl2u"]
 [ext_resource type="AudioStream" uid="uid://edwk5flnwq2j" path="res://assets/audio/sfx/pocketing.wav" id="6_awq15"]
 [ext_resource type="AudioStream" uid="uid://b6ovmg0b0k6xl" path="res://assets/audio/sfx/scratch1.wav" id="7_0331c"]
 [ext_resource type="Script" uid="uid://cbg2drqlxjv78" path="res://scenes/game/sfx_player.gd" id="7_wqt7y"]
 [ext_resource type="AudioStream" uid="uid://dxl3uv8js3hp5" path="res://assets/audio/sfx/scratch2.wav" id="8_llqx5"]
 [ext_resource type="AudioStream" uid="uid://mgfy1opatm4g" path="res://assets/audio/sfx/scratch3.wav" id="9_jpvhe"]
 [ext_resource type="PackedScene" uid="uid://bel5jjp1bj06v" path="res://scenes/components/dialog_component.tscn" id="15_no1w5"]
-[ext_resource type="Script" uid="uid://csmhuk0dbpcgs" path="res://scenes/areas/restoring/repairing.gd" id="17_sd7ac"]
-[ext_resource type="PackedScene" uid="uid://bgo4aqvimdy2q" path="res://scenes/areas/restoring/item_piece.tscn" id="18_fdw42"]
+[ext_resource type="Script" uid="uid://csmhuk0dbpcgs" path="res://scenes/areas/restoring/repairing/repairing.gd" id="17_sd7ac"]
+[ext_resource type="PackedScene" uid="uid://jix4vnbamqhu" path="res://scenes/areas/restoring/repairing/item_piece.tscn" id="18_fdw42"]
+[ext_resource type="Texture2D" uid="uid://dh3jnw5lwyyuk" path="res://assets/visual/areas/worshop_area_orange_palet/amphora_pieces/p1_fill.png" id="19_q2xng"]
+[ext_resource type="Texture2D" uid="uid://dp6ludqqv1ila" path="res://assets/visual/areas/worshop_area_orange_palet/amphora_pieces/p1_outline.png" id="20_48np6"]
+[ext_resource type="Texture2D" uid="uid://b58mc2jajvtbt" path="res://assets/visual/areas/worshop_area_orange_palet/amphora_pieces/p1_fill_highlighted .png" id="21_xhng0"]
+[ext_resource type="Texture2D" uid="uid://bsk14nxlmfcsk" path="res://assets/visual/areas/worshop_area_orange_palet/amphora_pieces/p2_fill.png" id="22_x014u"]
+[ext_resource type="Texture2D" uid="uid://ddagl3q3ttf58" path="res://assets/visual/areas/worshop_area_orange_palet/amphora_pieces/p2_fill_highlighted.png" id="24_70dlm"]
+[ext_resource type="Texture2D" uid="uid://cqfnhim2v0dtt" path="res://assets/visual/areas/worshop_area_orange_palet/amphora_pieces/p3_fill.png" id="24_gj2tm"]
+[ext_resource type="Texture2D" uid="uid://nlhk585s416n" path="res://assets/visual/areas/worshop_area_orange_palet/amphora_pieces/p3_outline.png" id="25_gqbfy"]
+[ext_resource type="Texture2D" uid="uid://7jrql8ttayh0" path="res://assets/visual/areas/worshop_area_orange_palet/amphora_pieces/p3_fill_highlighted.png" id="26_t22ms"]
+[ext_resource type="Texture2D" uid="uid://cvsp7sr00fkg8" path="res://assets/visual/areas/worshop_area_orange_palet/amphora_pieces/p4_fill.png" id="27_joowf"]
+[ext_resource type="Texture2D" uid="uid://f2nelxnc5nic" path="res://assets/visual/areas/worshop_area_orange_palet/amphora_pieces/p4_outline.png" id="28_rb0ys"]
+[ext_resource type="Texture2D" uid="uid://3h2rbm13ntbw" path="res://assets/visual/areas/worshop_area_orange_palet/amphora_pieces/p4_fill_highlighted.png" id="29_khod8"]
+[ext_resource type="Texture2D" uid="uid://sfvs5cxtih3y" path="res://assets/visual/areas/worshop_area_orange_palet/amphora_pieces/p5_fill.png" id="30_lipsv"]
+[ext_resource type="Texture2D" uid="uid://5wdeurxm56n4" path="res://assets/visual/areas/worshop_area_orange_palet/amphora_pieces/p5_outline.png" id="31_vyjn4"]
+[ext_resource type="Texture2D" uid="uid://nvlbb0xqbmr5" path="res://assets/visual/areas/worshop_area_orange_palet/amphora_pieces/p5_fill_highlighted.png" id="32_05h8h"]
+[ext_resource type="Texture2D" uid="uid://ckwk27215jpcu" path="res://assets/visual/areas/worshop_area_orange_palet/amphora_pieces/p6_fill.png" id="33_cjisc"]
+[ext_resource type="Texture2D" uid="uid://bg1arctdoh5um" path="res://assets/visual/areas/worshop_area_orange_palet/amphora_pieces/p6_outline.png" id="34_nxawq"]
+[ext_resource type="Texture2D" uid="uid://cfk477odol3x6" path="res://assets/visual/areas/worshop_area_orange_palet/amphora_pieces/p6_fill_highlighted.png" id="35_ftm4u"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gerlc"]
 shader = ExtResource("2_ov8pg")
@@ -92,4 +109,34 @@ metadata/_custom_type_script = "uid://cbg2drqlxjv78"
 visible = false
 script = ExtResource("17_sd7ac")
 
-[node name="ItemPiece" parent="Repairing" instance=ExtResource("18_fdw42")]
+[node name="BrokenItem" type="Node2D" parent="Repairing"]
+
+[node name="ItemPiece1" parent="Repairing/BrokenItem" instance=ExtResource("18_fdw42")]
+fill = ExtResource("19_q2xng")
+outline = ExtResource("20_48np6")
+highlighted_fill = ExtResource("21_xhng0")
+
+[node name="ItemPiece2" parent="Repairing/BrokenItem" instance=ExtResource("18_fdw42")]
+fill = ExtResource("22_x014u")
+outline = ExtResource("20_48np6")
+highlighted_fill = ExtResource("24_70dlm")
+
+[node name="ItemPiece3" parent="Repairing/BrokenItem" instance=ExtResource("18_fdw42")]
+fill = ExtResource("24_gj2tm")
+outline = ExtResource("25_gqbfy")
+highlighted_fill = ExtResource("26_t22ms")
+
+[node name="ItemPiece4" parent="Repairing/BrokenItem" instance=ExtResource("18_fdw42")]
+fill = ExtResource("27_joowf")
+outline = ExtResource("28_rb0ys")
+highlighted_fill = ExtResource("29_khod8")
+
+[node name="ItemPiece5" parent="Repairing/BrokenItem" instance=ExtResource("18_fdw42")]
+fill = ExtResource("30_lipsv")
+outline = ExtResource("31_vyjn4")
+highlighted_fill = ExtResource("32_05h8h")
+
+[node name="ItemPiece6" parent="Repairing/BrokenItem" instance=ExtResource("18_fdw42")]
+fill = ExtResource("33_cjisc")
+outline = ExtResource("34_nxawq")
+highlighted_fill = ExtResource("35_ftm4u")
