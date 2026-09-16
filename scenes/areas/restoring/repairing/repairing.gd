@@ -5,11 +5,14 @@ signal finished_restoring
 
 enum Mode { SELECT, MOVE, ROTATE }
 
-const ROTATION_NB = 24
+const ROTATION_NB: int = 24
 
 @export var navigate_sfx: AudioStream
 @export var enter_sfx: AudioStream
 @export var sfx_player: SFXPlayer
+
+@export var speed: float = 0.5
+@export var piece_hitbox: Vector2 = Vector2(16.0, 16.0)
 
 var user_interactions_allowed: bool
 var pieces_initial_positions: Array
@@ -18,6 +21,7 @@ var mode: Mode = Mode.SELECT
 var selected_index: int = 0
 
 @onready var pieces: Array = $BrokenItem.get_children()
+@onready var bounds: Rect2 = Rect2(piece_hitbox / 2.0, get_viewport_rect().size - piece_hitbox)
 
 func _ready() -> void:
 	pieces_initial_positions = pieces.map(func(piece): return piece.position)
@@ -45,7 +49,7 @@ func _update_selected(index: int):
 		pieces[i].highlight(mode == Mode.SELECT and i == selected_index)
 
 func _unhandled_input(event: InputEvent) -> void:
-	if not user_interactions_allowed or mode != Mode.SELECT:
+	if not user_interactions_allowed:
 		return
 	if event.is_action_pressed("ui_accept"):
 		_change_mode()
@@ -54,6 +58,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		_set_mode(Mode.SELECT)
 	elif mode == Mode.SELECT:
 		_menu_navigate(event)
+	elif mode == Mode.ROTATE:
+		_rotate(event)
 
 func _menu_navigate(event: InputEvent) -> void:
 	var direction: Vector2 = Vector2.ZERO
@@ -88,3 +94,14 @@ func _change_mode() -> void:
 func _set_mode(new_mode: Mode) -> void:
 	mode = new_mode
 	_update_selected(selected_index)
+
+func _physics_process(_delta: float) -> void:
+	if user_interactions_allowed and mode == Mode.MOVE:
+		Player.move(pieces[selected_index], speed, bounds)
+
+func _rotate(event: InputEvent) -> void:
+	var rotation_tick = 2 * PI / ROTATION_NB
+	if event.is_action_pressed("right"):
+		pieces[selected_index].rotation += rotation_tick
+	elif event.is_action_pressed("left"):
+		pieces[selected_index].rotation -= rotation_tick
