@@ -15,7 +15,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	fish_pole.grab_focus()
+	_focus_button_you_originate_from()
 
 	for button in [fish_pole, door, workshop]:
 		button.focus_entered.connect(sfx_player.play_sfx.bind(navigate_sfx))
@@ -25,3 +25,10 @@ func _ready() -> void:
 func _on_area_selected(area: AreaManager.Area) -> void:
 	await sfx_player.finished
 	AreaManager.switch_area(area)
+
+func _focus_button_you_originate_from():
+	for button in button_area_binding:
+		if button_area_binding[button] == AreaManager.origin_area:
+			button.grab_focus()
+			return
+	fish_pole.grab_focus() #default
