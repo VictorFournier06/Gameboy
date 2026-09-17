@@ -6,12 +6,15 @@ signal finished_restoring
 enum Mode { SELECT, MOVE, ROTATE }
 
 const ROTATION_NB: int = 24
+const POSITION_TOLERANCE: int = 2 #in px
+const ROTATION_TOLERANCE: float = 0.01
 
 @export var navigate_sfx: AudioStream
 @export var enter_sfx: AudioStream
 @export var sfx_player: SFXPlayer
 
-@export var speed: float = 0.5
+@export var speed: float = 0.25
+@export var rotation_speed: float = 0.1 #seconds between each tick
 @export var piece_hitbox: Vector2 = Vector2(16.0, 16.0)
 
 var user_interactions_allowed: bool
@@ -19,14 +22,27 @@ var pieces_initial_positions: Array
 
 var mode: Mode = Mode.SELECT
 var selected_index: int = 0
+var rotation_cooldown: float = 0.0
 
+var finished_texture: Texture2D
+var final_shift: Vector2
+
+@onready var broken_item: Node2D = $BrokenItem
 @onready var pieces: Array = $BrokenItem.get_children()
+@onready var finished_image: Sprite2D = $FinishedImage
 @onready var bounds: Rect2 = Rect2(piece_hitbox / 2.0, get_viewport_rect().size - piece_hitbox)
 
 func _ready() -> void:
 	pieces_initial_positions = pieces.map(func(piece): return piece.position)
 
 func setup(item: Item) -> void:
+	finished_image.hide()
+	for piece in pieces:
+		piece.show()
+
+	finished_texture = item.type.clean_texture
+	finished_image.texture = finished_texture
+
 	var shuffled_positions: Array = pieces_initial_positions.duplicate()
 	shuffled_positions.shuffle()
 
@@ -38,10 +54,21 @@ func setup(item: Item) -> void:
 	_update_selected(0)
 
 func complete() -> void:
-	pass
+	for piece in pieces:
+		piece.hide()
+	finished_image.position = broken_item.position + final_shift
+	finished_image.show()
 
 func skip() -> void:
-	pass
+	if not user_interactions_allowed:
+		return
+	user_interactions_allowed = false
+	var center := (get_viewport_rect().size - finished_texture.get_size()) / 2.0
+	final_shift = center - broken_item.position
+	finished_restoring.emit()
+
+func image_to_make_shine() -> Node2D:
+	return finished_image
 
 func _update_selected(index: int):
 	selected_index = index
@@ -58,8 +85,6 @@ func _unhandled_input(event: InputEvent) -> void:
 		_set_mode(Mode.SELECT)
 	elif mode == Mode.SELECT:
 		_menu_navigate(event)
-	elif mode == Mode.ROTATE:
-		_rotate(event)
 
 func _menu_navigate(event: InputEvent) -> void:
 	var direction: Vector2 = Vector2.ZERO
@@ -95,13 +120,29 @@ func _set_mode(new_mode: Mode) -> void:
 	mode = new_mode
 	_update_selected(selected_index)
 
-func _physics_process(_delta: float) -> void:
-	if user_interactions_allowed and mode == Mode.MOVE:
+func _physics_process(delta: float) -> void:
+	if not user_interactions_allowed:
+		return
+	if mode == Mode.MOVE:
 		Player.move(pieces[selected_index], speed, bounds)
+		_check_finished()
+	elif mode == Mode.ROTATE:
+		rotation_cooldown -= delta
+		var clockwiseness: float = Input.get_axis("left", "right")
+		if clockwiseness != 0.0 and rotation_cooldown <= 0.0:
+			pieces[selected_index].rotation += sign(clockwiseness) * ( 2 * PI / ROTATION_NB)
+			rotation_cooldown = rotation_speed
+			_check_finished()
+		elif clockwiseness == 0.0:
+			rotation_cooldown = 0.0 #instant move
 
-func _rotate(event: InputEvent) -> void:
-	var rotation_tick = 2 * PI / ROTATION_NB
-	if event.is_action_pressed("right"):
-		pieces[selected_index].rotation += rotation_tick
-	elif event.is_action_pressed("left"):
-		pieces[selected_index].rotation -= rotation_tick
+func _check_finished() -> void:
+	var global_shift: Vector2 = pieces[0].position - pieces[0].centroid
+	for piece in pieces:
+		if (piece.position - piece.centroid).distance_to(global_shift) > POSITION_TOLERANCE:
+			return
+		if abs(wrap(piece.rotation, -PI, PI)) > ROTATION_TOLERANCE:
+			return
+	final_shift = global_shift
+	user_interactions_allowed = false
+	finished_restoring.emit()

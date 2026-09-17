@@ -59,7 +59,7 @@ func _finished_restoring() -> void:
 
 func _shine_animation() -> void:
 	await get_tree().create_timer(finished_restoring_pause).timeout
-	var instance_material: ShaderMaterial = minigame_instance.material
+	var instance_material: ShaderMaterial = minigame_instance.image_to_make_shine().material
 	instance_material.set_shader_parameter("shine_color", shine_color)
 	instance_material.set_shader_parameter("shine_width", shine_width)
 

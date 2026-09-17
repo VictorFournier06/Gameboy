@@ -95,3 +95,6 @@ func skip() -> void:
 		return
 	cleanness_sum = current_item_surface
 	_check_cleanness()
+
+func image_to_make_shine() -> Node2D:
+	return self
