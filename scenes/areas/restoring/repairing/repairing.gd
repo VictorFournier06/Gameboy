@@ -110,11 +110,10 @@ func _closest_piece_in_direction(direction: Vector2) -> int:
 	return argmin
 
 func _change_mode() -> void:
-	_set_mode(
-		Mode.MOVE if mode == Mode.SELECT
-		else (Mode.ROTATE if mode == Mode.MOVE
-		else Mode.MOVE)
-	)
+	match mode:
+		Mode.SELECT: _set_mode(Mode.MOVE)
+		Mode.MOVE: _set_mode(Mode.ROTATE)
+		Mode.ROTATE: _set_mode(Mode.MOVE)
 
 func _set_mode(new_mode: Mode) -> void:
 	mode = new_mode
@@ -130,7 +129,7 @@ func _physics_process(delta: float) -> void:
 		rotation_cooldown -= delta
 		var clockwiseness: float = Input.get_axis("left", "right")
 		if clockwiseness != 0.0 and rotation_cooldown <= 0.0:
-			pieces[selected_index].rotation += sign(clockwiseness) * ( 2 * PI / ROTATION_NB)
+			pieces[selected_index].rotation += clockwiseness * ( 2 * PI / ROTATION_NB)
 			rotation_cooldown = rotation_speed
 			_check_finished()
 		elif clockwiseness == 0.0:
@@ -141,7 +140,7 @@ func _check_finished() -> void:
 	for piece in pieces:
 		if (piece.position - piece.centroid).distance_to(global_shift) > POSITION_TOLERANCE:
 			return
-		if abs(wrap(piece.rotation, -PI, PI)) > ROTATION_TOLERANCE:
+		if absf(wrapf(piece.rotation, -PI, PI)) > ROTATION_TOLERANCE:
 			return
 	final_shift = global_shift
 	user_interactions_allowed = false
