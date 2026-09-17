@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cht430hyjs03e"
-path="res://.godot/imported/boot.png-50d96bebe7bf6d2d7e2a6e4940ae2fa3.ctex"
+uid="uid://ddf5ddq2gtuck"
+path="res://.godot/imported/Map_Clean.png-c226c0648ec5231fe4b1bb220d620093.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/visual/areas/Fishing_area_blue_palet/boot.png"
-dest_files=["res://.godot/imported/boot.png-50d96bebe7bf6d2d7e2a6e4940ae2fa3.ctex"]
+source_file="res://assets/visual/areas/Worshop_area_orange_palet/Map_Clean.png"
+dest_files=["res://.godot/imported/Map_Clean.png-c226c0648ec5231fe4b1bb220d620093.ctex"]
 
 [params]
 

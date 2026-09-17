@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cfuh8frsuvajm"
-path="res://.godot/imported/hub_background.png-35adb394fd49133243197d79be5b0501.ctex"
+path="res://.godot/imported/hub_background.png-d76c1e04b058c9fda94d48cd9b50b246.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/visual/areas/hub_area_orange_palet/hub_background.png"
-dest_files=["res://.godot/imported/hub_background.png-35adb394fd49133243197d79be5b0501.ctex"]
+source_file="res://assets/visual/areas/Hub_area_orange_palet/hub_background.png"
+dest_files=["res://.godot/imported/hub_background.png-d76c1e04b058c9fda94d48cd9b50b246.ctex"]
 
 [params]
 
