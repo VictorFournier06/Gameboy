@@ -3,13 +3,14 @@ extends Node2D
 @export var no_object_dialog: DialogData
 
 @export var shine_animation_duration = 2.0
-@export var shine_color = Color("#f3edd1") #white from palette
 @export var shine_width = 0.1
 @export var finished_restoring_pause = 1.0
 
 @export var finished_restoring_sfx: AudioStream
 @export var shiney_sfx: AudioStream
 @export var pocketing_sfx: AudioStream
+
+@export var palette: ColorPalette
 
 var current_item: Item
 var minigame_instance  #untyped, cleaning or repairing
@@ -37,7 +38,7 @@ func _reset() -> void:
 	if current_item == null:
 		if minigame_instance:
 			minigame_instance.hide()
-		dialog_component.play_dialog(no_object_dialog)
+		dialog_component.play_dialog(no_object_dialog, palette)
 		return
 
 	minigame_instance = instance_deterioration_matching[current_item.deterioration]
@@ -60,7 +61,7 @@ func _finished_restoring() -> void:
 func _shine_animation() -> void:
 	await get_tree().create_timer(finished_restoring_pause).timeout
 	var instance_material: ShaderMaterial = minigame_instance.image_to_make_shine().material
-	instance_material.set_shader_parameter("shine_color", shine_color)
+	instance_material.set_shader_parameter("shine_color", palette.colors[0])
 	instance_material.set_shader_parameter("shine_width", shine_width)
 
 	var tween: Tween = create_tween()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://d3dr0gh263yak"]
+[gd_scene load_steps=27 format=3 uid="uid://d3dr0gh263yak"]
 
 [ext_resource type="Texture2D" uid="uid://bk13jo1hr7xjy" path="res://assets/visual/areas/worshop_area_orange_palet/workshop_background.png" id="1_2pk82"]
 [ext_resource type="Script" uid="uid://bcpdkyw3i8j8b" path="res://scenes/areas/restoring/restoring.gd" id="1_yhtj7"]
@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://caoe21prgyul3" path="res://assets/audio/sfx/finished_cleaning.wav" id="4_qak5x"]
 [ext_resource type="AudioStream" uid="uid://cq67e0fivaji7" path="res://assets/audio/sfx/shiney.wav" id="5_wqt7y"]
 [ext_resource type="Script" uid="uid://217ekmdqdj3j" path="res://scenes/areas/restoring/cleaning/scratch_sound.gd" id="6_4jl2u"]
+[ext_resource type="ColorPalette" uid="uid://dkgc7iy3lo56a" path="res://resources/palettes/workshop_palette.tres" id="6_5cbc7"]
 [ext_resource type="AudioStream" uid="uid://edwk5flnwq2j" path="res://assets/audio/sfx/pocketing.wav" id="6_awq15"]
 [ext_resource type="AudioStream" uid="uid://b6ovmg0b0k6xl" path="res://assets/audio/sfx/scratch1.wav" id="7_0331c"]
 [ext_resource type="Script" uid="uid://cbg2drqlxjv78" path="res://scenes/game/sfx_player.gd" id="7_wqt7y"]
@@ -46,6 +47,7 @@ no_object_dialog = ExtResource("2_uc1vo")
 finished_restoring_sfx = ExtResource("4_qak5x")
 shiney_sfx = ExtResource("5_wqt7y")
 pocketing_sfx = ExtResource("6_awq15")
+palette = ExtResource("6_5cbc7")
 
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("1_2pk82")
@@ -89,8 +91,6 @@ script = ExtResource("6_4jl2u")
 scratch_sounds = Array[AudioStream]([ExtResource("7_0331c"), ExtResource("8_llqx5"), ExtResource("9_jpvhe")])
 
 [node name="DialogComponent" parent="." instance=ExtResource("15_no1w5")]
-black_color = Color(0.22352941, 0.14509805, 0.13725491, 1)
-white_color = Color(0.9529412, 0.92941177, 0.81960785, 1)
 
 [node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
 bus = &"SFX"

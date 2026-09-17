@@ -7,10 +7,6 @@ signal dialog_finished
 @export var dialog_sfx: AudioStream
 @export var char_per_sfx: int = 3
 
-#those depend on the palette
-@export var black_color: Color
-@export var white_color: Color
-
 var current_line_nb: int
 var reveal_tween: Tween
 var dialog: DialogData
@@ -23,9 +19,6 @@ var char_nb_before_last_sfx: int = 0
 @onready var arrow: Sprite2D = $DialogBox/Arrow
 
 func _ready() -> void:
-	label.add_theme_color_override("default_color", black_color)
-	dialog_box.material.set_shader_parameter("black_color", black_color)
-	dialog_box.material.set_shader_parameter("white_color", white_color)
 	dialog_finished.connect(hide)
 	arrow_bobbing()
 
@@ -36,7 +29,11 @@ func arrow_bobbing() -> void:
 	bobbing_tween.tween_property(arrow, "position:y", idle_y, 0.2)
 	bobbing_tween.tween_interval(1.0)
 
-func play_dialog(input_dialog: DialogData) -> void:
+func play_dialog(input_dialog: DialogData, palette: ColorPalette) -> void:
+	label.add_theme_color_override("default_color", palette.colors[3])
+	dialog_box.material.set_shader_parameter("black_color", palette.colors[3])
+	dialog_box.material.set_shader_parameter("white_color", palette.colors[0])
+
 	show()
 	dialog = input_dialog
 	current_line_nb = 0

@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var owners: Array[OwnerData]
+@export var palette: ColorPalette
 
 @onready var background: Sprite2D = $Background
 @onready var character: Sprite2D = $Character
@@ -12,4 +13,4 @@ func _ready() -> void:
 func _display_owner(input_owner: OwnerData, dialog_nb: int) -> void:
 	background.texture = input_owner.background
 	character.texture = input_owner.character
-	dialog_component.play_dialog(input_owner.dialogs[dialog_nb])
+	dialog_component.play_dialog(input_owner.dialogs[dialog_nb], palette)
