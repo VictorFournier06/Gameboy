@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="ItemType" load_steps=5 format=3 uid="uid://dqnv8p5d2ij0h"]
 
 [ext_resource type="Script" uid="uid://bufyg5eq08p5" path="res://resources/classes/piece_data.gd" id="1_fpx3g"]
-[ext_resource type="Texture2D" uid="uid://1m7y7sv5pytw" path="res://assets/visual/areas/Worshop_area_orange_palet/Ring_Clean.png" id="2_fqh4a"]
+[ext_resource type="Texture2D" uid="uid://1m7y7sv5pytw" path="res://assets/visual/areas/worshop_area_orange_palet/ring_clean.png" id="2_fqh4a"]
 [ext_resource type="Script" uid="uid://bfkgwhugqn2wy" path="res://resources/classes/item_type.gd" id="2_o1lpu"]
-[ext_resource type="Texture2D" uid="uid://c186mypbpmcyr" path="res://assets/visual/areas/Worshop_area_orange_palet/Ring_Dirty.png" id="3_38dfi"]
+[ext_resource type="Texture2D" uid="uid://c186mypbpmcyr" path="res://assets/visual/areas/worshop_area_orange_palet/ring_dirty.png" id="3_38dfi"]
 
 [resource]
 script = ExtResource("2_o1lpu")
