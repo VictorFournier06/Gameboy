@@ -3,6 +3,7 @@ extends Node2D
 @export var owners: Array[OwnerData]
 @export var palette: ColorPalette
 @export var start_icon: Texture2D
+@export var door_sfx: AudioStream
 
 @onready var background: Sprite2D = $Interior/Background
 @onready var character: Sprite2D = $Interior/Character
@@ -11,6 +12,7 @@ extends Node2D
 @onready var interior: Node2D = $Interior
 @onready var player: CharacterBody2D = $Overworld/OverworldPlayer
 @onready var camera: Camera2D = $Overworld/OverworldPlayer/Camera2D
+@onready var sfx_player: SFXPlayer = $SFXPlayer
 
 func _ready() -> void:
 	for door in $Overworld/Doors.get_children():
@@ -19,6 +21,9 @@ func _ready() -> void:
 func _enter_door(element: CharacterBody2D, door: Area2D) -> void:
 	if element != player:
 		return
+	sfx_player.play_sfx(door_sfx)
+	player.can_move = false
+	await sfx_player.finished
 	if not door.house_owner:
 		AreaManager.switch_area(AreaManager.Area.HUB)
 	else:

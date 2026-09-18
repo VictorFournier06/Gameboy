@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://b3b0lcc3bcabw"]
+[gd_scene load_steps=22 format=3 uid="uid://b3b0lcc3bcabw"]
 
 [ext_resource type="Script" uid="uid://diha7jpnbh076" path="res://scenes/areas/locating_owners/locating_owners.gd" id="1_fo5li"]
 [ext_resource type="Script" uid="uid://dxnh3kgqd0k5h" path="res://resources/classes/owner_data.gd" id="2_3lkyt"]
@@ -11,11 +11,13 @@
 [ext_resource type="Resource" uid="uid://7a3ysg5545xq" path="res://resources/owners/goose.tres" id="6_jexa5"]
 [ext_resource type="ColorPalette" uid="uid://dj5w272b5ro6j" path="res://resources/palettes/green_orange_palette.tres" id="7_cm22u"]
 [ext_resource type="Texture2D" uid="uid://8612gd71baoe" path="res://assets/visual/components/hint_menu/start.png" id="8_jexa5"]
+[ext_resource type="AudioStream" uid="uid://c7e48yhbev1ku" path="res://assets/audio/sfx/door.wav" id="9_h4gtx"]
 [ext_resource type="Texture2D" uid="uid://bsewxyog667ye" path="res://assets/visual/areas/hub_area_orange_palet/doggo.png" id="11_tl0t6"]
 [ext_resource type="Texture2D" uid="uid://cy2sto2u5c7mh" path="res://untracked/town/town_3d.png" id="12_om14i"]
 [ext_resource type="Script" uid="uid://l4xn28667jr1" path="res://scenes/areas/locating_owners/overworld_player.gd" id="12_v2a5a"]
 [ext_resource type="Texture2D" uid="uid://thycxjadhha7" path="res://untracked/town/town_ground.png" id="13_i5nml"]
 [ext_resource type="Script" uid="uid://b70fg5of616mx" path="res://scenes/areas/locating_owners/door.gd" id="14_i5nml"]
+[ext_resource type="Script" uid="uid://cbg2drqlxjv78" path="res://scenes/game/audio/sfx_player.gd" id="17_jtsqa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tl0t6"]
 size = Vector2(14, 14)
@@ -31,6 +33,7 @@ script = ExtResource("1_fo5li")
 owners = Array[ExtResource("2_3lkyt")]([ExtResource("3_jj7qe"), ExtResource("4_6udhy"), ExtResource("5_cm22u"), ExtResource("6_jexa5")])
 palette = ExtResource("7_cm22u")
 start_icon = ExtResource("8_jexa5")
+door_sfx = ExtResource("9_h4gtx")
 
 [node name="Overworld" type="Node2D" parent="."]
 
@@ -137,3 +140,7 @@ position = Vector2(80, 72)
 texture = ExtResource("4_3lkyt")
 
 [node name="DialogComponent" parent="Interior" instance=ExtResource("5_slc62")]
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
+script = ExtResource("17_jtsqa")
+metadata/_custom_type_script = "uid://cbg2drqlxjv78"
