@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DialogData" load_steps=2 format=3 uid="uid://djrqjdr8vd8ck"]
+
+[ext_resource type="Script" uid="uid://b7lxtrcfc1iu5" path="res://resources/classes/dialog_data.gd" id="1_1c8ug"]
+
+[resource]
+script = ExtResource("1_1c8ug")
+lines = Array[String](["Thank you so much!
+
+
+", "I was so sad to have lost it...", "It means so much to me!", "We're looking forward to seeing you", " at our party next week!"])
+metadata/_custom_type_script = "uid://b7lxtrcfc1iu5"

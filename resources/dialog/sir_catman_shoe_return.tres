@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DialogData" load_steps=2 format=3 uid="uid://hdj5a3yfgekc"]
+
+[ext_resource type="Script" uid="uid://b7lxtrcfc1iu5" path="res://resources/classes/dialog_data.gd" id="1_lufbg"]
+
+[resource]
+script = ExtResource("1_lufbg")
+lines = Array[String](["My good Sir,
+
+
+", "What would happen of me ", "if you were not here?", "When do you get off work?", "Do you want to go for a walk?"])
+metadata/_custom_type_script = "uid://b7lxtrcfc1iu5"

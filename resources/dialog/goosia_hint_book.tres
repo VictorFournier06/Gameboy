@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DialogData" load_steps=2 format=3 uid="uid://cjfdpq0arqrfn"]
+
+[ext_resource type="Script" uid="uid://b7lxtrcfc1iu5" path="res://resources/classes/dialog_data.gd" id="1_wo7pp"]
+
+[resource]
+script = ExtResource("1_wo7pp")
+lines = Array[String](["There's no denying it  ", "we each have very different hobbies!", "Personnaly, I like scrolling ", "through social media", "while our favourite Catman is more of a", "fan of print books. What a smart person!!"])
+metadata/_custom_type_script = "uid://b7lxtrcfc1iu5"

@@ -1,12 +1,17 @@
-[gd_resource type="Resource" script_class="OwnerData" load_steps=5 format=3 uid="uid://os0i3h1xxsog"]
+[gd_resource type="Resource" script_class="OwnerData" load_steps=9 format=3 uid="uid://os0i3h1xxsog"]
 
 [ext_resource type="Texture2D" uid="uid://bmiuem7hb7pei" path="res://assets/visual/areas/locating_owners_green_orange_palet/back_cat.png" id="1_5dtiy"]
 [ext_resource type="Script" uid="uid://b7lxtrcfc1iu5" path="res://resources/classes/dialog_data.gd" id="1_jq6c8"]
 [ext_resource type="Script" uid="uid://dxnh3kgqd0k5h" path="res://resources/classes/owner_data.gd" id="2_5c2cx"]
 [ext_resource type="Texture2D" uid="uid://btjy5b15hammc" path="res://assets/visual/areas/locating_owners_green_orange_palet/cat.png" id="2_jv7w6"]
+[ext_resource type="Resource" uid="uid://cx5hwgm3k2qd7" path="res://resources/dialog/sir_catman_book_return.tres" id="4_jv7w6"]
+[ext_resource type="Resource" uid="uid://bpr01kfnwlers" path="res://resources/dialog/sir_catman_key_hint.tres" id="5_wybou"]
+[ext_resource type="Resource" uid="uid://hdj5a3yfgekc" path="res://resources/dialog/sir_catman_shoe_return.tres" id="6_ryix1"]
+[ext_resource type="Resource" uid="uid://xcbjf20wxper" path="res://resources/dialog/sir_catman_hint_amphora.tres" id="7_y6juh"]
 
 [resource]
 script = ExtResource("2_5c2cx")
 character = ExtResource("2_jv7w6")
 background = ExtResource("1_5dtiy")
+dialogs = Array[ExtResource("1_jq6c8")]([ExtResource("4_jv7w6"), ExtResource("5_wybou"), ExtResource("6_ryix1"), ExtResource("7_y6juh")])
 metadata/_custom_type_script = "uid://dxnh3kgqd0k5h"

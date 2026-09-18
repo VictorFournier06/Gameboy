@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="DialogData" load_steps=2 format=3 uid="uid://t431e3m608au"]
+
+[ext_resource type="Script" uid="uid://b7lxtrcfc1iu5" path="res://resources/classes/dialog_data.gd" id="1_wrmtj"]
+
+[resource]
+script = ExtResource("1_wrmtj")
+lines = Array[String](["Hey Doggy!
+
+", "My girlfriend and I are", " throwing a little party next week!", "Will you be able to make it?
+", "We're celebrating our 5-year anniversary!
+", "It was last week.
+", "We went to a great restaurant, 
+ ", "and my girlfriend looked so pretty!", "She even wore the necklace", "I gave her for our 1-year anniversary!"])
+metadata/_custom_type_script = "uid://b7lxtrcfc1iu5"

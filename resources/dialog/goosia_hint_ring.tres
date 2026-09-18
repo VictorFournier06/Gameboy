@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DialogData" load_steps=2 format=3 uid="uid://dpuyv7bdnot0y"]
+
+[ext_resource type="Script" uid="uid://b7lxtrcfc1iu5" path="res://resources/classes/dialog_data.gd" id="1_wia7b"]
+
+[resource]
+script = ExtResource("1_wia7b")
+lines = Array[String](["Hey my friend!
+
+
+", "Have you seen Froggo and Owly?", "They're so cute together!", "Imo, Froggo's gonna propose soon!!!"])
+metadata/_custom_type_script = "uid://b7lxtrcfc1iu5"

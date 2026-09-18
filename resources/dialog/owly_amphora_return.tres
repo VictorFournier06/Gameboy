@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DialogData" load_steps=2 format=3 uid="uid://mpbv7b8ho4i4"]
+
+[ext_resource type="Script" uid="uid://b7lxtrcfc1iu5" path="res://resources/classes/dialog_data.gd" id="1_0183g"]
+
+[resource]
+script = ExtResource("1_0183g")
+lines = Array[String](["You are so sweet, Doggy!  ", "I bought this amphora in Greece.", "The trip was so much fun, and the view", " of the Parthenon was unforgettable!"])
+metadata/_custom_type_script = "uid://b7lxtrcfc1iu5"

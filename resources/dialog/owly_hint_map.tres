@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="DialogData" load_steps=2 format=3 uid="uid://twmayfojnoxc"]
+
+[ext_resource type="Script" uid="uid://b7lxtrcfc1iu5" path="res://resources/classes/dialog_data.gd" id="1_tta6q"]
+
+[resource]
+script = ExtResource("1_tta6q")
+lines = Array[String](["Hello Doggy!
+
+
+
+", "We're so lucky we don't have ", "to migrate every year!", "That would wear me out so much!", "Plus, I'd get lost so easily...", "I'd really need a GPS or a map..."])
+metadata/_custom_type_script = "uid://b7lxtrcfc1iu5"

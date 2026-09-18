@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DialogData" load_steps=2 format=3 uid="uid://djlp83t7dtrir"]
+
+[ext_resource type="Script" uid="uid://b7lxtrcfc1iu5" path="res://resources/classes/dialog_data.gd" id="1_0dfwh"]
+
+[resource]
+script = ExtResource("1_0dfwh")
+lines = Array[String](["Oh great !
+
+
+", "I'll be able to get back on social media!", "By the way, can I have your number?", "We could go on a date!"])
+metadata/_custom_type_script = "uid://b7lxtrcfc1iu5"

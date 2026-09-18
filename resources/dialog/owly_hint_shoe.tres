@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogData" load_steps=2 format=3 uid="uid://dvfxlf4c63vx3"]
+
+[ext_resource type="Script" uid="uid://b7lxtrcfc1iu5" path="res://resources/classes/dialog_data.gd" id="1_5aada"]
+
+[resource]
+script = ExtResource("1_5aada")
+lines = Array[String](["Heyo!!
+
+ ", "I saw you last weekend at the mall", "that jacket you tried on looked great on you!", "I also saw Catman at the shoe store,", "by the way he really has great taste!"])
+metadata/_custom_type_script = "uid://b7lxtrcfc1iu5"

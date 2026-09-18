@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DialogData" load_steps=2 format=3 uid="uid://cx5hwgm3k2qd7"]
+
+[ext_resource type="Script" uid="uid://b7lxtrcfc1iu5" path="res://resources/classes/dialog_data.gd" id="1_k7mhv"]
+
+[resource]
+script = ExtResource("1_k7mhv")
+lines = Array[String](["Thanks a lot Comrade!", "I was wondering where I had dropped it!", "That is a wonderful story about ", "a couple of lovebirds!", "It reminds me so much about ", "our friends Froggo and Owly!"])
+metadata/_custom_type_script = "uid://b7lxtrcfc1iu5"
