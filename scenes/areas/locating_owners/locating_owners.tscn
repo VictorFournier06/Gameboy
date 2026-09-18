@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b3b0lcc3bcabw"]
+[gd_scene load_steps=20 format=3 uid="uid://b3b0lcc3bcabw"]
 
 [ext_resource type="Script" uid="uid://diha7jpnbh076" path="res://scenes/areas/locating_owners/locating_owners.gd" id="1_fo5li"]
 [ext_resource type="Script" uid="uid://dxnh3kgqd0k5h" path="res://resources/classes/owner_data.gd" id="2_3lkyt"]
@@ -15,17 +15,22 @@
 [ext_resource type="Texture2D" uid="uid://cy2sto2u5c7mh" path="res://untracked/town/town_3d.png" id="12_om14i"]
 [ext_resource type="Script" uid="uid://l4xn28667jr1" path="res://scenes/areas/locating_owners/overworld_player.gd" id="12_v2a5a"]
 [ext_resource type="Texture2D" uid="uid://thycxjadhha7" path="res://untracked/town/town_ground.png" id="13_i5nml"]
+[ext_resource type="Script" uid="uid://b70fg5of616mx" path="res://scenes/areas/locating_owners/door.gd" id="14_i5nml"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tl0t6"]
 size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i5nml"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jtsqa"]
+size = Vector2(32, 16)
 
 [node name="LocatingOwners" type="Node2D"]
 script = ExtResource("1_fo5li")
 owners = Array[ExtResource("2_3lkyt")]([ExtResource("3_jj7qe"), ExtResource("4_6udhy"), ExtResource("5_cm22u"), ExtResource("6_jexa5")])
 palette = ExtResource("7_cm22u")
 start_icon = ExtResource("8_jexa5")
-
-[node name="DialogComponent" parent="." instance=ExtResource("5_slc62")]
 
 [node name="Overworld" type="Node2D" parent="."]
 
@@ -51,7 +56,7 @@ polygon = PackedVector2Array(288, 272, 304, 272, 304, 256, 320, 256, 320, 272, 3
 
 [node name="OverworldPlayer" type="CharacterBody2D" parent="Overworld"]
 z_index = 1
-position = Vector2(216, 24)
+position = Vector2(216, 40)
 script = ExtResource("12_v2a5a")
 step_duration = 0.5
 
@@ -79,6 +84,47 @@ centered = false
 texture = ExtResource("13_i5nml")
 centered = false
 
+[node name="Doors" type="Node2D" parent="Overworld"]
+
+[node name="CatDoor" type="Area2D" parent="Overworld/Doors"]
+script = ExtResource("14_i5nml")
+house_owner = ExtResource("3_jj7qe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Overworld/Doors/CatDoor"]
+position = Vector2(320, 119)
+shape = SubResource("RectangleShape2D_i5nml")
+
+[node name="FrogDoor" type="Area2D" parent="Overworld/Doors"]
+script = ExtResource("14_i5nml")
+house_owner = ExtResource("5_cm22u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Overworld/Doors/FrogDoor"]
+position = Vector2(128, 166)
+shape = SubResource("RectangleShape2D_i5nml")
+
+[node name="OwlDoor" type="Area2D" parent="Overworld/Doors"]
+script = ExtResource("14_i5nml")
+house_owner = ExtResource("4_6udhy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Overworld/Doors/OwlDoor"]
+position = Vector2(104, 343)
+shape = SubResource("RectangleShape2D_i5nml")
+
+[node name="GooseDoor" type="Area2D" parent="Overworld/Doors"]
+script = ExtResource("14_i5nml")
+house_owner = ExtResource("6_jexa5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Overworld/Doors/GooseDoor"]
+position = Vector2(312, 263)
+shape = SubResource("RectangleShape2D_i5nml")
+
+[node name="HubDoor" type="Area2D" parent="Overworld/Doors"]
+script = ExtResource("14_i5nml")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Overworld/Doors/HubDoor"]
+position = Vector2(224, 8)
+shape = SubResource("RectangleShape2D_jtsqa")
+
 [node name="Interior" type="Node2D" parent="."]
 visible = false
 
@@ -89,3 +135,5 @@ texture = ExtResource("3_slc62")
 [node name="Character" type="Sprite2D" parent="Interior"]
 position = Vector2(80, 72)
 texture = ExtResource("4_3lkyt")
+
+[node name="DialogComponent" parent="Interior" instance=ExtResource("5_slc62")]
