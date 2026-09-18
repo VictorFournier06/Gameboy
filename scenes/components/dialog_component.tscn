@@ -5,7 +5,7 @@
 [ext_resource type="Shader" uid="uid://fb8ksc3ncruf" path="res://scenes/components/dialog_box.gdshader" id="2_f110v"]
 [ext_resource type="AudioStream" uid="uid://bapsu7m6lac2c" path="res://assets/audio/sfx/dialog.wav" id="2_gq1lo"]
 [ext_resource type="FontFile" uid="uid://bjkhi8or8orcm" path="res://assets/font/m5x7.ttf" id="3_f110v"]
-[ext_resource type="Script" uid="uid://cbg2drqlxjv78" path="res://scenes/game/sfx_player.gd" id="5_f110v"]
+[ext_resource type="Script" uid="uid://cbg2drqlxjv78" path="res://scenes/game/audio/sfx_player.gd" id="5_f110v"]
 [ext_resource type="Texture2D" uid="uid://dmo0boqdfv325" path="res://assets/visual/components/dialog/dialog_arrow.png" id="5_wdw1g"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jj7qe"]

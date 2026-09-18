@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cgqxpomlmkyhj"]
+
+[ext_resource type="Script" uid="uid://bxp68sdyi6kxh" path="res://scenes/game/hint_menu/hint_menu.gd" id="1_0aq2y"]
+[ext_resource type="ColorPalette" uid="uid://dkgc7iy3lo56a" path="res://resources/palettes/orange_palette.tres" id="2_2jppc"]
+[ext_resource type="Texture2D" uid="uid://d0m2uaxq1xbo" path="res://assets/visual/components/hint_menu/hint_menu.png" id="2_w0xpp"]
+
+[node name="HintMenu" type="CanvasLayer"]
+script = ExtResource("1_0aq2y")
+drawn_palette = ExtResource("2_2jppc")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(-12, 20)
+texture = ExtResource("2_w0xpp")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(-12, 20)

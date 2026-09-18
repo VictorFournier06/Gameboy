@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://d3dr0gh263yak"]
+[gd_scene load_steps=30 format=3 uid="uid://d3dr0gh263yak"]
 
 [ext_resource type="Texture2D" uid="uid://bk13jo1hr7xjy" path="res://assets/visual/areas/worshop_area_orange_palet/workshop_background.png" id="1_2pk82"]
 [ext_resource type="Script" uid="uid://bcpdkyw3i8j8b" path="res://scenes/areas/restoring/restoring.gd" id="1_yhtj7"]
@@ -10,10 +10,11 @@
 [ext_resource type="AudioStream" uid="uid://caoe21prgyul3" path="res://assets/audio/sfx/finished_cleaning.wav" id="4_qak5x"]
 [ext_resource type="AudioStream" uid="uid://cq67e0fivaji7" path="res://assets/audio/sfx/shiney.wav" id="5_wqt7y"]
 [ext_resource type="Script" uid="uid://217ekmdqdj3j" path="res://scenes/areas/restoring/cleaning/scratch_sound.gd" id="6_4jl2u"]
-[ext_resource type="ColorPalette" uid="uid://dkgc7iy3lo56a" path="res://resources/palettes/workshop_palette.tres" id="6_5cbc7"]
+[ext_resource type="ColorPalette" uid="uid://dkgc7iy3lo56a" path="res://resources/palettes/orange_palette.tres" id="6_5cbc7"]
 [ext_resource type="AudioStream" uid="uid://edwk5flnwq2j" path="res://assets/audio/sfx/pocketing.wav" id="6_awq15"]
 [ext_resource type="AudioStream" uid="uid://b6ovmg0b0k6xl" path="res://assets/audio/sfx/scratch1.wav" id="7_0331c"]
-[ext_resource type="Script" uid="uid://cbg2drqlxjv78" path="res://scenes/game/sfx_player.gd" id="7_wqt7y"]
+[ext_resource type="Texture2D" uid="uid://8612gd71baoe" path="res://assets/visual/components/hint_menu/start.png" id="7_edvo0"]
+[ext_resource type="Script" uid="uid://cbg2drqlxjv78" path="res://scenes/game/audio/sfx_player.gd" id="7_wqt7y"]
 [ext_resource type="AudioStream" uid="uid://dxl3uv8js3hp5" path="res://assets/audio/sfx/scratch2.wav" id="8_llqx5"]
 [ext_resource type="AudioStream" uid="uid://mgfy1opatm4g" path="res://assets/audio/sfx/scratch3.wav" id="9_jpvhe"]
 [ext_resource type="AudioStream" uid="uid://c7640uqo803q2" path="res://assets/audio/sfx/menu_move.wav" id="14_uc1vo"]
@@ -22,6 +23,8 @@
 [ext_resource type="Shader" uid="uid://bc24so8i3ccup" path="res://scenes/areas/restoring/repairing/finished_image.gdshader" id="17_fdw42"]
 [ext_resource type="Script" uid="uid://csmhuk0dbpcgs" path="res://scenes/areas/restoring/repairing/repairing.gd" id="17_sd7ac"]
 [ext_resource type="PackedScene" uid="uid://jix4vnbamqhu" path="res://scenes/areas/restoring/repairing/item_piece.tscn" id="18_fdw42"]
+[ext_resource type="Texture2D" uid="uid://cmnb1am1fd7ak" path="res://assets/visual/components/hint_menu/move_icon.png" id="21_pw6rm"]
+[ext_resource type="Texture2D" uid="uid://d0jhl2yv34l23" path="res://assets/visual/components/hint_menu/rotate_icon.png" id="22_edvo0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gerlc"]
 shader = ExtResource("2_ov8pg")
@@ -48,6 +51,7 @@ finished_restoring_sfx = ExtResource("4_qak5x")
 shiney_sfx = ExtResource("5_wqt7y")
 pocketing_sfx = ExtResource("6_awq15")
 palette = ExtResource("6_5cbc7")
+start_icon = ExtResource("7_edvo0")
 
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("1_2pk82")
@@ -102,6 +106,8 @@ script = ExtResource("17_sd7ac")
 navigate_sfx = ExtResource("14_uc1vo")
 enter_sfx = ExtResource("15_sd7ac")
 sfx_player = NodePath("../SFXPlayer")
+move_icon = ExtResource("21_pw6rm")
+rotate_icon = ExtResource("22_edvo0")
 
 [node name="BrokenItem" type="Node2D" parent="Repairing"]
 position = Vector2(76, 85)

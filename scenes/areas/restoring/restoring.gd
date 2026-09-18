@@ -11,6 +11,7 @@ extends Node2D
 @export var pocketing_sfx: AudioStream
 
 @export var palette: ColorPalette
+@export var start_icon: Texture2D
 
 var current_item: Item
 var minigame_instance  #untyped, cleaning or repairing
@@ -25,6 +26,7 @@ var minigame_instance  #untyped, cleaning or repairing
 }
 
 func _ready() -> void:
+	repairing.palette = palette
 	cleaning.finished_restoring.connect(_finished_restoring)
 	repairing.finished_restoring.connect(_finished_restoring)
 	_reset.call_deferred()
@@ -38,7 +40,9 @@ func _reset() -> void:
 	if current_item == null:
 		if minigame_instance:
 			minigame_instance.hide()
+		dialog_component.dialog_finished.connect(HintMenu.play.bind(start_icon, palette))
 		dialog_component.play_dialog(no_object_dialog, palette)
+		HintMenu.play(start_icon, palette)
 		return
 
 	minigame_instance = instance_deterioration_matching[current_item.deterioration]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b3b0lcc3bcabw"]
+[gd_scene load_steps=12 format=3 uid="uid://b3b0lcc3bcabw"]
 
 [ext_resource type="Script" uid="uid://diha7jpnbh076" path="res://scenes/areas/locating_owners/locating_owners.gd" id="1_fo5li"]
 [ext_resource type="Script" uid="uid://dxnh3kgqd0k5h" path="res://resources/classes/owner_data.gd" id="2_3lkyt"]
@@ -9,12 +9,14 @@
 [ext_resource type="Resource" uid="uid://e4ig7bsuynym" path="res://resources/owners/frog.tres" id="5_cm22u"]
 [ext_resource type="PackedScene" uid="uid://bel5jjp1bj06v" path="res://scenes/components/dialog_component.tscn" id="5_slc62"]
 [ext_resource type="Resource" uid="uid://7a3ysg5545xq" path="res://resources/owners/goose.tres" id="6_jexa5"]
-[ext_resource type="ColorPalette" uid="uid://dj5w272b5ro6j" path="res://resources/palettes/owners_palette.tres" id="7_cm22u"]
+[ext_resource type="ColorPalette" uid="uid://dj5w272b5ro6j" path="res://resources/palettes/green_orange_palette.tres" id="7_cm22u"]
+[ext_resource type="Texture2D" uid="uid://8612gd71baoe" path="res://assets/visual/components/hint_menu/start.png" id="8_jexa5"]
 
 [node name="LocatingOwners" type="Node2D"]
 script = ExtResource("1_fo5li")
 owners = Array[ExtResource("2_3lkyt")]([ExtResource("3_jj7qe"), ExtResource("4_6udhy"), ExtResource("5_cm22u"), ExtResource("6_jexa5")])
 palette = ExtResource("7_cm22u")
+start_icon = ExtResource("8_jexa5")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(80, 72)

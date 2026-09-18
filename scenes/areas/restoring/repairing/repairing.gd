@@ -17,6 +17,9 @@ const ROTATION_TOLERANCE: float = 0.01
 @export var rotation_speed: float = 0.1 #seconds between each tick
 @export var piece_hitbox: Vector2 = Vector2(16.0, 16.0)
 
+@export var move_icon: Texture2D
+@export var rotate_icon: Texture2D
+
 var user_interactions_allowed: bool
 var pieces_initial_positions: Array
 
@@ -26,6 +29,8 @@ var rotation_cooldown: float = 0.0
 
 var finished_texture: Texture2D
 var final_shift: Vector2
+
+var palette: ColorPalette
 
 @onready var broken_item: Node2D = $BrokenItem
 @onready var pieces: Array = $BrokenItem.get_children()
@@ -118,6 +123,9 @@ func _change_mode() -> void:
 func _set_mode(new_mode: Mode) -> void:
 	mode = new_mode
 	_update_selected(selected_index)
+	match mode:
+		Mode.MOVE: HintMenu.play(move_icon, palette)
+		Mode.ROTATE: HintMenu.play(rotate_icon, palette)
 
 func _physics_process(delta: float) -> void:
 	if not user_interactions_allowed:

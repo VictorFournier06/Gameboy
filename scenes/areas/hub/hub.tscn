@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dach6q0fqp5fc" path="res://assets/visual/areas/hub_area_orange_palet/hub_door_highlight.png" id="6_qlspo"]
 [ext_resource type="Texture2D" uid="uid://ce56362xgbqwo" path="res://assets/visual/areas/hub_area_orange_palet/hub_workshop.png" id="7_3jkhj"]
 [ext_resource type="Texture2D" uid="uid://bacf2vphv4thm" path="res://assets/visual/areas/hub_area_orange_palet/hub_workshop_highlight.png" id="8_qlspo"]
-[ext_resource type="Script" uid="uid://cbg2drqlxjv78" path="res://scenes/game/sfx_player.gd" id="9_s8lqa"]
+[ext_resource type="Script" uid="uid://cbg2drqlxjv78" path="res://scenes/game/audio/sfx_player.gd" id="9_s8lqa"]
 
 [node name="Hub" type="Control"]
 layout_mode = 3
