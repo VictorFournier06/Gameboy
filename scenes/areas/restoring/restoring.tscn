@@ -1,6 +1,6 @@
 [gd_scene load_steps=30 format=3 uid="uid://d3dr0gh263yak"]
 
-[ext_resource type="Texture2D" uid="uid://bk13jo1hr7xjy" path="res://assets/visual/areas/worshop_area_orange_palet/workshop_background.png" id="1_2pk82"]
+[ext_resource type="Texture2D" uid="uid://bk13jo1hr7xjy" path="res://assets/visual/areas/Worshop_area_orange_palet/Workshop_Background.png" id="1_2pk82"]
 [ext_resource type="Script" uid="uid://bcpdkyw3i8j8b" path="res://scenes/areas/restoring/restoring.gd" id="1_yhtj7"]
 [ext_resource type="Script" uid="uid://cr122fu60irp" path="res://scenes/areas/restoring/cleaning/cleaning_player.gd" id="2_iysp6"]
 [ext_resource type="Shader" uid="uid://wuwbah74w55m" path="res://scenes/areas/restoring/cleaning/cleaning.gdshader" id="2_ov8pg"]
@@ -20,7 +20,7 @@
 [ext_resource type="AudioStream" uid="uid://c7640uqo803q2" path="res://assets/audio/sfx/menu_move.wav" id="14_uc1vo"]
 [ext_resource type="PackedScene" uid="uid://bel5jjp1bj06v" path="res://scenes/components/dialog_component.tscn" id="15_no1w5"]
 [ext_resource type="AudioStream" uid="uid://bvlxgbq1rnj4h" path="res://assets/audio/sfx/menu_accept.wav" id="15_sd7ac"]
-[ext_resource type="Shader" uid="uid://bc24so8i3ccup" path="res://scenes/areas/restoring/repairing/finished_image.gdshader" id="17_fdw42"]
+[ext_resource type="Shader" path="res://scenes/areas/restoring/repairing/finished_image.gdshader" id="17_fdw42"]
 [ext_resource type="Script" uid="uid://csmhuk0dbpcgs" path="res://scenes/areas/restoring/repairing/repairing.gd" id="17_sd7ac"]
 [ext_resource type="PackedScene" uid="uid://jix4vnbamqhu" path="res://scenes/areas/restoring/repairing/item_piece.tscn" id="18_fdw42"]
 [ext_resource type="Texture2D" uid="uid://cmnb1am1fd7ak" path="res://assets/visual/components/hint_menu/move_icon.png" id="21_pw6rm"]

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dh3jnw5lwyyuk"
-path="res://.godot/imported/p1_fill.png-611cd1e8e2f46fd70010fbe54d65ea17.ctex"
+path="res://.godot/imported/p1_fill.png-1077a29c4081d976fca4c2ebedfe6722.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/visual/areas/worshop_area_orange_palet/amphora_pieces/p1_fill.png"
-dest_files=["res://.godot/imported/p1_fill.png-611cd1e8e2f46fd70010fbe54d65ea17.ctex"]
+source_file="res://assets/visual/areas/Worshop_area_orange_palet/amphora_pieces/p1_fill.png"
+dest_files=["res://.godot/imported/p1_fill.png-1077a29c4081d976fca4c2ebedfe6722.ctex"]
 
 [params]
 

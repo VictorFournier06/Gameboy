@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemType" load_steps=5 format=3 uid="uid://oh0cy7h776w7"]
+
+[ext_resource type="Script" uid="uid://bufyg5eq08p5" path="res://resources/classes/piece_data.gd" id="1_xauvv"]
+[ext_resource type="Texture2D" uid="uid://ddf5ddq2gtuck" path="res://assets/visual/areas/Worshop_area_orange_palet/Map_Clean.png" id="2_6sfie"]
+[ext_resource type="Script" uid="uid://bfkgwhugqn2wy" path="res://resources/classes/item_type.gd" id="2_u81fh"]
+[ext_resource type="Texture2D" uid="uid://bdulsbrelj5hj" path="res://assets/visual/areas/Worshop_area_orange_palet/Map_Dirty.png" id="3_a55aw"]
+
+[resource]
+script = ExtResource("2_u81fh")
+clean_texture = ExtResource("2_6sfie")
+dirty_texture = ExtResource("3_a55aw")
+metadata/_custom_type_script = "uid://bfkgwhugqn2wy"
