@@ -36,6 +36,7 @@ func _ready() -> void:
 	_spawn_target()
 
 func _spawn_target() -> void:
+	player.position = Vector2.ZERO
 	var distance: float = randf_range(min_spawn_distance, max_spawn_distance)
 	var angle: float = randf() * 2 * PI
 	target_position = distance * Vector2.from_angle(angle)
