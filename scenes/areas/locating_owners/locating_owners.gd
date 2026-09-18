@@ -4,8 +4,8 @@ extends Node2D
 @export var palette: ColorPalette
 @export var start_icon: Texture2D
 
-@onready var background: Sprite2D = $Background
-@onready var character: Sprite2D = $Character
+@onready var background: Sprite2D = $Interior/Background
+@onready var character: Sprite2D = $Interior/Character
 @onready var dialog_component: DialogComponent = $DialogComponent
 
 func _ready() -> void:

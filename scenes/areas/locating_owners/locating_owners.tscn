@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b3b0lcc3bcabw"]
+[gd_scene load_steps=17 format=3 uid="uid://b3b0lcc3bcabw"]
 
 [ext_resource type="Script" uid="uid://diha7jpnbh076" path="res://scenes/areas/locating_owners/locating_owners.gd" id="1_fo5li"]
 [ext_resource type="Script" uid="uid://dxnh3kgqd0k5h" path="res://resources/classes/owner_data.gd" id="2_3lkyt"]
@@ -11,6 +11,13 @@
 [ext_resource type="Resource" uid="uid://7a3ysg5545xq" path="res://resources/owners/goose.tres" id="6_jexa5"]
 [ext_resource type="ColorPalette" uid="uid://dj5w272b5ro6j" path="res://resources/palettes/green_orange_palette.tres" id="7_cm22u"]
 [ext_resource type="Texture2D" uid="uid://8612gd71baoe" path="res://assets/visual/components/hint_menu/start.png" id="8_jexa5"]
+[ext_resource type="Texture2D" uid="uid://bsewxyog667ye" path="res://assets/visual/areas/hub_area_orange_palet/doggo.png" id="11_tl0t6"]
+[ext_resource type="Texture2D" uid="uid://cy2sto2u5c7mh" path="res://untracked/town/town_3d.png" id="12_om14i"]
+[ext_resource type="Script" uid="uid://l4xn28667jr1" path="res://scenes/areas/locating_owners/overworld_player.gd" id="12_v2a5a"]
+[ext_resource type="Texture2D" uid="uid://thycxjadhha7" path="res://untracked/town/town_ground.png" id="13_i5nml"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tl0t6"]
+size = Vector2(16, 16)
 
 [node name="LocatingOwners" type="Node2D"]
 script = ExtResource("1_fo5li")
@@ -18,12 +25,67 @@ owners = Array[ExtResource("2_3lkyt")]([ExtResource("3_jj7qe"), ExtResource("4_6
 palette = ExtResource("7_cm22u")
 start_icon = ExtResource("8_jexa5")
 
-[node name="Background" type="Sprite2D" parent="."]
+[node name="DialogComponent" parent="." instance=ExtResource("5_slc62")]
+
+[node name="Overworld" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Overworld"]
+
+[node name="Trees" type="CollisionPolygon2D" parent="Overworld/StaticBody2D"]
+polygon = PackedVector2Array(208, 0, 208, 48, 176, 48, 176, 64, 144, 64, 144, 48, 104, 48, 104, 64, 128, 64, 128, 80, 112, 80, 104, 80, 96, 80, 88, 80, 80, 80, 80, 96, 64, 96, 64, 112, 48, 112, 48, 128, 24, 128, 24, 176, 48, 176, 48, 192, 56, 192, 56, 208, 88, 208, 88, 224, 128, 224, 128, 240, 192, 240, 192, 256, 176, 256, 176, 272, 192, 272, 192, 288, 160, 288, 160, 272, 144, 272, 144, 288, 64, 288, 48, 288, 48, 304, 64, 304, 64, 320, 48, 320, 48, 336, 24, 336, 24, 384, 40, 384, 40, 392, 56, 392, 56, 384, 64, 384, 72, 384, 80, 384, 80, 392, 144, 392, 144, 384, 184, 384, 184, 344, 200, 344, 200, 336, 224, 336, 224, 352, 200, 352, 200, 368, 208, 368, 208, 384, 216, 384, 216, 360, 248, 360, 248, 368, 248, 376, 248, 376, 264, 376, 264, 400, 392, 400, 392, 384, 424, 384, 424, 328, 440, 328, 440, 312, 456, 312, 456, 256, 440, 256, 440, 240, 416, 240, 416, 224, 456, 224, 456, 208, 440, 208, 440, 192, 440, 176, 456, 176, 456, 112, 432, 112, 432, 96, 416, 96, 416, 80, 440, 80, 440, 64, 384, 64, 384, 48, 288, 48, 288, 64, 256, 64, 256, 48, 240, 48, 240, 0, 480, 0, 480, 416, 0, 416, 0, 0)
+
+[node name="LoneTree" type="CollisionPolygon2D" parent="Overworld/StaticBody2D"]
+polygon = PackedVector2Array(384, 336, 384, 352, 416, 352, 416, 336)
+
+[node name="OwlHouse" type="CollisionPolygon2D" parent="Overworld/StaticBody2D"]
+polygon = PackedVector2Array(80, 352, 80, 320, 128, 320, 128, 352, 112, 352, 112, 336, 96, 336, 96, 352)
+
+[node name="Pond" type="CollisionPolygon2D" parent="Overworld/StaticBody2D"]
+polygon = PackedVector2Array(112, 176, 112, 160, 144, 160, 144, 176, 160, 176, 160, 168, 168, 168, 168, 160, 176, 160, 176, 152, 184, 152, 184, 144, 192, 144, 192, 128, 192, 120, 184, 120, 184, 112, 176, 112, 176, 104, 168, 104, 168, 96, 160, 96, 160, 88, 112, 88, 112, 96, 104, 96, 96, 96, 96, 104, 88, 104, 88, 112, 80, 112, 80, 120, 72, 120, 72, 128, 64, 128, 64, 152, 64, 160, 72, 160, 80, 160, 80, 168, 80, 176)
+
+[node name="CatHouse" type="CollisionPolygon2D" parent="Overworld/StaticBody2D"]
+polygon = PackedVector2Array(272, 128, 304, 128, 304, 112, 336, 112, 336, 128, 368, 128, 368, 80, 272, 80)
+
+[node name="GooseHouse" type="CollisionPolygon2D" parent="Overworld/StaticBody2D"]
+polygon = PackedVector2Array(288, 272, 304, 272, 304, 256, 320, 256, 320, 272, 336, 272, 344, 272, 344, 264, 352, 264, 352, 224, 344, 224, 344, 216, 336, 216, 336, 208, 288, 208, 288, 216, 280, 216, 280, 224, 272, 224, 272, 256, 280, 256, 280, 264, 288, 264)
+
+[node name="OverworldPlayer" type="CharacterBody2D" parent="Overworld"]
+z_index = 1
+position = Vector2(216, 24)
+script = ExtResource("12_v2a5a")
+step_duration = 0.5
+
+[node name="Sprite2D" type="Sprite2D" parent="Overworld/OverworldPlayer"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_tl0t6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Overworld/OverworldPlayer"]
+shape = SubResource("RectangleShape2D_tl0t6")
+
+[node name="RayCast2D" type="RayCast2D" parent="Overworld/OverworldPlayer"]
+
+[node name="Camera2D" type="Camera2D" parent="Overworld/OverworldPlayer"]
+limit_left = 0
+limit_top = 0
+limit_right = 480
+limit_bottom = 416
+
+[node name="3DElements" type="Sprite2D" parent="Overworld"]
+z_index = 2
+texture = ExtResource("12_om14i")
+centered = false
+
+[node name="Ground" type="Sprite2D" parent="Overworld"]
+texture = ExtResource("13_i5nml")
+centered = false
+
+[node name="Interior" type="Node2D" parent="."]
+visible = false
+
+[node name="Background" type="Sprite2D" parent="Interior"]
 position = Vector2(80, 72)
 texture = ExtResource("3_slc62")
 
-[node name="Character" type="Sprite2D" parent="."]
+[node name="Character" type="Sprite2D" parent="Interior"]
 position = Vector2(80, 72)
 texture = ExtResource("4_3lkyt")
-
-[node name="DialogComponent" parent="." instance=ExtResource("5_slc62")]
