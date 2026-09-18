@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ddelgvpp3axxn"
-path="res://.godot/imported/Boot_Dirty.png-f5547f9cd295825b069724dcb240b699.ctex"
+path="res://.godot/imported/Boot_Dirty.png-71d63e6cc14b9fa4279f29d6622d664d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/visual/areas/Worshop_area_orange_palet/Boot_Dirty.png"
-dest_files=["res://.godot/imported/Boot_Dirty.png-f5547f9cd295825b069724dcb240b699.ctex"]
+source_file="res://assets/visual/areas/worshop_area_orange_palet/Boot_Dirty.png"
+dest_files=["res://.godot/imported/Boot_Dirty.png-71d63e6cc14b9fa4279f29d6622d664d.ctex"]
 
 [params]
 

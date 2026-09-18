@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dach6q0fqp5fc"
-path="res://.godot/imported/hub_door_highlight.png-05c353aa11d81f3fdab702e7dddf6f28.ctex"
+path="res://.godot/imported/hub_door_highlight.png-546bb5097592545dd64aa28e54f6d16f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/visual/areas/Hub_area_orange_palet/hub_door_highlight.png"
-dest_files=["res://.godot/imported/hub_door_highlight.png-05c353aa11d81f3fdab702e7dddf6f28.ctex"]
+source_file="res://assets/visual/areas/hub_area_orange_palet/hub_door_highlight.png"
+dest_files=["res://.godot/imported/hub_door_highlight.png-546bb5097592545dd64aa28e54f6d16f.ctex"]
 
 [params]
 
