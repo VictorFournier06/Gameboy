@@ -18,7 +18,7 @@
 [ext_resource type="Script" uid="uid://b70fg5of616mx" path="res://scenes/areas/locating_owners/door.gd" id="14_i5nml"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tl0t6"]
-size = Vector2(16, 16)
+size = Vector2(14, 14)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i5nml"]
 size = Vector2(16, 16)
@@ -46,7 +46,7 @@ polygon = PackedVector2Array(384, 336, 384, 352, 416, 352, 416, 336)
 polygon = PackedVector2Array(80, 352, 80, 320, 128, 320, 128, 352, 112, 352, 112, 336, 96, 336, 96, 352)
 
 [node name="Pond" type="CollisionPolygon2D" parent="Overworld/StaticBody2D"]
-polygon = PackedVector2Array(112, 176, 112, 160, 144, 160, 144, 176, 160, 176, 160, 168, 168, 168, 168, 160, 176, 160, 176, 152, 184, 152, 184, 144, 192, 144, 192, 128, 192, 120, 184, 120, 184, 112, 176, 112, 176, 104, 168, 104, 168, 96, 160, 96, 160, 88, 112, 88, 112, 96, 104, 96, 96, 96, 96, 104, 88, 104, 88, 112, 80, 112, 80, 120, 72, 120, 72, 128, 64, 128, 64, 152, 64, 160, 72, 160, 80, 160, 80, 168, 80, 176)
+polygon = PackedVector2Array(112, 176, 112, 160, 144, 160, 144, 176, 160, 176, 160, 168, 168, 168, 168, 160, 176, 160, 176, 152, 184, 152, 184, 144, 192, 144, 192, 128, 192, 120, 184, 120, 184, 112, 176, 112, 176, 104, 168, 104, 168, 96, 160, 96, 160, 88, 120, 88, 104, 88, 104, 96, 96, 96, 96, 104, 88, 104, 88, 112, 80, 112, 80, 120, 72, 120, 72, 128, 64, 128, 64, 152, 64, 160, 72, 160, 80, 160, 80, 168, 80, 176)
 
 [node name="CatHouse" type="CollisionPolygon2D" parent="Overworld/StaticBody2D"]
 polygon = PackedVector2Array(272, 128, 304, 128, 304, 112, 336, 112, 336, 128, 368, 128, 368, 80, 272, 80)
