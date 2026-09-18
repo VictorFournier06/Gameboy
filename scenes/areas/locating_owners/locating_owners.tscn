@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://b3b0lcc3bcabw"]
+[gd_scene load_steps=22 format=3 uid="uid://b3b0lcc3bcabw"]
 
 [ext_resource type="Script" uid="uid://diha7jpnbh076" path="res://scenes/areas/locating_owners/locating_owners.gd" id="1_fo5li"]
 [ext_resource type="Script" uid="uid://dxnh3kgqd0k5h" path="res://resources/classes/owner_data.gd" id="2_3lkyt"]
@@ -12,9 +12,11 @@
 [ext_resource type="ColorPalette" uid="uid://dj5w272b5ro6j" path="res://resources/palettes/green_orange_palette.tres" id="7_cm22u"]
 [ext_resource type="Texture2D" uid="uid://8612gd71baoe" path="res://assets/visual/components/hint_menu/start.png" id="8_jexa5"]
 [ext_resource type="AudioStream" uid="uid://c7e48yhbev1ku" path="res://assets/audio/sfx/door.wav" id="9_h4gtx"]
-[ext_resource type="Texture2D" uid="uid://bsewxyog667ye" path="res://assets/visual/areas/Hub_area_orange_palet/Doggo.png" id="11_tl0t6"]
-[ext_resource type="Script" path="res://scenes/areas/locating_owners/overworld_player.gd" id="12_v2a5a"]
-[ext_resource type="Script" path="res://scenes/areas/locating_owners/door.gd" id="14_i5nml"]
+[ext_resource type="Texture2D" uid="uid://bsewxyog667ye" path="res://assets/visual/areas/hub_area_orange_palet/doggo.png" id="11_tl0t6"]
+[ext_resource type="Texture2D" uid="uid://ddpro4klvd6m0" path="res://assets/visual/areas/locating_owners_green_orange_palet/town_3d.png" id="12_h4gtx"]
+[ext_resource type="Script" uid="uid://l4xn28667jr1" path="res://scenes/areas/locating_owners/overworld_player.gd" id="12_v2a5a"]
+[ext_resource type="Texture2D" uid="uid://bnj4plieq4kwu" path="res://assets/visual/areas/locating_owners_green_orange_palet/town_ground.png" id="13_iqvvq"]
+[ext_resource type="Script" uid="uid://b70fg5of616mx" path="res://scenes/areas/locating_owners/door.gd" id="14_i5nml"]
 [ext_resource type="Script" uid="uid://cbg2drqlxjv78" path="res://scenes/game/audio/sfx_player.gd" id="17_jtsqa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tl0t6"]
@@ -78,9 +80,11 @@ limit_bottom = 416
 
 [node name="3DElements" type="Sprite2D" parent="Overworld"]
 z_index = 2
+texture = ExtResource("12_h4gtx")
 centered = false
 
 [node name="Ground" type="Sprite2D" parent="Overworld"]
+texture = ExtResource("13_iqvvq")
 centered = false
 
 [node name="Doors" type="Node2D" parent="Overworld"]

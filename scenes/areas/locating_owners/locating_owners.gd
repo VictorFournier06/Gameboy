@@ -18,7 +18,7 @@ func _ready() -> void:
 	for door in $Overworld/Doors.get_children():
 		door.body_entered.connect(_enter_door.bind(door))
 
-func _enter_door(element: CharacterBody2D, door: Area2D) -> void:
+func _enter_door(element: Node2D, door: Area2D) -> void:
 	if element != player:
 		return
 	sfx_player.play_sfx(door_sfx)
