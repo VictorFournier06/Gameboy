@@ -22,6 +22,8 @@ func switch_area(new_area: Area) -> void:
 	get_tree().change_scene_to_file(AREA_MAPPING[new_area])
 	origin_area = current_area
 	current_area = new_area
+	if new_area == Area.HUB:
+		HintMenu.reset_palette()
 	if new_area in MUSIC_MAPPING: #TODO: remove once all areas have a music
 		MusicPlayer.music_transition(MUSIC_MAPPING[new_area])
 
