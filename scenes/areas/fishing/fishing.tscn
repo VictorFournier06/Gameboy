@@ -1,7 +1,15 @@
-[gd_scene load_steps=15 format=3 uid="uid://n0d2bfx60yol"]
+[gd_scene load_steps=23 format=3 uid="uid://n0d2bfx60yol"]
 
-[ext_resource type="Texture2D" uid="uid://cruseh3oic61j" path="res://assets/visual/areas/Fishing_area_blue_palet/fishing_background.png" id="1_unp7j"]
-[ext_resource type="Texture2D" uid="uid://dfp21wwkpkrc7" path="res://assets/visual/areas/Fishing_area_blue_palet/back_fish.png" id="2_8upm0"]
+[ext_resource type="Script" uid="uid://ok8e0up8mpgq" path="res://scenes/areas/fishing/fishing.gd" id="1_8upm0"]
+[ext_resource type="Texture2D" uid="uid://cruseh3oic61j" path="res://assets/visual/areas/fishing_area_blue_palet/fishing_background.png" id="1_unp7j"]
+[ext_resource type="Texture2D" uid="uid://dfp21wwkpkrc7" path="res://assets/visual/areas/fishing_area_blue_palet/back_fish.png" id="2_8upm0"]
+[ext_resource type="AudioStream" uid="uid://5cx2gxpy3gmr" path="res://assets/audio/sfx/treasure.wav" id="2_bbq6x"]
+[ext_resource type="AudioStream" uid="uid://caiqsbrksjb8s" path="res://assets/audio/sfx/miss.wav" id="3_0f186"]
+[ext_resource type="Texture2D" uid="uid://bi8wdfeq2pf0t" path="res://assets/visual/areas/fishing_area_blue_palet/gauge_static_bar.png" id="4_7pqhb"]
+[ext_resource type="Script" uid="uid://cbg2drqlxjv78" path="res://scenes/game/audio/sfx_player.gd" id="4_j1kc5"]
+[ext_resource type="Texture2D" uid="uid://dn0s4e6g3qo36" path="res://assets/visual/areas/fishing_area_blue_palet/gauge_rising_bar.png" id="5_bbq6x"]
+[ext_resource type="Texture2D" uid="uid://t6ub1s61uign" path="res://assets/visual/areas/fishing_area_blue_palet/gauge_foreground.png" id="6_0f186"]
+[ext_resource type="Texture2D" uid="uid://dy83oyjmh3p68" path="res://assets/visual/areas/fishing_area_blue_palet/gauge_background.png" id="7_ywut8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j1kc5"]
 atlas = ExtResource("1_unp7j")
@@ -89,6 +97,15 @@ animations = [{
 }]
 
 [node name="Fishing" type="Node2D"]
+script = ExtResource("1_8upm0")
+max_spawn_distance = 100.0
+min_spawn_distance = 50.0
+catch_distance = 5.0
+player_speed = 1.0
+sweep_timer = 1.5
+echo_duration = 0.5
+treasure_sfx = ExtResource("2_bbq6x")
+miss_sfx = ExtResource("3_0f186")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(80, 72)
@@ -98,3 +115,28 @@ autoplay = "default"
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_8upm0")
 centered = false
+
+[node name="Player" type="Node2D" parent="."]
+
+[node name="Gauge" type="Node2D" parent="."]
+position = Vector2(80, 72)
+
+[node name="EchoBar" type="Sprite2D" parent="Gauge"]
+visible = false
+z_index = 3
+texture = ExtResource("4_7pqhb")
+
+[node name="RisingBar" type="Sprite2D" parent="Gauge"]
+z_index = 1
+texture = ExtResource("5_bbq6x")
+
+[node name="GaugeForeground" type="Sprite2D" parent="Gauge"]
+z_index = 2
+texture = ExtResource("6_0f186")
+
+[node name="GaugeBackground" type="Sprite2D" parent="Gauge"]
+texture = ExtResource("7_ywut8")
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
+script = ExtResource("4_j1kc5")
+metadata/_custom_type_script = "uid://cbg2drqlxjv78"
