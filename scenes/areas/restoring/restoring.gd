@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var no_object_dialog: DialogData
+@export var should_return_object_dialog: DialogData
 
 @export var shine_animation_duration = 2.0
 @export var shine_width = 0.1
@@ -34,17 +35,31 @@ func _ready() -> void:
 	Debug.skip_minigame.connect(_skip_restoring)
 
 func _reset() -> void:
-	current_item = Inventory.get_first_restorable_item(
-		[Item.Deterioration.DIRTY, Item.Deterioration.BROKEN]
-	)
+	# prioritize broken when it is there
+	current_item = Inventory.get_first_restorable_item(Item.Deterioration.BROKEN)
+	if current_item == null:
+		current_item = Inventory.get_first_restorable_item(Item.Deterioration.DIRTY)
 	if current_item == null:
 		if minigame_instance:
 			minigame_instance.hide()
+
+		var in_possesion_of_restored_item: bool = false
+		for item in Inventory.items:
+			if item.deterioration == Item.Deterioration.NONE:
+				in_possesion_of_restored_item = true
+				break
+
+		var dialog: DialogData
+		if in_possesion_of_restored_item:
+			dialog = should_return_object_dialog
+		else:
+			dialog = no_object_dialog
+
 		dialog_component.dialog_finished.connect(
 			HintMenu.play.bind(start_icon, palette),
 			CONNECT_ONE_SHOT
 		)
-		dialog_component.play_dialog(no_object_dialog, palette)
+		dialog_component.play_dialog(dialog, palette)
 		return
 
 	minigame_instance = instance_deterioration_matching[current_item.deterioration]

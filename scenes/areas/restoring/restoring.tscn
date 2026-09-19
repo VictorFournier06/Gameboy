@@ -1,10 +1,10 @@
-[gd_scene load_steps=30 format=3 uid="uid://d3dr0gh263yak"]
+[gd_scene load_steps=31 format=3 uid="uid://d3dr0gh263yak"]
 
 [ext_resource type="Texture2D" uid="uid://bk13jo1hr7xjy" path="res://assets/visual/areas/worshop_area_orange_palet/workshop_background.png" id="1_2pk82"]
 [ext_resource type="Script" uid="uid://bcpdkyw3i8j8b" path="res://scenes/areas/restoring/restoring.gd" id="1_yhtj7"]
 [ext_resource type="Script" uid="uid://cr122fu60irp" path="res://scenes/areas/restoring/cleaning/cleaning_player.gd" id="2_iysp6"]
 [ext_resource type="Shader" uid="uid://wuwbah74w55m" path="res://scenes/areas/restoring/cleaning/cleaning.gdshader" id="2_ov8pg"]
-[ext_resource type="Resource" uid="uid://bns7nh1n48wa0" path="res://resources/dialog/no_item.tres" id="2_uc1vo"]
+[ext_resource type="Script" uid="uid://b7lxtrcfc1iu5" path="res://resources/classes/dialog_data.gd" id="3_70dlm"]
 [ext_resource type="Script" uid="uid://cxg40dy05iqj7" path="res://scenes/areas/restoring/cleaning/cleaning.gd" id="3_ov8pg"]
 [ext_resource type="SpriteFrames" uid="uid://ctjfdeq8a5qc2" path="res://resources/scrubbing_tools/rag.tres" id="4_2pk82"]
 [ext_resource type="AudioStream" uid="uid://caoe21prgyul3" path="res://assets/audio/sfx/finished_cleaning.wav" id="4_qak5x"]
@@ -26,6 +26,11 @@
 [ext_resource type="Texture2D" uid="uid://cmnb1am1fd7ak" path="res://assets/visual/components/hint_menu/move_icon.png" id="21_pw6rm"]
 [ext_resource type="Texture2D" uid="uid://d0jhl2yv34l23" path="res://assets/visual/components/hint_menu/rotate_icon.png" id="22_edvo0"]
 
+[sub_resource type="Resource" id="Resource_q24t4"]
+script = ExtResource("3_70dlm")
+lines = Array[String](["Oh ! I don't have any item to restore.", "I'd better find the owner of an object", "I already have restored"])
+metadata/_custom_type_script = "uid://b7lxtrcfc1iu5"
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gerlc"]
 shader = ExtResource("2_ov8pg")
 shader_parameter/shine_animation_progress = 0.0
@@ -46,7 +51,7 @@ shader_parameter/shine_width = 0.0
 
 [node name="Restoring" type="Node2D"]
 script = ExtResource("1_yhtj7")
-no_object_dialog = ExtResource("2_uc1vo")
+should_return_object_dialog = SubResource("Resource_q24t4")
 finished_restoring_sfx = ExtResource("4_qak5x")
 shiney_sfx = ExtResource("5_wqt7y")
 pocketing_sfx = ExtResource("6_awq15")

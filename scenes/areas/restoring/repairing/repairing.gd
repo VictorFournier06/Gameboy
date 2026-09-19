@@ -6,7 +6,7 @@ signal finished_restoring
 enum Mode { SELECT, MOVE, ROTATE }
 
 const ROTATION_NB: int = 24
-const POSITION_TOLERANCE: int = 2 #in px
+const POSITION_TOLERANCE: int = 3 #in px
 const ROTATION_TOLERANCE: float = 0.01
 
 @export var navigate_sfx: AudioStream
@@ -82,6 +82,10 @@ func _update_selected(index: int):
 
 func _unhandled_input(event: InputEvent) -> void:
 	if not user_interactions_allowed:
+		return
+	if event.is_action_pressed("start") and mode != Mode.SELECT:
+		_set_mode(Mode.SELECT)
+		get_viewport().set_input_as_handled()
 		return
 	if event.is_action_pressed("ui_accept"):
 		_change_mode()

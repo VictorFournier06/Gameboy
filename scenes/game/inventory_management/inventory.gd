@@ -49,9 +49,9 @@ func add_item(item: Item) -> void:
 	_inventory_items.append(item)
 	items_changed.emit(items)
 
-func get_first_restorable_item(deteriorations: Array[Item.Deterioration]) -> Item:
+func get_first_restorable_item(deteriorations: Item.Deterioration) -> Item:
 	for item in _inventory_items:
-		if item.deterioration in deteriorations:
+		if item.deterioration == deteriorations:
 			return item
 	return null
 
