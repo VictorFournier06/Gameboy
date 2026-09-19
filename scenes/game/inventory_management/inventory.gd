@@ -17,6 +17,8 @@ var _nostalgia_coupons: int = 0
 var _inventory_items: Array[Item] = []
 var _item_pool: Array[ItemType] = [] #stack
 
+var broken_pieces: Dictionary[ItemType, int] = {}
+
 func _ready() -> void:
 	for item_type in ItemCatalog.ARTEFACTS:
 		for _i in maxi(1, item_type.broken_pieces.size()):
@@ -53,7 +55,23 @@ func get_first_restorable_item(deteriorations: Array[Item.Deterioration]) -> Ite
 			return item
 	return null
 
-func get_random_item_from_pool() -> ItemType:
+func get_random_item_from_pool() -> Item:
 	if _item_pool.is_empty():
 		return null
-	return _item_pool.pop_back() #remove from pool
+	var item_type: ItemType = _item_pool.pop_back() #remove from pool
+
+	if item_type.broken_pieces.is_empty(): #dirty item
+		var dirty_item: Item = Item.new(item_type, Item.Deterioration.DIRTY)
+		add_item(dirty_item)
+		return dirty_item
+
+	#broken item
+	var broken_item: Item = Item.new(item_type, Item.Deterioration.BROKEN)
+	if item_type in broken_pieces:
+		broken_pieces[item_type] += 1
+		if broken_pieces[item_type] >= item_type.broken_pieces.size():
+			broken_pieces.erase(item_type)
+			add_item(broken_item)
+	else:
+		broken_pieces[item_type] = 1
+	return broken_item

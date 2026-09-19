@@ -14,4 +14,5 @@
 script = ExtResource("9_mjavh")
 clean_texture = ExtResource("8_urbdo")
 broken_pieces = Array[ExtResource("1_7tet1")]([ExtResource("2_315lt"), ExtResource("3_55ss7"), ExtResource("4_ukwwb"), ExtResource("5_e2qhq"), ExtResource("6_v8ml3"), ExtResource("7_c5cm6")])
+diplay_name = "Amphora"
 metadata/_custom_type_script = "uid://bfkgwhugqn2wy"

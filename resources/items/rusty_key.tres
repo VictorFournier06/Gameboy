@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="ItemType" load_steps=4 format=3 uid="uid://b48u6pbduhl7y"]
+[gd_resource type="Resource" script_class="ItemType" load_steps=5 format=3 uid="uid://b48u6pbduhl7y"]
 
+[ext_resource type="Script" uid="uid://bufyg5eq08p5" path="res://resources/classes/piece_data.gd" id="1_7074m"]
 [ext_resource type="Script" uid="uid://bfkgwhugqn2wy" path="res://resources/classes/item_type.gd" id="1_acr8r"]
 [ext_resource type="Texture2D" uid="uid://jptulsbr7k4r" path="res://assets/visual/areas/worshop_area_orange_palet/key_clean.png" id="1_cl5gm"]
 [ext_resource type="Texture2D" uid="uid://dyelp6ysat6bd" path="res://assets/visual/areas/worshop_area_orange_palet/key_dirty.png" id="2_7074m"]
@@ -8,4 +9,5 @@
 script = ExtResource("1_acr8r")
 clean_texture = ExtResource("1_cl5gm")
 dirty_texture = ExtResource("2_7074m")
+diplay_name = "Key"
 metadata/_custom_type_script = "uid://bfkgwhugqn2wy"

@@ -9,4 +9,5 @@
 script = ExtResource("2_p4v6h")
 clean_texture = ExtResource("2_6jjsu")
 dirty_texture = ExtResource("3_kpa3n")
+diplay_name = "Boot"
 metadata/_custom_type_script = "uid://bfkgwhugqn2wy"

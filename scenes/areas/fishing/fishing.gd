@@ -13,6 +13,12 @@ const GAUGE_HEIGHT: float = 63
 @export var treasure_sfx: AudioStream
 @export var miss_sfx: AudioStream
 
+@export var dirty_catch_phrase: DialogData #pun intended
+@export var broken_catch_phrase: DialogData
+@export var empty_sea_dialog: DialogData
+@export var start_icon: Texture2D
+@export var palette: ColorPalette
+
 var target_position: Vector2
 var bounds: Rect2
 var y_gauge_bottom: float
@@ -25,6 +31,8 @@ var imprinted_echo: bool = false
 @onready var rising_bar: Sprite2D = $Gauge/RisingBar
 @onready var echo_bar: Sprite2D = $Gauge/EchoBar
 @onready var sfx_player: SFXPlayer = $SFXPlayer
+@onready var dialog_component: DialogComponent = $DialogComponent
+@onready var gauge: Node2D = $Gauge
 
 func _ready() -> void:
 	var diagonal: Vector2 = Vector2(max_spawn_distance, max_spawn_distance)
@@ -35,11 +43,18 @@ func _ready() -> void:
 	y_gauge_bottom = rising_bar.position.y
 	_spawn_target()
 
+	Debug.skip_minigame.connect(_obtain_item)
+
 func _spawn_target() -> void:
-	player.position = Vector2.ZERO
-	var distance: float = randf_range(min_spawn_distance, max_spawn_distance)
-	var angle: float = randf() * 2 * PI
-	target_position = distance * Vector2.from_angle(angle)
+	if Inventory._item_pool.is_empty():
+		_disable_fishing()
+	else:
+		set_process(true)
+		set_physics_process(true)
+		player.position = Vector2.ZERO
+		var distance: float = randf_range(min_spawn_distance, max_spawn_distance)
+		var angle: float = randf() * 2 * PI
+		target_position = distance * Vector2.from_angle(angle)
 
 func _physics_process(_delta: float) -> void:
 	Player.move(player, player_speed, bounds)
@@ -74,8 +89,41 @@ func _convert_distance_to_gauge_height(distance: float) -> float:
 
 func _catch_attempt() -> void:
 	if player.position.distance_to(target_position) <= catch_distance:
-		var item_obtained = Inventory.get_random_item_from_pool()
-		sfx_player.play_sfx(treasure_sfx)
-		_spawn_target()
+		_obtain_item() #spawn new item after the dialog
 	else:
 		sfx_player.play_sfx(miss_sfx)
+
+func _obtain_item() -> void:
+	if not is_processing():
+		return
+	set_process(false)
+	set_physics_process(false)
+	sfx_player.play_sfx(treasure_sfx)
+	var item_obtained: Item = Inventory.get_random_item_from_pool()
+
+	var item_dialog: DialogData
+	if item_obtained.deterioration == Item.Deterioration.DIRTY:
+		item_dialog = dirty_catch_phrase
+	else:
+		item_dialog = broken_catch_phrase
+
+	var output_dialog: DialogData = DialogData.new()
+	for line in item_dialog.lines:
+		output_dialog.lines.append(line.format({
+			"item": item_obtained.type.diplay_name,
+			"count": Inventory.broken_pieces.get(
+				item_obtained.type,
+				item_obtained.type.broken_pieces.size()
+			),
+			"total": item_obtained.type.broken_pieces.size()
+		}))
+	dialog_component.dialog_finished.connect(_spawn_target, CONNECT_ONE_SHOT)
+	dialog_component.play_dialog(output_dialog, palette)
+
+func _disable_fishing() -> void:
+	set_process(false)
+	set_physics_process(false)
+	gauge.hide()
+
+	dialog_component.dialog_finished.connect(HintMenu.play.bind(start_icon, palette), CONNECT_ONE_SHOT)
+	dialog_component.play_dialog(empty_sea_dialog, palette)

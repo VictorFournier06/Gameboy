@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://n0d2bfx60yol"]
+[gd_scene load_steps=30 format=3 uid="uid://n0d2bfx60yol"]
 
 [ext_resource type="Script" uid="uid://ok8e0up8mpgq" path="res://scenes/areas/fishing/fishing.gd" id="1_8upm0"]
 [ext_resource type="Texture2D" uid="uid://cruseh3oic61j" path="res://assets/visual/areas/fishing_area_blue_palet/fishing_background.png" id="1_unp7j"]
@@ -6,10 +6,29 @@
 [ext_resource type="AudioStream" uid="uid://5cx2gxpy3gmr" path="res://assets/audio/sfx/treasure.wav" id="2_bbq6x"]
 [ext_resource type="AudioStream" uid="uid://caiqsbrksjb8s" path="res://assets/audio/sfx/miss.wav" id="3_0f186"]
 [ext_resource type="Texture2D" uid="uid://bi8wdfeq2pf0t" path="res://assets/visual/areas/fishing_area_blue_palet/gauge_static_bar.png" id="4_7pqhb"]
+[ext_resource type="Script" uid="uid://b7lxtrcfc1iu5" path="res://resources/classes/dialog_data.gd" id="4_he1dc"]
 [ext_resource type="Script" uid="uid://cbg2drqlxjv78" path="res://scenes/game/audio/sfx_player.gd" id="4_j1kc5"]
+[ext_resource type="ColorPalette" uid="uid://6qxtg52ebixe" path="res://resources/palettes/blue_palette.tres" id="4_qa1d5"]
+[ext_resource type="Texture2D" uid="uid://8612gd71baoe" path="res://assets/visual/components/hint_menu/start.png" id="5_6av71"]
 [ext_resource type="Texture2D" uid="uid://dn0s4e6g3qo36" path="res://assets/visual/areas/fishing_area_blue_palet/gauge_rising_bar.png" id="5_bbq6x"]
 [ext_resource type="Texture2D" uid="uid://t6ub1s61uign" path="res://assets/visual/areas/fishing_area_blue_palet/gauge_foreground.png" id="6_0f186"]
 [ext_resource type="Texture2D" uid="uid://dy83oyjmh3p68" path="res://assets/visual/areas/fishing_area_blue_palet/gauge_background.png" id="7_ywut8"]
+[ext_resource type="PackedScene" uid="uid://bel5jjp1bj06v" path="res://scenes/components/dialog_component.tscn" id="11_ywut8"]
+
+[sub_resource type="Resource" id="Resource_he1dc"]
+script = ExtResource("4_he1dc")
+lines = Array[String](["Oh ! I reeled in a dirty {item}."])
+metadata/_custom_type_script = "uid://b7lxtrcfc1iu5"
+
+[sub_resource type="Resource" id="Resource_6av71"]
+script = ExtResource("4_he1dc")
+lines = Array[String](["Oh ! I reeled in something !", "It is a broken {item} piece ({count}/{total})."])
+metadata/_custom_type_script = "uid://b7lxtrcfc1iu5"
+
+[sub_resource type="Resource" id="Resource_bywvj"]
+script = ExtResource("4_he1dc")
+lines = Array[String](["The sea feels empty,", "I don't feel any memories left in there."])
+metadata/_custom_type_script = "uid://b7lxtrcfc1iu5"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j1kc5"]
 atlas = ExtResource("1_unp7j")
@@ -106,6 +125,11 @@ sweep_timer = 1.5
 echo_duration = 0.5
 treasure_sfx = ExtResource("2_bbq6x")
 miss_sfx = ExtResource("3_0f186")
+dirty_catch_phrase = SubResource("Resource_he1dc")
+broken_catch_phrase = SubResource("Resource_6av71")
+empty_sea_dialog = SubResource("Resource_bywvj")
+start_icon = ExtResource("5_6av71")
+palette = ExtResource("4_qa1d5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(80, 72)
@@ -140,3 +164,5 @@ texture = ExtResource("7_ywut8")
 [node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
 script = ExtResource("4_j1kc5")
 metadata/_custom_type_script = "uid://cbg2drqlxjv78"
+
+[node name="DialogComponent" parent="." instance=ExtResource("11_ywut8")]

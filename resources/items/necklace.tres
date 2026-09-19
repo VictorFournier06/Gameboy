@@ -1,12 +1,13 @@
-[gd_resource type="Resource" script_class="ItemType" load_steps=5 format=3 uid="uid://detsvysqnmqmd"]
+[gd_resource type="Resource" script_class="ItemType" load_steps=5 format=3 uid="uid://dbsj0gdmkykx0"]
 
 [ext_resource type="Script" uid="uid://bufyg5eq08p5" path="res://resources/classes/piece_data.gd" id="1_f0ys0"]
 [ext_resource type="Script" uid="uid://bfkgwhugqn2wy" path="res://resources/classes/item_type.gd" id="2_27exd"]
-[ext_resource type="Texture2D" uid="uid://gn4ju824ng48" path="res://assets/visual/areas/Worshop_area_orange_palet/Necklace_Clean.png" id="2_vsdpl"]
-[ext_resource type="Texture2D" uid="uid://bsg1fp3so6cnq" path="res://assets/visual/areas/Worshop_area_orange_palet/Necklace_Dirty.png" id="3_1r4bp"]
+[ext_resource type="Texture2D" uid="uid://gn4ju824ng48" path="res://assets/visual/areas/worshop_area_orange_palet/necklace_clean.png" id="2_vsdpl"]
+[ext_resource type="Texture2D" uid="uid://bsg1fp3so6cnq" path="res://assets/visual/areas/worshop_area_orange_palet/necklace_dirty.png" id="3_1r4bp"]
 
 [resource]
 script = ExtResource("2_27exd")
 clean_texture = ExtResource("2_vsdpl")
 dirty_texture = ExtResource("3_1r4bp")
+diplay_name = "Necklace"
 metadata/_custom_type_script = "uid://bfkgwhugqn2wy"

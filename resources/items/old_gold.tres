@@ -1,7 +1,9 @@
-[gd_resource type="Resource" script_class="ItemType" load_steps=2 format=3 uid="uid://dpnocjt2h0nm1"]
+[gd_resource type="Resource" script_class="ItemType" load_steps=3 format=3 uid="uid://dpnocjt2h0nm1"]
 
+[ext_resource type="Script" uid="uid://bufyg5eq08p5" path="res://resources/classes/piece_data.gd" id="1_dfxs2"]
 [ext_resource type="Script" uid="uid://bfkgwhugqn2wy" path="res://resources/classes/item_type.gd" id="1_qgnfh"]
 
 [resource]
 script = ExtResource("1_qgnfh")
+diplay_name = "Old Gold"
 metadata/_custom_type_script = "uid://bfkgwhugqn2wy"

@@ -9,4 +9,5 @@
 script = ExtResource("2_o1lpu")
 clean_texture = ExtResource("2_fqh4a")
 dirty_texture = ExtResource("3_38dfi")
+diplay_name = "Ring"
 metadata/_custom_type_script = "uid://bfkgwhugqn2wy"
