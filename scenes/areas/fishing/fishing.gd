@@ -17,6 +17,7 @@ const GAUGE_HEIGHT: float = 63
 @export var broken_catch_phrase: DialogData
 @export var empty_sea_dialog: DialogData
 @export var start_icon: Texture2D
+@export var move_icon: Texture2D
 @export var palette: ColorPalette
 
 var target_position: Vector2
@@ -42,6 +43,8 @@ func _ready() -> void:
 	)
 	y_gauge_bottom = rising_bar.position.y
 	_spawn_target()
+	if not Inventory._item_pool.is_empty():
+		HintMenu.play(move_icon, palette)
 
 	Debug.skip_minigame.connect(_obtain_item)
 
