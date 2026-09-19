@@ -7,5 +7,5 @@ script = ExtResource("1_wia7b")
 lines = Array[String](["Hey my friend!
 
 
-", "Have you seen Froggo and Owly?", "They're so cute together!", "Imo, Froggo's gonna propose soon!!!"])
+", "Have you seen Froggo and Owly?", "They're so cute together!", "imo, Froggo's gonna propose soon!!!"])
 metadata/_custom_type_script = "uid://b7lxtrcfc1iu5"

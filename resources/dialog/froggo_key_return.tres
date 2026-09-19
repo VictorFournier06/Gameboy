@@ -4,5 +4,5 @@
 
 [resource]
 script = ExtResource("1_oq65v")
-lines = Array[String](["Thank you Doggy!", "I realized that last night", " right outside my door", "Luckily, Owly didn't live that far away.", "I was able to get to her easily.", "The three of us can plan a dinner", "at home sometimes!!"])
+lines = Array[String](["My key! Thank you Doggy!", "I lost it last night right outside my door", "Luckily, Owly didn't live that far away.", "I was able to get to her easily.", "The three of us can plan a dinner", "at home sometimes!!"])
 metadata/_custom_type_script = "uid://b7lxtrcfc1iu5"

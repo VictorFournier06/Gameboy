@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_4320v")
-lines = Array[String](["Nice !! Thanks Doggy !
+lines = Array[String](["Nice!! Thanks Doggy!
 
-", "Since I'd lost my map, I kept getting lost.", "I couldn't find my way back", " to my dates anymore!"])
+", "Since I'd lost my map, I kept getting lost.", "I couldn't find my way to my dates anymore!"])
 metadata/_custom_type_script = "uid://b7lxtrcfc1iu5"

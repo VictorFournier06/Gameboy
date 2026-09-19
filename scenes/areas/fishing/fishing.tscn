@@ -24,7 +24,7 @@ metadata/_custom_type_script = "uid://b7lxtrcfc1iu5"
 
 [sub_resource type="Resource" id="Resource_6av71"]
 script = ExtResource("4_he1dc")
-lines = Array[String](["Oh ! I reeled in something !", "It is a broken {item} piece ({count}/{total})."])
+lines = Array[String](["Oh! I reeled in something!", "It is a broken {item} piece ({count}/{total})."])
 metadata/_custom_type_script = "uid://b7lxtrcfc1iu5"
 
 [sub_resource type="Resource" id="Resource_bywvj"]

@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_du1yl")
 lines = Array[String](["Good morning Dear!
-", "I hope you had a great night
+", "I hope you had a great night with
 
-", " with wonderful dreams!", "That wasn't the little Froggo's luck...", "He was left stranded ", "outside its home for the night..."])
+", "wonderful dreams!", "That wasn't the little Froggo's luck...", "He was left stranded outside its home", "for the night..."])
 metadata/_custom_type_script = "uid://b7lxtrcfc1iu5"

@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_0dfwh")
-lines = Array[String](["Oh great !
+lines = Array[String](["Oh great! My phone!
 
 
 ", "I'll be able to get back on social media!", "By the way, can I have your number?", "We could go on a date!"])

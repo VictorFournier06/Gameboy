@@ -4,8 +4,8 @@
 
 [resource]
 script = ExtResource("1_1c8ug")
-lines = Array[String](["Thank you so much!
+lines = Array[String](["My necklace, thank you so much!
 
 
-", "I was so sad to have lost it...", "It means so much to me!", "We're looking forward to seeing you", " at our party next week!"])
+", "I was so sad to have lost it...", "It means so much to me!", "We're looking forward to seeing you", "at our party next week!"])
 metadata/_custom_type_script = "uid://b7lxtrcfc1iu5"
