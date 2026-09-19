@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="OwnerData" load_steps=10 format=3 uid="uid://e4ig7bsuynym"]
+[gd_resource type="Resource" script_class="OwnerData" load_steps=13 format=3 uid="uid://e4ig7bsuynym"]
 
 [ext_resource type="Texture2D" uid="uid://be7gjwiuim1o2" path="res://assets/visual/areas/locating_owners_green_orange_palet/back_frog.png" id="1_m5m0e"]
 [ext_resource type="Texture2D" uid="uid://b47q7ypkthvy7" path="res://assets/visual/areas/locating_owners_green_orange_palet/frog.png" id="2_hjuyb"]
@@ -7,12 +7,19 @@
 [ext_resource type="Script" uid="uid://dxnh3kgqd0k5h" path="res://resources/classes/owner_data.gd" id="5_3bwjv"]
 [ext_resource type="Resource" uid="uid://creail0bosxfx" path="res://resources/dialog/froggo_key_return.tres" id="5_hjuyb"]
 [ext_resource type="Resource" uid="uid://t431e3m608au" path="res://resources/dialog/froggo_hint_necklace.tres" id="6_tbd8x"]
+[ext_resource type="Script" uid="uid://bfkgwhugqn2wy" path="res://resources/classes/item_type.gd" id="7_3bwjv"]
 [ext_resource type="Resource" uid="uid://dr0q27y1dpn1u" path="res://resources/dialog/froggo_hint_phone.tres" id="7_o5606"]
 [ext_resource type="Resource" uid="uid://bpjvonife3la8" path="res://resources/dialog/froggo_ring_return.tres" id="8_3bwjv"]
+[ext_resource type="Resource" uid="uid://dqnv8p5d2ij0h" path="res://resources/items/ring.tres" id="8_3nymt"]
+[ext_resource type="Resource" uid="uid://b48u6pbduhl7y" path="res://resources/items/rusty_key.tres" id="10_s6pyp"]
 
 [resource]
 script = ExtResource("5_3bwjv")
 character = ExtResource("2_hjuyb")
 background = ExtResource("1_m5m0e")
-dialogs = Array[ExtResource("3_tbd8x")]([ExtResource("4_o5606"), ExtResource("5_hjuyb"), ExtResource("6_tbd8x"), ExtResource("7_o5606"), ExtResource("8_3bwjv")])
+base_dialogs = Array[ExtResource("3_tbd8x")]([ExtResource("4_o5606"), ExtResource("6_tbd8x"), ExtResource("7_o5606")])
+returning_item_dialogs = Dictionary[ExtResource("7_3bwjv"), ExtResource("3_tbd8x")]({
+ExtResource("8_3nymt"): ExtResource("8_3bwjv"),
+ExtResource("10_s6pyp"): ExtResource("5_hjuyb")
+})
 metadata/_custom_type_script = "uid://dxnh3kgqd0k5h"

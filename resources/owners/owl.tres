@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="OwnerData" load_steps=10 format=3 uid="uid://d0li2bsukia63"]
+[gd_resource type="Resource" script_class="OwnerData" load_steps=13 format=3 uid="uid://d0li2bsukia63"]
 
 [ext_resource type="Script" uid="uid://b7lxtrcfc1iu5" path="res://resources/classes/dialog_data.gd" id="1_mk1dd"]
 [ext_resource type="Texture2D" uid="uid://0ehliaylkkh0" path="res://assets/visual/areas/locating_owners_green_orange_palet/back_owl.png" id="1_rc1p3"]
@@ -8,11 +8,18 @@
 [ext_resource type="Resource" uid="uid://lnetsbbr24qa" path="res://resources/dialog/owly_base.tres" id="5_yjecn"]
 [ext_resource type="Resource" uid="uid://djrqjdr8vd8ck" path="res://resources/dialog/owly_necklace_return.tres" id="6_23c8j"]
 [ext_resource type="Resource" uid="uid://dvfxlf4c63vx3" path="res://resources/dialog/owly_hint_shoe.tres" id="7_ayg1y"]
+[ext_resource type="Script" uid="uid://bfkgwhugqn2wy" path="res://resources/classes/item_type.gd" id="7_lj37m"]
+[ext_resource type="Resource" uid="uid://dbsj0gdmkykx0" path="res://resources/items/necklace.tres" id="8_8r2xx"]
 [ext_resource type="Resource" uid="uid://mpbv7b8ho4i4" path="res://resources/dialog/owly_amphora_return.tres" id="8_lj37m"]
+[ext_resource type="Resource" uid="uid://dtv33g2418u7p" path="res://resources/items/amphora/amphora.tres" id="10_op5up"]
 
 [resource]
 script = ExtResource("2_jcv5g")
 character = ExtResource("2_rc1p3")
 background = ExtResource("1_rc1p3")
-dialogs = Array[ExtResource("1_mk1dd")]([ExtResource("4_rc1p3"), ExtResource("5_yjecn"), ExtResource("6_23c8j"), ExtResource("7_ayg1y"), ExtResource("8_lj37m")])
+base_dialogs = Array[ExtResource("1_mk1dd")]([ExtResource("5_yjecn"), ExtResource("4_rc1p3"), ExtResource("7_ayg1y")])
+returning_item_dialogs = Dictionary[ExtResource("7_lj37m"), ExtResource("1_mk1dd")]({
+ExtResource("8_8r2xx"): ExtResource("6_23c8j"),
+ExtResource("10_op5up"): ExtResource("8_lj37m")
+})
 metadata/_custom_type_script = "uid://dxnh3kgqd0k5h"
