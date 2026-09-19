@@ -74,6 +74,7 @@ func _convert_distance_to_gauge_height(distance: float) -> float:
 
 func _catch_attempt() -> void:
 	if player.position.distance_to(target_position) <= catch_distance:
+		var item_obtained = Inventory.get_random_item_from_pool()
 		sfx_player.play_sfx(treasure_sfx)
 		_spawn_target()
 	else:
