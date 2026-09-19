@@ -40,9 +40,11 @@ func _reset() -> void:
 	if current_item == null:
 		if minigame_instance:
 			minigame_instance.hide()
-		dialog_component.dialog_finished.connect(HintMenu.play.bind(start_icon, palette))
+		dialog_component.dialog_finished.connect(
+			HintMenu.play.bind(start_icon, palette),
+			CONNECT_ONE_SHOT
+		)
 		dialog_component.play_dialog(no_object_dialog, palette)
-		HintMenu.play(start_icon, palette)
 		return
 
 	minigame_instance = instance_deterioration_matching[current_item.deterioration]
