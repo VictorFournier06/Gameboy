@@ -21,6 +21,7 @@ var _dialog_about_to_play: Array[DialogData] = [] #queue
 
 func _ready() -> void:
 	player.entering_house.connect(_enter_door)
+	dialog_component.dialog_finished.connect(_pop_dialog)
 
 func _enter_door(door: Area2D) -> void:
 	sfx_player.play_sfx(door_sfx)
@@ -64,15 +65,10 @@ func _find_dialogs_for_owner(input_owner: OwnerData) -> Array[DialogData]:
 	return dialogs
 
 func _pop_dialog() -> void:
-	var first_dialog: DialogData = _dialog_about_to_play.pop_front()
 	if _dialog_about_to_play.is_empty():
-		dialog_component.dialog_finished.connect(
-			HintMenu.play.bind(start_icon, palette),
-			CONNECT_ONE_SHOT
-		)
+		HintMenu.play(start_icon, palette)
 	else:
-		dialog_component.dialog_finished.connect(_pop_dialog, CONNECT_ONE_SHOT)
-	dialog_component.play_dialog(first_dialog, palette)
+		dialog_component.play_dialog(_dialog_about_to_play.pop_front(), palette)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if not event.is_action_pressed("start"):
