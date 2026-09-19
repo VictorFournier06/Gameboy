@@ -257,6 +257,7 @@ animation = &"idle_right"
 shape = SubResource("RectangleShape2D_tl0t6")
 
 [node name="RayCast2D" type="RayCast2D" parent="Overworld/OverworldPlayer"]
+collide_with_areas = true
 
 [node name="Camera2D" type="Camera2D" parent="Overworld/OverworldPlayer"]
 limit_left = 0

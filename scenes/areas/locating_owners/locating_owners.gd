@@ -20,12 +20,9 @@ var _dialog_about_to_play: Array[DialogData] = [] #queue
 @onready var sfx_player: SFXPlayer = $SFXPlayer
 
 func _ready() -> void:
-	for door in $Overworld/Doors.get_children():
-		door.body_entered.connect(_enter_door.bind(door))
+	player.entering_house.connect(_enter_door)
 
-func _enter_door(element: Node2D, door: Area2D) -> void:
-	if element != player:
-		return
+func _enter_door(door: Area2D) -> void:
 	sfx_player.play_sfx(door_sfx)
 	player.can_move = false
 	await sfx_player.finished
@@ -76,3 +73,18 @@ func _pop_dialog() -> void:
 	else:
 		dialog_component.dialog_finished.connect(_pop_dialog, CONNECT_ONE_SHOT)
 	dialog_component.play_dialog(first_dialog, palette)
+
+func _unhandled_input(event: InputEvent) -> void:
+	if not event.is_action_pressed("start"):
+		return
+	get_viewport().set_input_as_handled()
+	if interior.visible:
+		_exit_house()
+
+func _exit_house() -> void:
+	interior.hide()
+	overworld.show()
+	camera.enabled = true
+	player.set_physics_process(true)
+	player.can_move = true
+	player.facing_direction = "down"
