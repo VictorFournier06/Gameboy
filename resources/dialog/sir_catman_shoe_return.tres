@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_lufbg")
-lines = Array[String](["My good Sir,
+lines = Array[String](["My boot !", "My good Sir,
 
 
 ", "What would happen of me ", "if you were not here?", "When do you get off work?", "Do you want to go for a walk?"])
