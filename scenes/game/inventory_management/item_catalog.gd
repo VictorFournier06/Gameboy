@@ -1,7 +1,7 @@
 class_name ItemCatalog
 
 const ARTEFACTS: Array[ItemType] = [
-	OLD_GOLD, RUSTY_KEY, AMPHORA, BOOK, BOOT, MAP, PHONE, RING, NECKLACE
+	RUSTY_KEY, AMPHORA, BOOK, BOOT, MAP, PHONE, RING, NECKLACE #TODO Old Gold
 ]
 
 const OLD_GOLD: ItemType = preload("res://resources/items/old_gold.tres")
