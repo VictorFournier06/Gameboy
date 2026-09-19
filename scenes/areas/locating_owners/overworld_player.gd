@@ -9,8 +9,13 @@ var can_move: bool = true
 var tween: Tween
 var facing_direction: String = "down"
 
+var god_mode_speed: bool = false
+
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var ray_cast: RayCast2D = $RayCast2D
+
+func _ready():
+	Debug.skip_minigame.connect(_toggle_god_mode_speed)
 
 func _physics_process(_delta: float) -> void:
 	if not can_move:
@@ -41,3 +46,10 @@ func _physics_process(_delta: float) -> void:
 		tween.tween_property(self, "position", position + direction * TILE_SIZE, step_duration)
 		await tween.finished
 		moving = false
+
+func _toggle_god_mode_speed() -> void:
+	god_mode_speed = not god_mode_speed
+	if god_mode_speed:
+		step_duration = step_duration / 3.0
+	else:
+		step_duration = step_duration * 3.0
