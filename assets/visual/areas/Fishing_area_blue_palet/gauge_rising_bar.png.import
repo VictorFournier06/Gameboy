@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dn0s4e6g3qo36"
-path="res://.godot/imported/gauge_rising_bar.png-49db0dd6193e8ac49ecd73b140358368.ctex"
+path="res://.godot/imported/gauge_rising_bar.png-6e4a99c94413c7092bb704c462919797.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/visual/areas/Fishing_area_blue_palet/gauge_rising_bar.png"
-dest_files=["res://.godot/imported/gauge_rising_bar.png-49db0dd6193e8ac49ecd73b140358368.ctex"]
+source_file="res://assets/visual/areas/fishing_area_blue_palet/gauge_rising_bar.png"
+dest_files=["res://.godot/imported/gauge_rising_bar.png-6e4a99c94413c7092bb704c462919797.ctex"]
 
 [params]
 

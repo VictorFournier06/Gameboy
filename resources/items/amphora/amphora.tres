@@ -7,7 +7,7 @@
 [ext_resource type="Resource" uid="uid://bstvl6mfhs7tr" path="res://resources/items/amphora/piece4.tres" id="5_e2qhq"]
 [ext_resource type="Resource" uid="uid://bn7dka82fqb4i" path="res://resources/items/amphora/piece5.tres" id="6_v8ml3"]
 [ext_resource type="Resource" uid="uid://4tostraymmx8" path="res://resources/items/amphora/piece6.tres" id="7_c5cm6"]
-[ext_resource type="Texture2D" uid="uid://eafbuiabxqnd" path="res://assets/visual/areas/Worshop_area_orange_palet/amphora_pieces/amphora.png" id="8_urbdo"]
+[ext_resource type="Texture2D" uid="uid://eafbuiabxqnd" path="res://assets/visual/areas/worshop_area_orange_palet/amphora_pieces/amphora.png" id="8_urbdo"]
 [ext_resource type="Script" uid="uid://bfkgwhugqn2wy" path="res://resources/classes/item_type.gd" id="9_mjavh"]
 
 [resource]

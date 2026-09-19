@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="ItemType" load_steps=5 format=3 uid="uid://dkm4yav7ccc01"]
 
 [ext_resource type="Script" uid="uid://bufyg5eq08p5" path="res://resources/classes/piece_data.gd" id="1_4wskn"]
-[ext_resource type="Texture2D" uid="uid://dbk5y7u7c4uqh" path="res://assets/visual/areas/Worshop_area_orange_palet/Boot_Clean.png" id="2_6jjsu"]
+[ext_resource type="Texture2D" uid="uid://dbk5y7u7c4uqh" path="res://assets/visual/areas/worshop_area_orange_palet/boot_clean.png" id="2_6jjsu"]
 [ext_resource type="Script" uid="uid://bfkgwhugqn2wy" path="res://resources/classes/item_type.gd" id="2_p4v6h"]
-[ext_resource type="Texture2D" uid="uid://ddelgvpp3axxn" path="res://assets/visual/areas/Worshop_area_orange_palet/Boot_Dirty.png" id="3_kpa3n"]
+[ext_resource type="Texture2D" uid="uid://ddelgvpp3axxn" path="res://assets/visual/areas/worshop_area_orange_palet/boot_dirty.png" id="3_kpa3n"]
 
 [resource]
 script = ExtResource("2_p4v6h")
