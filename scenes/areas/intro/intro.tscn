@@ -1,9 +1,9 @@
 [gd_scene load_steps=28 format=3 uid="uid://da23kfrxomyx1"]
 
-[ext_resource type="Texture2D" uid="uid://ccvlwrdexf1xh" path="res://assets/visual/intro/intro1.png" id="1_wfs7u"]
-[ext_resource type="Texture2D" uid="uid://1mgm8wco7t5o" path="res://assets/visual/intro/introloop.png" id="2_es01l"]
-[ext_resource type="Texture2D" uid="uid://cyefwfjt1bevj" path="res://assets/visual/intro/intro2.png" id="3_0naf5"]
-[ext_resource type="Texture2D" uid="uid://maqbjoupywb2" path="res://assets/visual/intro/intro3.png" id="4_bu1yb"]
+[ext_resource type="Texture2D" uid="uid://ccvlwrdexf1xh" path="res://assets/visual/areas/intro_blue_palette/intro1.png" id="1_wfs7u"]
+[ext_resource type="Texture2D" uid="uid://1mgm8wco7t5o" path="res://assets/visual/areas/intro_blue_palette/introloop.png" id="2_es01l"]
+[ext_resource type="Texture2D" uid="uid://cyefwfjt1bevj" path="res://assets/visual/areas/intro_blue_palette/intro2.png" id="3_0naf5"]
+[ext_resource type="Texture2D" uid="uid://maqbjoupywb2" path="res://assets/visual/areas/intro_blue_palette/intro3.png" id="4_bu1yb"]
 [ext_resource type="Script" uid="uid://cd6hs6teipkfc" path="res://scenes/areas/intro/introcine.gd" id="5_t1qkj"]
 [ext_resource type="AudioStream" uid="uid://dgsh7ycfhabff" path="res://assets/audio/music/intro_song.wav" id="6_es01l"]
 
