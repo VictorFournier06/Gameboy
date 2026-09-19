@@ -73,6 +73,7 @@ func _input(event: InputEvent) -> void:
 	else:
 		current_line_nb += 1
 		show_line()
+	get_viewport().set_input_as_handled()
 
 func _process(_delta: float) -> void:
 	if reveal_tween and reveal_tween.is_running():

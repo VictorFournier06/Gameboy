@@ -2,6 +2,8 @@ extends Node2D
 
 const GAUGE_HEIGHT: float = 63
 
+static var has_seen_a_press_hint: bool = false
+
 @export var max_spawn_distance: float
 @export var min_spawn_distance: float
 @export var catch_distance: float
@@ -18,6 +20,7 @@ const GAUGE_HEIGHT: float = 63
 @export var empty_sea_dialog: DialogData
 @export var start_icon: Texture2D
 @export var move_icon: Texture2D
+@export var a_press_icon: Texture2D
 @export var palette: ColorPalette
 
 var target_position: Vector2
@@ -77,15 +80,16 @@ func _process(delta: float) -> void:
 	rising_bar.position.y = y_gauge_bottom - rising_bar_height
 
 	var target_distance: float = player.position.distance_to(target_position)
+	if not has_seen_a_press_hint and target_distance <= catch_distance:
+		has_seen_a_press_hint = true
+		HintMenu.play(a_press_icon, palette)
+
 	var echo_height: float = _convert_distance_to_gauge_height(target_distance)
 	if not imprinted_echo and rising_bar_height >= echo_height:
 		imprinted_echo = true
 		echo_bar.position.y = y_gauge_bottom - echo_height
 		echo_bar.show()
 		echo_alive_since = 0.0
-
-	if Input.is_action_just_pressed("a"):
-		_catch_attempt()
 
 func _convert_distance_to_gauge_height(distance: float) -> float:
 	return clampf((1.0 - distance / max_spawn_distance) * GAUGE_HEIGHT, 0.0, GAUGE_HEIGHT)
@@ -130,3 +134,7 @@ func _disable_fishing() -> void:
 
 	dialog_component.dialog_finished.connect(HintMenu.play.bind(start_icon, palette), CONNECT_ONE_SHOT)
 	dialog_component.play_dialog(empty_sea_dialog, palette)
+
+func _unhandled_input(event: InputEvent) -> void:
+	if is_processing() and event.is_action_pressed("a"):
+		_catch_attempt()
