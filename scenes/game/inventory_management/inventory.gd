@@ -14,8 +14,7 @@ var items: Array[Item]:
 		return read_only_items
 
 var _nostalgia_coupons: int = 0
-#TODO: remove once fishing adds item
-var _items: Array[Item] = [Item.new(ItemCatalog.RING,Item.Deterioration.DIRTY),Item.new(ItemCatalog.AMPHORA, Item.Deterioration.BROKEN)]
+var _items: Array[Item] = []
 
 func spend_coupons(cost: int) -> bool:
 	assert(cost >= 0)
@@ -25,7 +24,7 @@ func spend_coupons(cost: int) -> bool:
 		return true
 	return false
 
-func earn_money(amount: int) -> void:
+func earn_coupons(amount: int) -> void:
 	assert(amount >= 0)
 	_nostalgia_coupons += amount
 	coupons_changed.emit(nostalgia_coupons)

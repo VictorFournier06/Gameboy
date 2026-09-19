@@ -58,7 +58,7 @@ func _process(delta: float) -> void:
 	var rising_bar_height: float = sweep_progress * GAUGE_HEIGHT
 	rising_bar.position.y = y_gauge_bottom - rising_bar_height
 
-	var target_distance = player.position.distance_to(target_position)
+	var target_distance: float = player.position.distance_to(target_position)
 	var echo_height: float = _convert_distance_to_gauge_height(target_distance)
 	if not imprinted_echo and rising_bar_height >= echo_height:
 		imprinted_echo = true

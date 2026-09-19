@@ -1,9 +1,9 @@
-[gd_resource type="Resource" script_class="ItemType" load_steps=5 format=3 uid="uid://cxwirsby0he3n"]
+[gd_resource type="Resource" script_class="ItemType" load_steps=5 format=3 uid="uid://cy7u53mmmnfj5"]
 
 [ext_resource type="Script" uid="uid://bufyg5eq08p5" path="res://resources/classes/piece_data.gd" id="1_jql5r"]
-[ext_resource type="Texture2D" uid="uid://dj3wals5btguf" path="res://assets/visual/areas/Worshop_area_orange_palet/Book_Clean.png" id="2_t71pd"]
+[ext_resource type="Texture2D" uid="uid://dj3wals5btguf" path="res://assets/visual/areas/worshop_area_orange_palet/book_clean.png" id="2_t71pd"]
 [ext_resource type="Script" uid="uid://bfkgwhugqn2wy" path="res://resources/classes/item_type.gd" id="2_x6w05"]
-[ext_resource type="Texture2D" uid="uid://b5iymxx2hcb6l" path="res://assets/visual/areas/Worshop_area_orange_palet/Book_Dirty.png" id="3_2tull"]
+[ext_resource type="Texture2D" uid="uid://b5iymxx2hcb6l" path="res://assets/visual/areas/worshop_area_orange_palet/book_dirty.png" id="3_2tull"]
 
 [resource]
 script = ExtResource("2_x6w05")
