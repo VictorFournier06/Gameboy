@@ -1,10 +1,11 @@
-[gd_scene load_steps=27 format=3 uid="uid://dhjrb8vvrjmr2"]
+[gd_scene load_steps=28 format=3 uid="uid://da23kfrxomyx1"]
 
 [ext_resource type="Texture2D" uid="uid://ccvlwrdexf1xh" path="res://assets/visual/intro/intro1.png" id="1_wfs7u"]
 [ext_resource type="Texture2D" uid="uid://1mgm8wco7t5o" path="res://assets/visual/intro/introloop.png" id="2_es01l"]
 [ext_resource type="Texture2D" uid="uid://cyefwfjt1bevj" path="res://assets/visual/intro/intro2.png" id="3_0naf5"]
 [ext_resource type="Texture2D" uid="uid://maqbjoupywb2" path="res://assets/visual/intro/intro3.png" id="4_bu1yb"]
-[ext_resource type="Script" uid="uid://cd6hs6teipkfc" path="res://scenes/game/introcine.gd" id="5_t1qkj"]
+[ext_resource type="Script" uid="uid://cd6hs6teipkfc" path="res://scenes/areas/intro/introcine.gd" id="5_t1qkj"]
+[ext_resource type="AudioStream" uid="uid://dgsh7ycfhabff" path="res://assets/audio/music/intro_song.wav" id="6_es01l"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_272cy"]
 atlas = ExtResource("1_wfs7u")
@@ -171,3 +172,4 @@ position = Vector2(80, 72)
 sprite_frames = SubResource("SpriteFrames_lm4bj")
 animation = &"water"
 script = ExtResource("5_t1qkj")
+music = ExtResource("6_es01l")

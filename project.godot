@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Gameboy"
-run/main_scene="res://scenes/areas/start_screen/start_screen.tscn"
+run/main_scene="uid://da23kfrxomyx1"
 config/features=PackedStringArray("4.5", "Forward Plus")
 
 [audio]
