@@ -12,7 +12,8 @@ const AREA_MAPPING: Dictionary = {
 const MUSIC_MAPPING: Dictionary = {
 	Area.LOCATING_OWNERS: preload("res://assets/audio/music/nostalgia_box.wav"),
 	Area.FISHING: preload("res://assets/audio/music/retrieving_memories.wav"),
-	Area.RESTORING: preload("res://assets/audio/music/scrubbing_the_past.wav")
+	Area.RESTORING: preload("res://assets/audio/music/scrubbing_the_past.wav"),
+	Area.HUB: preload("res://assets/audio/music/getting_to_work.wav")
 }
 
 var origin_area: Area = Area.FISHING
