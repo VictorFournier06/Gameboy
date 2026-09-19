@@ -2,8 +2,6 @@ extends Node2D
 
 const GAUGE_HEIGHT: float = 63
 
-static var has_seen_a_press_hint: bool = false
-
 @export var max_spawn_distance: float
 @export var min_spawn_distance: float
 @export var catch_distance: float
@@ -30,6 +28,8 @@ var echo_alive_since: float = 0.0
 
 var sweep_progress: float = 0.0 #in [0,1]
 var imprinted_echo: bool = false
+
+var items_fished: int = 0 #since in the scene
 
 @onready var player: Node2D = $Player
 @onready var rising_bar: Sprite2D = $Gauge/RisingBar
@@ -80,8 +80,7 @@ func _process(delta: float) -> void:
 	rising_bar.position.y = y_gauge_bottom - rising_bar_height
 
 	var target_distance: float = player.position.distance_to(target_position)
-	if not has_seen_a_press_hint and target_distance <= catch_distance:
-		has_seen_a_press_hint = true
+	if target_distance <= catch_distance:
 		HintMenu.play(a_press_icon, palette)
 
 	var echo_height: float = _convert_distance_to_gauge_height(target_distance)
@@ -99,6 +98,7 @@ func _catch_attempt() -> void:
 		_obtain_item() #spawn new item after the dialog
 	else:
 		sfx_player.play_sfx(miss_sfx)
+		HintMenu.play(move_icon, palette)
 
 func _obtain_item() -> void:
 	if not is_processing():
@@ -107,6 +107,9 @@ func _obtain_item() -> void:
 	set_physics_process(false)
 	sfx_player.play_sfx(treasure_sfx)
 	var item_obtained: Item = Inventory.get_random_item_from_pool()
+
+	if not Inventory.broken_pieces.has(item_obtained.type):
+		items_fished += 1
 
 	var item_dialog: DialogData
 	if item_obtained.deterioration == Item.Deterioration.DIRTY:
@@ -125,6 +128,11 @@ func _obtain_item() -> void:
 			"total": item_obtained.type.broken_pieces.size()
 		}))
 	dialog_component.dialog_finished.connect(_spawn_target, CONNECT_ONE_SHOT)
+	if items_fished == 3:
+		dialog_component.dialog_finished.connect(
+			HintMenu.play.bind(start_icon, palette),
+			CONNECT_ONE_SHOT
+		)
 	dialog_component.play_dialog(output_dialog, palette)
 
 func _disable_fishing() -> void:
