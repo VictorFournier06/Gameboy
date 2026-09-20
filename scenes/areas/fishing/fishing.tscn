@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://n0d2bfx60yol"]
+[gd_scene load_steps=33 format=3 uid="uid://n0d2bfx60yol"]
 
 [ext_resource type="Script" uid="uid://ok8e0up8mpgq" path="res://scenes/areas/fishing/fishing.gd" id="1_8upm0"]
 [ext_resource type="Texture2D" uid="uid://cruseh3oic61j" path="res://assets/visual/areas/fishing_area_blue_palet/fishing_background.png" id="1_unp7j"]
@@ -30,6 +30,11 @@ metadata/_custom_type_script = "uid://b7lxtrcfc1iu5"
 [sub_resource type="Resource" id="Resource_bywvj"]
 script = ExtResource("4_he1dc")
 lines = Array[String](["The sea feels empty,", "I don't feel any memories left in there."])
+metadata/_custom_type_script = "uid://b7lxtrcfc1iu5"
+
+[sub_resource type="Resource" id="Resource_wl2nb"]
+script = ExtResource("4_he1dc")
+lines = Array[String](["I can't see anything underwater,", "but I should slowly move", "with the arrows to try to get closer to", "treasure and then press a to catch it!", "At least I've got my sonar bobber", "regularly giving me the distance to treasure"])
 metadata/_custom_type_script = "uid://b7lxtrcfc1iu5"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j1kc5"]
@@ -130,6 +135,7 @@ miss_sfx = ExtResource("3_0f186")
 dirty_catch_phrase = SubResource("Resource_he1dc")
 broken_catch_phrase = SubResource("Resource_6av71")
 empty_sea_dialog = SubResource("Resource_bywvj")
+explaining_the_game = SubResource("Resource_wl2nb")
 start_icon = ExtResource("5_6av71")
 move_icon = ExtResource("6_bywvj")
 a_press_icon = ExtResource("7_wl2nb")

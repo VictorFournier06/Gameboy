@@ -1,6 +1,7 @@
 extends Node2D
 
 const GAUGE_HEIGHT: float = 63
+const STRUGGLING_HINT_TIME: float = 60.0
 
 @export var max_spawn_distance: float
 @export var min_spawn_distance: float
@@ -16,6 +17,7 @@ const GAUGE_HEIGHT: float = 63
 @export var dirty_catch_phrase: DialogData #pun intended
 @export var broken_catch_phrase: DialogData
 @export var empty_sea_dialog: DialogData
+@export var explaining_the_game: DialogData
 @export var start_icon: Texture2D
 @export var move_icon: Texture2D
 @export var a_press_icon: Texture2D
@@ -30,6 +32,8 @@ var sweep_progress: float = 0.0 #in [0,1]
 var imprinted_echo: bool = false
 
 var items_fished: int = 0 #since in the scene
+var time_fishing: float = 0.0 #since in the scene
+var struggling_hint_given: bool = false
 
 @onready var player: Node2D = $Player
 @onready var rising_bar: Sprite2D = $Gauge/RisingBar
@@ -55,8 +59,7 @@ func _spawn_target() -> void:
 	if Inventory._item_pool.is_empty():
 		_disable_fishing()
 	else:
-		set_process(true)
-		set_physics_process(true)
+		_pause_or_resume_fishing(true)
 		player.position = Vector2.ZERO
 		var distance: float = randf_range(min_spawn_distance, max_spawn_distance)
 		var angle: float = randf() * 2 * PI
@@ -66,6 +69,13 @@ func _physics_process(_delta: float) -> void:
 	Player.move(player, player_speed, bounds)
 
 func _process(delta: float) -> void:
+	if items_fished == 0:
+		time_fishing += delta
+	if time_fishing >= STRUGGLING_HINT_TIME and not struggling_hint_given:
+		_display_struggling_hint()
+		struggling_hint_given = true
+		return
+
 	sweep_progress += delta / sweep_timer
 	echo_alive_since += delta
 
@@ -103,8 +113,7 @@ func _catch_attempt() -> void:
 func _obtain_item() -> void:
 	if not is_processing():
 		return
-	set_process(false)
-	set_physics_process(false)
+	_pause_or_resume_fishing(false)
 	sfx_player.play_sfx(treasure_sfx)
 	var item_obtained: Item = Inventory.get_random_item_from_pool()
 
@@ -136,8 +145,7 @@ func _obtain_item() -> void:
 	dialog_component.play_dialog(output_dialog, palette)
 
 func _disable_fishing() -> void:
-	set_process(false)
-	set_physics_process(false)
+	_pause_or_resume_fishing(false)
 	gauge.hide()
 
 	dialog_component.dialog_finished.connect(HintMenu.play.bind(start_icon, palette), CONNECT_ONE_SHOT)
@@ -146,3 +154,12 @@ func _disable_fishing() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if is_processing() and event.is_action_pressed("a"):
 		_catch_attempt()
+
+func _pause_or_resume_fishing(playing: bool) -> void:
+	set_process(playing)
+	set_physics_process(playing)
+
+func _display_struggling_hint() -> void:
+	_pause_or_resume_fishing(false)
+	dialog_component.dialog_finished.connect(_pause_or_resume_fishing.bind(true), CONNECT_ONE_SHOT)
+	dialog_component.play_dialog(explaining_the_game, palette)
