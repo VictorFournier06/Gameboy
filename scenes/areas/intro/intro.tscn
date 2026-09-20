@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://da23kfrxomyx1"]
+[gd_scene load_steps=32 format=3 uid="uid://da23kfrxomyx1"]
 
 [ext_resource type="Texture2D" uid="uid://ccvlwrdexf1xh" path="res://assets/visual/areas/intro_blue_palette/intro1.png" id="1_wfs7u"]
 [ext_resource type="Texture2D" uid="uid://1mgm8wco7t5o" path="res://assets/visual/areas/intro_blue_palette/introloop.png" id="2_es01l"]
@@ -6,6 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://maqbjoupywb2" path="res://assets/visual/areas/intro_blue_palette/intro3.png" id="4_bu1yb"]
 [ext_resource type="Script" uid="uid://cd6hs6teipkfc" path="res://scenes/areas/intro/introcine.gd" id="5_t1qkj"]
 [ext_resource type="AudioStream" uid="uid://dgsh7ycfhabff" path="res://assets/audio/music/intro_song.wav" id="6_es01l"]
+[ext_resource type="Texture2D" uid="uid://crej1i3xgjm54" path="res://assets/visual/areas/intro_blue_palette/gb_jam_14_splah_art_blue_background.png" id="7_csbml"]
+[ext_resource type="AudioStream" uid="uid://kctgiwrxsjyu" path="res://assets/audio/sfx/gbjam.wav" id="7_l8ceo"]
+[ext_resource type="Texture2D" uid="uid://b84yehfcl3g84" path="res://assets/visual/areas/intro_blue_palette/gb_jam_14_splah_art_blue_foreground.png" id="8_oetkf"]
+[ext_resource type="Script" uid="uid://cbg2drqlxjv78" path="res://scenes/game/audio/sfx_player.gd" id="9_oetkf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_272cy"]
 atlas = ExtResource("1_wfs7u")
@@ -173,3 +177,17 @@ sprite_frames = SubResource("SpriteFrames_lm4bj")
 animation = &"water"
 script = ExtResource("5_t1qkj")
 music = ExtResource("6_es01l")
+gbjam_sfx = ExtResource("7_l8ceo")
+
+[node name="GBJAMBackground" type="Sprite2D" parent="."]
+texture = ExtResource("7_csbml")
+centered = false
+
+[node name="GBJAMForeground" type="Sprite2D" parent="."]
+position = Vector2(0, -108)
+texture = ExtResource("8_oetkf")
+centered = false
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
+script = ExtResource("9_oetkf")
+metadata/_custom_type_script = "uid://cbg2drqlxjv78"

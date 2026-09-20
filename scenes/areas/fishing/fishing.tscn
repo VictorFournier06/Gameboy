@@ -34,7 +34,7 @@ metadata/_custom_type_script = "uid://b7lxtrcfc1iu5"
 
 [sub_resource type="Resource" id="Resource_wl2nb"]
 script = ExtResource("4_he1dc")
-lines = Array[String](["I can't see anything underwater,", "but I should slowly move", "with the arrows to try to get closer to", "treasure and then press a to catch it!", "At least I've got my sonar bobber", "regularly giving me the distance to treasure"])
+lines = Array[String](["I can't see anything underwater,", "but I should slowly move", "with the arrows to try to get closer to", "treasure and then press A to catch it!", "At least I've got my sonar bobber", "regularly giving me the distance to treasure"])
 metadata/_custom_type_script = "uid://b7lxtrcfc1iu5"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j1kc5"]
