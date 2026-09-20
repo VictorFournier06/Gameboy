@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccsp42qsqp5y2"
-path="res://.godot/imported/index.png-7750be10143200aafcfd7550e79cc220.ctex"
+uid="uid://6vd4gtxuy0hb"
+path="res://.godot/imported/gemboy_cartridge_montage.png-399b6213cb83003e7d7e507603fc82e2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://release/blue_rust/index.png"
-dest_files=["res://.godot/imported/index.png-7750be10143200aafcfd7550e79cc220.ctex"]
+source_file="res://release/thumbnail/gemboy_cartridge_montage.png"
+dest_files=["res://.godot/imported/gemboy_cartridge_montage.png-399b6213cb83003e7d7e507603fc82e2.ctex"]
 
 [params]
 
