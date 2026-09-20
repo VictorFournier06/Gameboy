@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dn6hdf083bkpo"
-path="res://.godot/imported/doggo_walking_back.png-4ed36fd90087f2583ac6a7d5dab16e9e.ctex"
+uid="uid://bpqi8aohfkht7"
+path="res://.godot/imported/doggo_walking_up.png-543a06500d1b211be2fa5802a6ea75d6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/visual/areas/locating_owners_green_orange_palet/doggo_walking_back.png"
-dest_files=["res://.godot/imported/doggo_walking_back.png-4ed36fd90087f2583ac6a7d5dab16e9e.ctex"]
+source_file="res://assets/visual/areas/locating_owners_green_orange_palet/doggo_walking_up.png"
+dest_files=["res://.godot/imported/doggo_walking_up.png-543a06500d1b211be2fa5802a6ea75d6.ctex"]
 
 [params]
 
