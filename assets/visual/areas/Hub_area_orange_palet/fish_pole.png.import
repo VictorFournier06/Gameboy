@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dfkce2380yyd0"
-path="res://.godot/imported/fish_pole.png-0075609a659b0982697ef357a6c3bc94.ctex"
+path="res://.godot/imported/fish_pole.png-65bbfa214ea3f4dae36dcb6c7c35c7ef.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/visual/areas/Hub_area_orange_palet/fish_pole.png"
-dest_files=["res://.godot/imported/fish_pole.png-0075609a659b0982697ef357a6c3bc94.ctex"]
+source_file="res://assets/visual/areas/hub_area_orange_palet/fish_pole.png"
+dest_files=["res://.godot/imported/fish_pole.png-65bbfa214ea3f4dae36dcb6c7c35c7ef.ctex"]
 
 [params]
 

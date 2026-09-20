@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://1m7y7sv5pytw"
-path="res://.godot/imported/Ring_Clean.png-c67b70bb9634677db877a617970d2fa3.ctex"
+path="res://.godot/imported/ring_clean.png-95fa2d639f529d2decd4e66e884353ae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/visual/areas/Worshop_area_orange_palet/Ring_Clean.png"
-dest_files=["res://.godot/imported/Ring_Clean.png-c67b70bb9634677db877a617970d2fa3.ctex"]
+source_file="res://assets/visual/areas/worshop_area_orange_palet/ring_clean.png"
+dest_files=["res://.godot/imported/ring_clean.png-95fa2d639f529d2decd4e66e884353ae.ctex"]
 
 [params]
 

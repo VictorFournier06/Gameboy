@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dbk5y7u7c4uqh"
-path="res://.godot/imported/Boot_Clean.png-40185626f4573bdb9d9ebc4bc7036e3d.ctex"
+path="res://.godot/imported/boot_clean.png-2317e651c3deab5bc50bc8398d35e7f0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/visual/areas/Worshop_area_orange_palet/Boot_Clean.png"
-dest_files=["res://.godot/imported/Boot_Clean.png-40185626f4573bdb9d9ebc4bc7036e3d.ctex"]
+source_file="res://assets/visual/areas/worshop_area_orange_palet/boot_clean.png"
+dest_files=["res://.godot/imported/boot_clean.png-2317e651c3deab5bc50bc8398d35e7f0.ctex"]
 
 [params]
 
