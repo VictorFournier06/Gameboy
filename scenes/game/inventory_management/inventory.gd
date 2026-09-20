@@ -13,17 +13,20 @@ var items: Array[Item]:
 		read_only_items.make_read_only()
 		return read_only_items
 
+var broken_pieces: Dictionary[ItemType, int] = {}
+
 var _nostalgia_coupons: int = 0
 var _inventory_items: Array[Item] = []
 var _item_pool: Array[ItemType] = [] #stack
-
-var broken_pieces: Dictionary[ItemType, int] = {}
 
 func _ready() -> void:
 	for item_type in ItemCatalog.ARTEFACTS:
 		for _i in maxi(1, item_type.broken_pieces.size()):
 			_item_pool.append(item_type)
 	_item_pool.shuffle()
+	#avoid aphora as a first item
+	while not _item_pool.back().broken_pieces.is_empty():
+		_item_pool.shuffle()
 
 func spend_coupons(cost: int) -> bool:
 	assert(cost >= 0)
