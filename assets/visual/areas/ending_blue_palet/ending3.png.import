@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cht430hyjs03e"
-path="res://.godot/imported/boot.png-50d96bebe7bf6d2d7e2a6e4940ae2fa3.ctex"
+uid="uid://bt0kcmk84n8au"
+path="res://.godot/imported/ending3.png-5b1d533a16fdbfb1ae0208e7241de9c2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/visual/areas/Fishing_area_blue_palet/boot.png"
-dest_files=["res://.godot/imported/boot.png-50d96bebe7bf6d2d7e2a6e4940ae2fa3.ctex"]
+source_file="res://assets/visual/areas/ending_blue_palet/ending3.png"
+dest_files=["res://.godot/imported/ending3.png-5b1d533a16fdbfb1ae0208e7241de9c2.ctex"]
 
 [params]
 
