@@ -1,6 +1,6 @@
 extends Node
 
-enum Area { FISHING, HUB, LOCATING_OWNERS, RESTORING, SHOP }
+enum Area { FISHING, HUB, LOCATING_OWNERS, RESTORING, SHOP, ENDING }
 
 const AREA_MAPPING: Dictionary = {
 	Area.FISHING: "res://scenes/areas/fishing/fishing.tscn",
@@ -8,12 +8,15 @@ const AREA_MAPPING: Dictionary = {
 	Area.LOCATING_OWNERS: "res://scenes/areas/locating_owners/locating_owners.tscn",
 	Area.RESTORING: "res://scenes/areas/restoring/restoring.tscn",
 	Area.SHOP: "res://scenes/areas/shop/shop.tscn",
+	Area.ENDING: "res://scenes/areas/ending/ending.tscn"
 }
+
 const MUSIC_MAPPING: Dictionary = {
 	Area.LOCATING_OWNERS: preload("res://assets/audio/music/nostalgia_box.wav"),
 	Area.FISHING: preload("res://assets/audio/music/retrieving_memories.wav"),
 	Area.RESTORING: preload("res://assets/audio/music/scrubbing_the_past.wav"),
-	Area.HUB: preload("res://assets/audio/music/getting_to_work.wav")
+	Area.HUB: preload("res://assets/audio/music/getting_to_work.wav"),
+	Area.ENDING: preload("res://assets/audio/music/end_credits.wav")
 }
 
 var origin_area: Area = Area.FISHING
@@ -29,5 +32,5 @@ func switch_area(new_area: Area) -> void:
 		MusicPlayer.music_transition(MUSIC_MAPPING[new_area])
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("start") and current_area != Area.HUB:
+	if event.is_action_pressed("start") and current_area not in [Area.HUB, Area.ENDING]:
 		switch_area(Area.HUB)

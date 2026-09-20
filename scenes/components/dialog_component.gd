@@ -66,6 +66,7 @@ func _input(event: InputEvent) -> void:
 	if not event.is_action_pressed("ui_accept"):
 		return
 
+	get_viewport().set_input_as_handled()
 	if reveal_tween and reveal_tween.is_running(): #reveal instant
 		reveal_tween.kill()
 		label.visible_ratio = 1.0
@@ -73,7 +74,7 @@ func _input(event: InputEvent) -> void:
 	else:
 		current_line_nb += 1
 		show_line()
-	get_viewport().set_input_as_handled()
+
 
 func _process(_delta: float) -> void:
 	if reveal_tween and reveal_tween.is_running():

@@ -66,7 +66,10 @@ func _find_dialogs_for_owner(input_owner: OwnerData) -> Array[DialogData]:
 
 func _pop_dialog() -> void:
 	if _dialog_about_to_play.is_empty():
-		HintMenu.play(start_icon, palette)
+		if Inventory._item_pool.is_empty() and Inventory.items.is_empty():
+			AreaManager.switch_area(AreaManager.Area.ENDING)
+		else:
+			HintMenu.play(start_icon, palette)
 	else:
 		dialog_component.play_dialog(_dialog_about_to_play.pop_front(), palette)
 
